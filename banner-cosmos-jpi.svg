@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="spaceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11031c"/>
+      <stop offset="50%" stop-color="#1f0830"/>
+      <stop offset="100%" stop-color="#2e0d44"/>
+    </linearGradient>
+
+    <radialGradient id="planetGlowLeft" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e5b75f" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#4a1f6b" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1f0830" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bhGlowRight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#09010f" stop-opacity="1"/>
+      <stop offset="38%" stop-color="#e5b75f" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#9d5ce6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1f0830" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="goldNeon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; white-space: pre; }
+      .hud-formula { fill: #e5b75f; opacity: 0.85; animation: hudPulse 5s infinite ease-in-out; }
+      .hud-sub { fill: #b87aff; opacity: 0.7; }
+      .star-a { fill: #ffffff; animation: twinkle 3.2s infinite ease-in-out; }
+      .star-b { fill: #e5b75f; animation: twinkle 4.4s infinite ease-in-out 1.4s; }
+      .ascii-planet { fill: #c699f5; opacity: 0.85; animation: floatSlow 7s infinite ease-in-out; }
+      .ascii-bh { fill: #e5b75f; opacity: 0.88; animation: floatSlow 8s infinite ease-in-out 1s; }
+      .logo-main { fill: #e5b75f; filter: url(#goldNeon); animation: logoPulse 4s infinite ease-in-out; }
+      .orbit-ring { stroke: #e5b75f; fill: none; stroke-dasharray: 5 5; animation: dashRotate 25s linear infinite; }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.95; }
+      }
+      @keyframes hudPulse {
+        0%, 100% { opacity: 0.65; }
+        50% { opacity: 1; }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+      @keyframes logoPulse {
+        0%, 100% { opacity: 0.92; }
+        50% { opacity: 1; }
+      }
+      @keyframes dashRotate {
+        to { stroke-dashoffset: -200; }
+      }
+    </style>
+  </defs>
+
+  <rect width="960" height="340" rx="14" fill="url(#spaceBg)" stroke="#4a1f6b" stroke-width="2"/>
+  <rect x="10" y="10" width="940" height="320" rx="9" fill="none" stroke="#e5b75f" stroke-opacity="0.28" stroke-dasharray="8 4"/>
+
+  <line x1="20" y1="54" x2="940" y2="54" stroke="#4a1f6b" stroke-width="1" stroke-dasharray="3 3"/>
+  
+  <text x="28" y="32" class="mono hud-formula" font-size="12" font-weight="bold">
+    [ MAXWELL ]  ∇ × B = μ₀J + μ₀ε₀(∂E/∂t)   │   ∇ · E = ρ/ε₀
+  </text>
+  <text x="28" y="47" class="mono hud-sub" font-size="10.5">
+    ELECTROMAGNETIC FIELD TENSOR: F_μν = ∂_μ A_ν - ∂_ν A_μ
+  </text>
+
+  <text x="932" y="32" text-anchor="end" class="mono hud-formula" font-size="12" font-weight="bold">
+    [ RELATIVITY ]  R_μν - ½R g_μν + Λg_μν = (8πG/c⁴) T_μν
+  </text>
+  <text x="932" y="47" text-anchor="end" class="mono hud-sub" font-size="10.5">
+    SPACE-TIME INTERVAL: ds² = -c²dt² + dx² + dy² + dz²
+  </text>
+
+  <g class="star-a">
+    <circle cx="290" cy="85" r="1.3"/><circle cx="670" cy="90" r="1.5"/>
+    <circle cx="320" cy="195" r="1"/><circle cx="635" cy="210" r="1.2"/>
+    <circle cx="480" cy="70" r="1.4"/><circle cx="255" cy="245" r="1.2"/>
+  </g>
+  <g class="star-b">
+    <text x="295" y="130" class="mono" font-size="11">✦</text>
+    <text x="645" y="140" class="mono" font-size="12">✧</text>
+    <text x="345" y="78" class="mono" font-size="10">˚</text>
+    <text x="610" y="75" class="mono" font-size="10">*</text>
+  </g>
+
+  <g class="ascii-planet">
+    <circle cx="145" cy="165" r="88" fill="url(#planetGlowLeft)"/>
+    <ellipse cx="145" cy="165" rx="98" ry="26" transform="rotate(-18 145 165)" fill="none" stroke="#9d5ce6" stroke-width="1.5" stroke-opacity="0.55"/>
+    <ellipse cx="145" cy="165" rx="112" ry="32" transform="rotate(-18 145 165)" class="orbit-ring" stroke-width="1.2" stroke-opacity="0.8"/>
+    <g font-size="10.5" fill="#d7b5ff">
+      <text x="72" y="118" class="mono">        .·:°████████°:·.        </text>
+      <text x="72" y="130" class="mono">     .·°▒▒▓▓████████▓▓▒▒°·.     </text>
+      <text x="72" y="142" class="mono">   .°░░░░▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒░░°.   </text>
+      <text x="72" y="154" class="mono">  :▒▒▓▓████████████████████▓▓▒: </text>
+      <text x="72" y="166" class="mono">  ▐████████▓▓▒▒░░░░▒▒▓▓████████▌</text>
+      <text x="72" y="178" class="mono">  :▓▓██████▒▒░░░░░░░░▒▒██████▓▓:</text>
+      <text x="72" y="190" class="mono">   '°▒▒▓▓████████████████▓▓▒▒°' </text>
+      <text x="72" y="202" class="mono">     '·°░░▒▒▓▓██████▓▓▒▒░░°·'   </text>
+      <text x="72" y="214" class="mono">        '·:°████████°:·'        </text>
+    </g>
+    <circle cx="242" cy="122" r="4.5" fill="#e5b75f" filter="url(#goldNeon)"/>
+    <text x="145" y="242" text-anchor="middle" class="mono" font-size="9.5" fill="#9d5ce6">
+      [ SYS_01 // KEPLER ORBITAL NODE ]
+    </text>
+  </g>
+
+  <g class="ascii-bh">
+    <circle cx="815" cy="165" r="88" fill="url(#bhGlowRight)"/>
+    <ellipse cx="815" cy="165" rx="52" ry="48" fill="none" stroke="#e5b75f" stroke-width="1.8" stroke-opacity="0.65"/>
+    <ellipse cx="815" cy="165" rx="96" ry="20" transform="rotate(14 815 165)" fill="none" stroke="#e5b75f" stroke-width="2" filter="url(#goldNeon)"/>
+    <ellipse cx="815" cy="165" rx="112" ry="26" transform="rotate(14 815 165)" class="orbit-ring" stroke-width="1"/>
+    <g font-size="10.5">
+      <text x="730" y="122" class="mono" fill="#b87aff">       . · ° ✦ ▄▄▄▄▄▄ ✦ ° · .       </text>
+      <text x="730" y="134" class="mono" fill="#e5b75f">    .·° ▒▒▓▓████████████▓▓▒▒ °·.    </text>
+      <text x="730" y="146" class="mono" fill="#e5b75f">  .° ▓▓████▀▀▀        ▀▀▀████▓▓ °.  </text>
+      <text x="730" y="158" class="mono" fill="#ffffff"> ══████▓▓▀   SINGULARITY  ▀▓▓████══ </text>
+      <text x="730" y="170" class="mono" fill="#e5b75f"> ══▒▒████▄     r = 2GM/c² ▄████▒▒══ </text>
+      <text x="730" y="182" class="mono" fill="#e5b75f">  '° ▓▓████▄▄▄        ▄▄▄████▓▓ °'  </text>
+      <text x="730" y="194" class="mono" fill="#b87aff">    '·° ░░▒▒▓▓████████▓▓▒▒░░ °·'    </text>
+      <text x="730" y="206" class="mono" fill="#9d5ce6">       ' · ° ✦ ▀▀▀▀▀▀ ✦ ° · '       </text>
+    </g>
+    <text x="815" y="242" text-anchor="middle" class="mono" font-size="9.5" fill="#e5b75f">
+      [ SYS_02 // RELATIVISTIC HORIZON ]
+    </text>
+  </g>
+
+  <g class="logo-main" font-size="15.5">
+    <text x="355" y="102" class="mono">       ██╗ ███████████╗</text>
+    <text x="355" y="120" class="mono">       ██║ ╚══██╔══██╔╝</text>
+    <text x="355" y="138" class="mono">       ██║    ██║  ██║ </text>
+    <text x="355" y="156" class="mono"> ██╗   ██║    ██║  ██║ </text>
+    <text x="355" y="174" class="mono"> ╚██████╔╝    ██║  ███╗</text>
+    <text x="355" y="192" class="mono">  ╚═════╝     ╚═╝  ╚══╝</text>
+  </g>
+
+  <line x1="250" y1="262" x2="710" y2="262" stroke="#e5b75f" stroke-opacity="0.35" stroke-width="1"/>
+
+  <text x="480" y="284" text-anchor="middle" class="mono" fill="#e5b75f" font-size="15.5" font-weight="bold" letter-spacing="3">
+    JUAN PABLO MARASCIO  //  Jπ STUDIO
+  </text>
+  <text x="480" y="305" text-anchor="middle" class="mono" fill="#d7b5ff" font-size="11.5" letter-spacing="1.2">
+    [ CREATIVE WEB &amp; 3D ARCHITECTURE  •  PHYSICS &amp; DATA SCIENCE (UNLP)  •  OFFSEC ]
+  </text>
+  <text x="480" y="324" text-anchor="middle" class="mono" fill="#8c52c7" font-size="10.5" letter-spacing="2">
+    ───═══╬  LA PLATA, ARGENTINA  •  SHOWROOM-JPI.PAGES.DEV  ╬═══───
+  </text>
+</svg>

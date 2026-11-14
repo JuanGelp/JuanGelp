@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#160524"/>
+      <stop offset="100%" stop-color="#2e0d44"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .mesh { fill: rgba(229, 183, 95, 0.05); stroke: #e5b75f; stroke-width: 1.5; animation: floatMesh 5s infinite ease-in-out; }
+      .mesh-inner { fill: none; stroke: #b87aff; stroke-width: 1; stroke-dasharray: 4 3; animation: floatMesh 5s infinite ease-in-out 0.6s; }
+      .fps-pulse { fill: #e5b75f; animation: blink 2s infinite; }
+      @keyframes floatMesh {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    </style>
+  </defs>
+
+  <rect width="420" height="270" rx="12" fill="url(#cardBg2)" stroke="#4a1f6b" stroke-width="2"/>
+  
+  <rect x="12" y="12" width="396" height="24" rx="5" fill="#12031d" stroke="#4a1f6b"/>
+  <circle cx="26" cy="24" r="4" fill="#e5b75f"/>
+  <circle cx="40" cy="24" r="4" fill="#9d5ce6"/>
+  <circle cx="54" cy="24" r="4" fill="#4a1f6b"/>
+  <text x="72" y="28" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">showroom-jpi.pages.dev // WebGL</text>
+  <text x="396" y="28" text-anchor="end" class="mono fps-pulse" font-size="10">60 FPS</text>
+
+  <line x1="210" y1="125" x2="210" y2="50" stroke="#9d5ce6" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="210" y1="125" x2="320" y2="175" stroke="#9d5ce6" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="210" y1="125" x2="100" y2="175" stroke="#9d5ce6" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <g class="mesh">
+    <polygon points="210,55 285,95 285,155 210,190 135,155 135,95"/>
+    <line x1="210" y1="55" x2="210" y2="190"/>
+    <line x1="135" y1="95" x2="285" y2="155"/>
+    <line x1="285" y1="95" x2="135" y2="155"/>
+  </g>
+  <polygon points="210,72 265,102 265,148 210,173 155,148 155,102" class="mesh-inner"/>
+
+  <rect x="24" y="65" width="76" height="22" rx="4" fill="#12031d" stroke="#e5b75f" stroke-width="1"/>
+  <text x="62" y="80" text-anchor="middle" class="mono" fill="#e5b75f" font-size="10">ASTRO 5</text>
+
+  <rect x="312" y="65" width="84" height="22" rx="4" fill="#12031d" stroke="#b87aff" stroke-width="1"/>
+  <text x="354" y="80" text-anchor="middle" class="mono" fill="#d7b5ff" font-size="10">GSAP/LENIS</text>
+
+  <rect x="18" y="205" width="384" height="48" rx="6" fill="#12031d" stroke="#4a1f6b"/>
+  <text x="30" y="224" class="mono" fill="#e5b75f" font-size="10.5">▸ INTERACTIVE SHOWROOM &amp; 3D MESH ENGINE</text>
+  <text x="30" y="242" class="mono" fill="#d7b5ff" font-size="10">▸ CLAUDE CODE ARCHITECTURE  |  n8n WORKFLOWS</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#160524"/>
+      <stop offset="100%" stop-color="#2e0d44"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .orbit-1 { stroke: #e5b75f; fill: none; stroke-width: 1.5; stroke-dasharray: 6 4; animation: rot 14s linear infinite; transform-origin: 210px 120px; }
+      .orbit-2 { stroke: #b87aff; fill: none; stroke-width: 1.5; opacity: 0.75; animation: rotRev 18s linear infinite; transform-origin: 210px 120px; }
+      .wave { fill: none; stroke: #e5b75f; stroke-width: 2; stroke-dasharray: 300; animation: waveFlow 5s linear infinite; }
+      @keyframes rot { to { transform: rotate(360deg); } }
+      @keyframes rotRev { to { transform: rotate(-360deg); } }
+      @keyframes waveFlow { to { stroke-dashoffset: -600; } }
+    </style>
+  </defs>
+
+  <rect width="420" height="270" rx="12" fill="url(#cardBg1)" stroke="#4a1f6b" stroke-width="2"/>
+  <rect x="8" y="8" width="404" height="254" rx="8" fill="none" stroke="#e5b75f" stroke-opacity="0.22"/>
+
+  <g stroke="#4a1f6b" stroke-width="0.6" opacity="0.45">
+    <line x1="20" y1="60" x2="400" y2="60"/><line x1="20" y1="120" x2="400" y2="120"/><line x1="20" y1="180" x2="400" y2="180"/>
+    <line x1="105" y1="35" x2="105" y2="210"/><line x1="210" y1="35" x2="210" y2="210"/><line x1="315" y1="35" x2="315" y2="210"/>
+  </g>
+
+  <text x="20" y="27" class="mono" fill="#e5b75f" font-size="11" font-weight="bold">UNLP // PHYSICS &amp; DATA SCIENCE LAB</text>
+  <text x="400" y="27" text-anchor="end" class="mono" fill="#b87aff" font-size="10">[LaTeX • R²=0.998]</text>
+
+  <ellipse cx="210" cy="120" rx="85" ry="30" transform="rotate(-28 210 120)" class="orbit-1"/>
+  <ellipse cx="210" cy="120" rx="85" ry="30" transform="rotate(28 210 120)" class="orbit-2"/>
+  <circle cx="210" cy="120" r="42" class="orbit-1"/>
+  <circle cx="210" cy="120" r="8" fill="#e5b75f"/>
+
+  <path d="M 30 120 Q 60 75, 90 120 T 150 120 T 210 120 T 270 120 T 330 120 T 390 120" class="wave"/>
+
+  <rect x="18" y="205" width="384" height="48" rx="6" fill="#12031d" stroke="#4a1f6b"/>
+  <text x="30" y="224" class="mono" fill="#e5b75f" font-size="10.5">▸ ELECTROMAGNETISM • RELATIVITY • OPTICS</text>
+  <text x="30" y="242" class="mono" fill="#d7b5ff" font-size="10">▸ LAB PAPERS (LaTeX)  |  DATA SCIENCE [2027]</text>
+</svg>
