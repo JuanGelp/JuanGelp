@@ -1,257 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" width="100%" height="100%">
   <defs>
     <linearGradient id="cardBg3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0e021a"/>
-      <stop offset="100%" stop-color="#250838"/>
+      <stop offset="0%" stop-color="#0d0218"/>
+      <stop offset="100%" stop-color="#240837"/>
     </linearGradient>
     <style>
-      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; white-space: pre; }
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
       .c-dark { fill: #693696; }
       .c-mid { fill: #9d5ce6; }
-      .c-bright { fill: #dfdbe5; }
+      .c-bright { fill: #e6dff0; }
       .c-gold { fill: #e5b75f; font-weight: bold; }
-      .f-f0 { opacity: 0; animation: s0 1.28s infinite steps(1, end); }
-      .f-f1 { opacity: 0; animation: s1 1.28s infinite steps(1, end); }
-      .f-f2 { opacity: 0; animation: s2 1.28s infinite steps(1, end); }
-      .f-f3 { opacity: 0; animation: s3 1.28s infinite steps(1, end); }
-      .f-f4 { opacity: 0; animation: s4 1.28s infinite steps(1, end); }
-      .f-f5 { opacity: 0; animation: s5 1.28s infinite steps(1, end); }
-      .f-f6 { opacity: 0; animation: s6 1.28s infinite steps(1, end); }
-      .f-f7 { opacity: 0; animation: s7 1.28s infinite steps(1, end); }
-      @keyframes s0 { 0%, 100% { opacity: 1; } 12.5% { opacity: 0; } }
-      @keyframes s1 { 0%, 12.49% { opacity: 0; } 12.5%, 24.99% { opacity: 1; } 25% { opacity: 0; } }
-      @keyframes s2 { 0%, 24.99% { opacity: 0; } 25%, 37.49% { opacity: 1; } 37.5% { opacity: 0; } }
-      @keyframes s3 { 0%, 37.49% { opacity: 0; } 37.5%, 49.99% { opacity: 1; } 50% { opacity: 0; } }
-      @keyframes s4 { 0%, 49.99% { opacity: 0; } 50%, 62.49% { opacity: 1; } 62.5% { opacity: 0; } }
-      @keyframes s5 { 0%, 62.49% { opacity: 0; } 62.5%, 74.99% { opacity: 1; } 75% { opacity: 0; } }
-      @keyframes s6 { 0%, 74.99% { opacity: 0; } 75%, 87.49% { opacity: 1; } 87.5% { opacity: 0; } }
-      @keyframes s7 { 0%, 87.49% { opacity: 0; } 87.5%, 99.99% { opacity: 1; } 100% { opacity: 0; } }
+      .f0 { opacity: 0; animation: s0 1.2s infinite steps(1, end); }
+      .f1 { opacity: 0; animation: s1 1.2s infinite steps(1, end); }
+      .f2 { opacity: 0; animation: s2 1.2s infinite steps(1, end); }
+      .f3 { opacity: 0; animation: s3 1.2s infinite steps(1, end); }
+      .f4 { opacity: 0; animation: s4 1.2s infinite steps(1, end); }
+      .f5 { opacity: 0; animation: s5 1.2s infinite steps(1, end); }
+      @keyframes s0 { 0%, 100% { opacity: 1; } 16.67% { opacity: 0; } }
+      @keyframes s1 { 0%, 16.66% { opacity: 0; } 16.67%, 33.33% { opacity: 1; } 33.34% { opacity: 0; } }
+      @keyframes s2 { 0%, 33.33% { opacity: 0; } 33.34%, 50.00% { opacity: 1; } 50.01% { opacity: 0; } }
+      @keyframes s3 { 0%, 50.00% { opacity: 0; } 50.01%, 66.66% { opacity: 1; } 66.67% { opacity: 0; } }
+      @keyframes s4 { 0%, 66.66% { opacity: 0; } 66.67%, 83.33% { opacity: 1; } 83.34% { opacity: 0; } }
+      @keyframes s5 { 0%, 83.33% { opacity: 0; } 83.34%, 99.99% { opacity: 1; } 100% { opacity: 0; } }
 </style>
   </defs>
-  <rect width="420" height="270" rx="12" fill="url(#cardBg3)" stroke="#4a1f6b" stroke-width="2"/>
-  <rect x="10" y="10" width="400" height="250" rx="8" fill="none" stroke="#e5b75f" stroke-opacity="0.22"/>
-  <rect x="14" y="14" width="392" height="24" rx="5" fill="#0b0114" stroke="#4a1f6b"/>
-  <text x="24" y="30" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">root@jpi-sec-lab:~/offsec-node#</text>
-  <text x="396" y="30" text-anchor="end" class="mono" fill="#9d5ce6" font-size="10">[RED_TEAM]</text>
-
+  <rect width="380" height="340" rx="12" fill="url(#cardBg3)" stroke="#4a1f6b" stroke-width="2"/>
+  <rect x="8" y="8" width="364" height="324" rx="8" fill="none" stroke="#e5b75f" stroke-opacity="0.24"/>
+  <rect x="14" y="14" width="352" height="26" rx="5" fill="#0b0114" stroke="#4a1f6b"/>
+  <text x="24" y="31" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">root@jpi-sec-lab:~/offsec#</text>
+  <text x="356" y="31" text-anchor="end" class="mono" fill="#9d5ce6" font-size="10">[RED_TEAM]</text>
   <g font-size="10" class="mono">
-    <text x="24" y="64" fill="#9d5ce6">$ ./recon_mesh.sh --deep</text>
-    <text x="24" y="84" fill="#e5b75f">[+] Probing 3D topology...</text>
-    <text x="24" y="104" fill="#dfdbe5"> ├─ TLS_1.3    [HARDENED]</text>
-    <text x="24" y="122" fill="#dfdbe5"> ├─ SSH_ED25519[VERIFIED]</text>
-    <text x="24" y="140" fill="#dfdbe5"> └─ API_SHIELD [ACTIVE]</text>
-    <text x="24" y="164" fill="#e5b75f">[+] Offline Arsenal: OK</text>
-    <text x="24" y="182" fill="#ffffff">&gt; status: SECURE_</text>
+    <text x="20" y="62" fill="#9d5ce6">$ ./recon_mesh.sh --deep</text>
+    <text x="20" y="82" fill="#e5b75f">[+] Probing 3D nodes...</text>
+    <text x="20" y="102" fill="#e6dff0"> ├─ TLS_1.3   [HARDENED]</text>
+    <text x="20" y="120" fill="#e6dff0"> ├─ SSH_KEYS  [VERIFIED]</text>
+    <text x="20" y="138" fill="#e6dff0"> ├─ API_WAF   [AUDITED]</text>
+    <text x="20" y="156" fill="#e6dff0"> └─ KERNEL    [LOCKED]</text>
+    <text x="20" y="180" fill="#e5b75f">[+] Offline Arsenal: OK</text>
+    <text x="20" y="198" fill="#9d5ce6">[+] Zero-Trust: ACTIVE</text>
+    <text x="20" y="216" fill="#ffffff">&gt; status: SECURE_</text>
   </g>
-  <g class="f-f0">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
+  <g class="mono">
+  <g class="f0" font-size="11.0">
+    <text y="69.5" xml:space="preserve"><tspan x="241.6" class="c-gold">######@@@@@@</tspan></text>
+    <text y="81.0" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">************</tspan><tspan x="320.8" class="c-gold">@@@</tspan></text>
+    <text y="92.5" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-bright">*</tspan><tspan x="235.0" class="c-dark">......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">......</tspan><tspan x="327.4" class="c-bright">*</tspan><tspan x="334.0" class="c-gold">@@</tspan></text>
+    <text y="104.0" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">........</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">........</tspan><tspan x="340.6" class="c-gold">@@</tspan></text>
+    <text y="115.5" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">.</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">.</tspan><tspan x="347.2" class="c-gold">@@</tspan></text>
+    <text y="127.0" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">..</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">..</tspan><tspan x="353.8" class="c-gold">@</tspan></text>
+    <text y="138.5" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">..</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">..</tspan><tspan x="353.8" class="c-gold">#</tspan></text>
+    <text y="150.0" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">.</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">.</tspan><tspan x="347.2" class="c-gold">##</tspan></text>
+    <text y="161.5" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">........</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">........</tspan><tspan x="340.6" class="c-gold">##</tspan></text>
+    <text y="173.0" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-bright">*</tspan><tspan x="235.0" class="c-dark">......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">......</tspan><tspan x="327.4" class="c-bright">*</tspan><tspan x="334.0" class="c-gold">##</tspan></text>
+    <text y="184.5" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">************</tspan><tspan x="320.8" class="c-gold">###</tspan></text>
+    <text y="196.0" xml:space="preserve"><tspan x="241.6" class="c-gold">############</tspan></text>
   </g>
-  <g class="f-f1">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
+  <g class="f1" font-size="11.0">
+    <text y="69.5" xml:space="preserve"><tspan x="241.6" class="c-gold">######@@@@@@</tspan></text>
+    <text y="81.0" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">***+******+*</tspan><tspan x="320.8" class="c-gold">@@@</tspan></text>
+    <text y="92.5" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">.....</tspan><tspan x="261.4" class="c-bright">*</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">..</tspan><tspan x="334.0" class="c-gold">@@</tspan></text>
+    <text y="104.0" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">.....</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">...</tspan><tspan x="340.6" class="c-gold">@@</tspan></text>
+    <text y="115.5" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">**</tspan><tspan x="327.4" class="c-dark">...</tspan><tspan x="347.2" class="c-gold">@@</tspan></text>
+    <text y="127.0" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-bright">*</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">*</tspan><tspan x="261.4" class="c-dark">.........</tspan><tspan x="320.8" class="c-bright">*</tspan><tspan x="327.4" class="c-dark">....</tspan><tspan x="353.8" class="c-gold">@</tspan></text>
+    <text y="138.5" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-bright">*</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">*</tspan><tspan x="261.4" class="c-dark">.........</tspan><tspan x="320.8" class="c-bright">*</tspan><tspan x="327.4" class="c-dark">....</tspan><tspan x="353.8" class="c-gold">#</tspan></text>
+    <text y="150.0" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">**</tspan><tspan x="327.4" class="c-dark">...</tspan><tspan x="347.2" class="c-gold">##</tspan></text>
+    <text y="161.5" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">.....</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">...</tspan><tspan x="340.6" class="c-gold">##</tspan></text>
+    <text y="173.0" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">.....</tspan><tspan x="261.4" class="c-bright">*</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">..</tspan><tspan x="334.0" class="c-gold">##</tspan></text>
+    <text y="184.5" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">***+******+*</tspan><tspan x="320.8" class="c-gold">###</tspan></text>
+    <text y="196.0" xml:space="preserve"><tspan x="241.6" class="c-gold">############</tspan></text>
   </g>
-  <g class="f-f2">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
+  <g class="f2" font-size="11.0">
+    <text y="69.5" xml:space="preserve"><tspan x="241.6" class="c-gold">######@@@@@@</tspan></text>
+    <text y="81.0" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">*+******+***</tspan><tspan x="320.8" class="c-gold">@@@</tspan></text>
+    <text y="92.5" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">..</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">*</tspan><tspan x="301.0" class="c-dark">.....</tspan><tspan x="334.0" class="c-gold">@@</tspan></text>
+    <text y="104.0" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">...</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">.....</tspan><tspan x="340.6" class="c-gold">@@</tspan></text>
+    <text y="115.5" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">...</tspan><tspan x="235.0" class="c-bright">**</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-gold">@@</tspan></text>
+    <text y="127.0" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">....</tspan><tspan x="235.0" class="c-bright">*</tspan><tspan x="241.6" class="c-dark">.........</tspan><tspan x="301.0" class="c-bright">*</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-bright">*</tspan><tspan x="353.8" class="c-gold">@</tspan></text>
+    <text y="138.5" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">....</tspan><tspan x="235.0" class="c-bright">*</tspan><tspan x="241.6" class="c-dark">.........</tspan><tspan x="301.0" class="c-bright">*</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-bright">*</tspan><tspan x="353.8" class="c-gold">#</tspan></text>
+    <text y="150.0" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">...</tspan><tspan x="235.0" class="c-bright">**</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-gold">##</tspan></text>
+    <text y="161.5" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">...</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">.....</tspan><tspan x="340.6" class="c-gold">##</tspan></text>
+    <text y="173.0" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">..</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">*</tspan><tspan x="301.0" class="c-dark">.....</tspan><tspan x="334.0" class="c-gold">##</tspan></text>
+    <text y="184.5" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">*+******+***</tspan><tspan x="320.8" class="c-gold">###</tspan></text>
+    <text y="196.0" xml:space="preserve"><tspan x="241.6" class="c-gold">############</tspan></text>
   </g>
-  <g class="f-f3">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
+  <g class="f3" font-size="11.0">
+    <text y="69.5" xml:space="preserve"><tspan x="241.6" class="c-gold">######@@@@@@</tspan></text>
+    <text y="81.0" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">************</tspan><tspan x="320.8" class="c-gold">@@@</tspan></text>
+    <text y="92.5" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-bright">*</tspan><tspan x="235.0" class="c-dark">......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">......</tspan><tspan x="327.4" class="c-bright">*</tspan><tspan x="334.0" class="c-gold">@@</tspan></text>
+    <text y="104.0" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">........</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">........</tspan><tspan x="340.6" class="c-gold">@@</tspan></text>
+    <text y="115.5" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">.</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">.</tspan><tspan x="347.2" class="c-gold">@@</tspan></text>
+    <text y="127.0" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">..</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">..</tspan><tspan x="353.8" class="c-gold">@</tspan></text>
+    <text y="138.5" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">..</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">..</tspan><tspan x="353.8" class="c-gold">#</tspan></text>
+    <text y="150.0" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">.</tspan><tspan x="221.8" class="c-bright">*</tspan><tspan x="228.4" class="c-dark">.......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">.......</tspan><tspan x="334.0" class="c-bright">*</tspan><tspan x="340.6" class="c-dark">.</tspan><tspan x="347.2" class="c-gold">##</tspan></text>
+    <text y="161.5" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">........</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">........</tspan><tspan x="340.6" class="c-gold">##</tspan></text>
+    <text y="173.0" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-bright">*</tspan><tspan x="235.0" class="c-dark">......</tspan><tspan x="274.6" class="c-bright">**</tspan><tspan x="287.8" class="c-dark">......</tspan><tspan x="327.4" class="c-bright">*</tspan><tspan x="334.0" class="c-gold">##</tspan></text>
+    <text y="184.5" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">************</tspan><tspan x="320.8" class="c-gold">###</tspan></text>
+    <text y="196.0" xml:space="preserve"><tspan x="241.6" class="c-gold">############</tspan></text>
   </g>
-  <g class="f-f4">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
+  <g class="f4" font-size="11.0">
+    <text y="69.5" xml:space="preserve"><tspan x="241.6" class="c-gold">######@@@@@@</tspan></text>
+    <text y="81.0" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">***+******+*</tspan><tspan x="320.8" class="c-gold">@@@</tspan></text>
+    <text y="92.5" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">.....</tspan><tspan x="261.4" class="c-bright">*</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">..</tspan><tspan x="334.0" class="c-gold">@@</tspan></text>
+    <text y="104.0" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">.....</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">...</tspan><tspan x="340.6" class="c-gold">@@</tspan></text>
+    <text y="115.5" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">**</tspan><tspan x="327.4" class="c-dark">...</tspan><tspan x="347.2" class="c-gold">@@</tspan></text>
+    <text y="127.0" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-bright">*</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">*</tspan><tspan x="261.4" class="c-dark">.........</tspan><tspan x="320.8" class="c-bright">*</tspan><tspan x="327.4" class="c-dark">....</tspan><tspan x="353.8" class="c-gold">@</tspan></text>
+    <text y="138.5" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-bright">*</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">*</tspan><tspan x="261.4" class="c-dark">.........</tspan><tspan x="320.8" class="c-bright">*</tspan><tspan x="327.4" class="c-dark">....</tspan><tspan x="353.8" class="c-gold">#</tspan></text>
+    <text y="150.0" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">......</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">**</tspan><tspan x="327.4" class="c-dark">...</tspan><tspan x="347.2" class="c-gold">##</tspan></text>
+    <text y="161.5" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">.....</tspan><tspan x="254.8" class="c-bright">**</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">...</tspan><tspan x="340.6" class="c-gold">##</tspan></text>
+    <text y="173.0" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">.....</tspan><tspan x="261.4" class="c-bright">*</tspan><tspan x="268.0" class="c-dark">.......</tspan><tspan x="314.2" class="c-bright">*</tspan><tspan x="320.8" class="c-dark">..</tspan><tspan x="334.0" class="c-gold">##</tspan></text>
+    <text y="184.5" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">***+******+*</tspan><tspan x="320.8" class="c-gold">###</tspan></text>
+    <text y="196.0" xml:space="preserve"><tspan x="241.6" class="c-gold">############</tspan></text>
   </g>
-  <g class="f-f5">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
+  <g class="f5" font-size="11.0">
+    <text y="69.5" xml:space="preserve"><tspan x="241.6" class="c-gold">######@@@@@@</tspan></text>
+    <text y="81.0" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">*+******+***</tspan><tspan x="320.8" class="c-gold">@@@</tspan></text>
+    <text y="92.5" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">..</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">*</tspan><tspan x="301.0" class="c-dark">.....</tspan><tspan x="334.0" class="c-gold">@@</tspan></text>
+    <text y="104.0" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">...</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">.....</tspan><tspan x="340.6" class="c-gold">@@</tspan></text>
+    <text y="115.5" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">...</tspan><tspan x="235.0" class="c-bright">**</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-gold">@@</tspan></text>
+    <text y="127.0" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">....</tspan><tspan x="235.0" class="c-bright">*</tspan><tspan x="241.6" class="c-dark">.........</tspan><tspan x="301.0" class="c-bright">*</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-bright">*</tspan><tspan x="353.8" class="c-gold">@</tspan></text>
+    <text y="138.5" xml:space="preserve"><tspan x="202.0" class="c-gold">#</tspan><tspan x="208.6" class="c-dark">....</tspan><tspan x="235.0" class="c-bright">*</tspan><tspan x="241.6" class="c-dark">.........</tspan><tspan x="301.0" class="c-bright">*</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-bright">*</tspan><tspan x="353.8" class="c-gold">#</tspan></text>
+    <text y="150.0" xml:space="preserve"><tspan x="202.0" class="c-gold">##</tspan><tspan x="215.2" class="c-dark">...</tspan><tspan x="235.0" class="c-bright">**</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">......</tspan><tspan x="347.2" class="c-gold">##</tspan></text>
+    <text y="161.5" xml:space="preserve"><tspan x="208.6" class="c-gold">##</tspan><tspan x="221.8" class="c-dark">...</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">**</tspan><tspan x="307.6" class="c-dark">.....</tspan><tspan x="340.6" class="c-gold">##</tspan></text>
+    <text y="173.0" xml:space="preserve"><tspan x="215.2" class="c-gold">##</tspan><tspan x="228.4" class="c-dark">..</tspan><tspan x="241.6" class="c-bright">*</tspan><tspan x="248.2" class="c-dark">.......</tspan><tspan x="294.4" class="c-bright">*</tspan><tspan x="301.0" class="c-dark">.....</tspan><tspan x="334.0" class="c-gold">##</tspan></text>
+    <text y="184.5" xml:space="preserve"><tspan x="221.8" class="c-gold">###</tspan><tspan x="241.6" class="c-bright">*+******+***</tspan><tspan x="320.8" class="c-gold">###</tspan></text>
+    <text y="196.0" xml:space="preserve"><tspan x="241.6" class="c-gold">############</tspan></text>
   </g>
-  <g class="f-f6">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
   </g>
-  <g class="f-f7">
-    <text x="242" y="73.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="73.5" class="mono c-gold" font-size="10.5">     ###    @@@     </text>
-    <text x="242" y="85.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="85.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="85.0" class="mono c-gold" font-size="10.5">  ##            @@  </text>
-    <text x="242" y="96.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="96.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="96.5" class="mono c-gold" font-size="10.5"> ##              @@ </text>
-    <text x="242" y="108.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="108.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="108.0" class="mono c-gold" font-size="10.5"> #                @ </text>
-    <text x="242" y="119.5" class="mono c-bright" font-size="10.5">  *+*****++*****+*  </text>
-    <text x="242" y="119.5" class="mono c-gold" font-size="10.5">##                ##</text>
-    <text x="242" y="131.0" class="mono c-dark" font-size="10.5">  . .....  ..... .  </text>
-    <text x="242" y="131.0" class="mono c-bright" font-size="10.5">   *     **     *   </text>
-    <text x="242" y="131.0" class="mono c-gold" font-size="10.5"> #                # </text>
-    <text x="242" y="142.5" class="mono c-dark" font-size="10.5">    ............    </text>
-    <text x="242" y="142.5" class="mono c-bright" font-size="10.5">   *            *   </text>
-    <text x="242" y="142.5" class="mono c-gold" font-size="10.5"> ##              ## </text>
-    <text x="242" y="154.0" class="mono c-dark" font-size="10.5">     ..........     </text>
-    <text x="242" y="154.0" class="mono c-bright" font-size="10.5">    *          *    </text>
-    <text x="242" y="154.0" class="mono c-gold" font-size="10.5">  ##            ##  </text>
-    <text x="242" y="165.5" class="mono c-dark" font-size="10.5">        ....        </text>
-    <text x="242" y="165.5" class="mono c-gold" font-size="10.5">     ###    ###     </text>
-  </g>
-  <rect x="18" y="204" width="384" height="48" rx="6" fill="#0b0114" stroke="#4a1f6b"/>
-  <text x="30" y="223" class="mono" fill="#e5b75f" font-size="10.5">▸ OFFENSIVE SECURITY &amp; PENTESTING ARCHIVE</text>
-  <text x="30" y="241" class="mono" fill="#dfdbe5" font-size="10">▸ LINUX HARDENING  |  RED TEAM AUDIT LABS</text>
+  <rect x="14" y="236" width="352" height="34" rx="5" fill="#130421" stroke="#4a1f6b" stroke-dasharray="4 2"/>
+  <text x="24" y="251" class="mono" fill="#9d5ce6" font-size="9.5">FOCUS: PENTESTING • LINUX • NETWORKING</text>
+  <text x="24" y="264" class="mono" fill="#e5b75f" font-size="9.5">MODE:  OFFLINE REPO ARCHIVE &amp; HARDENING</text>
+  <rect x="14" y="278" width="352" height="48" rx="6" fill="#0b0114" stroke="#4a1f6b"/>
+  <text x="24" y="298" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">▸ SEGURIDAD OFENSIVA &amp; PENTESTING LAB</text>
+  <text x="24" y="315" class="mono" fill="#e6dff0" font-size="10">▸ AUDITORÍA DE ARQUITECTURAS Jπ STUDIO</text>
 </svg>

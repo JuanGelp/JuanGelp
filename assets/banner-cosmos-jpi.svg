@@ -1,1064 +1,238 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="100%" height="100%">
   <defs>
     <linearGradient id="deepSpaceBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0b0114"/>
       <stop offset="50%" stop-color="#180529"/>
       <stop offset="100%" stop-color="#280a40"/>
     </linearGradient>
-
     <radialGradient id="nebulaCenter" cx="50%" cy="44%" r="52%">
       <stop offset="0%" stop-color="#4a1f6b" stop-opacity="0.38"/>
       <stop offset="60%" stop-color="#1f0830" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#0b0114" stop-opacity="0"/>
     </radialGradient>
-
     <radialGradient id="planetAtmoLeft" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#9d5ce6" stop-opacity="0.22"/>
       <stop offset="65%" stop-color="#4a1f6b" stop-opacity="0.08"/>
       <stop offset="100%" stop-color="#0b0114" stop-opacity="0"/>
     </radialGradient>
-
     <radialGradient id="accretionGlowRight" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#05000a" stop-opacity="0.95"/>
       <stop offset="32%" stop-color="#e5b75f" stop-opacity="0.26"/>
       <stop offset="68%" stop-color="#9d5ce6" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#0b0114" stop-opacity="0"/>
     </radialGradient>
-
-    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
     <style>
-      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; white-space: pre; }
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
       .c-dark { fill: #693696; }
       .c-mid { fill: #9d5ce6; }
-      .c-bright { fill: #dfdbe5; }
+      .c-bright { fill: #e6dff0; }
       .c-gold { fill: #e5b75f; font-weight: bold; }
-      .logo-main { fill: #e5b75f; filter: url(#goldGlow); animation: pulseLogo 4s infinite ease-in-out; }
-
-      /* 8-Frame Stepped ASCII 3D & Starfield Engine (1.2s loop = ~7 FPS retro terminal feel) */
-      .f-f0, .sf-f0 { opacity: 0; animation: step0 1.28s infinite steps(1, end); }
-      .f-f1, .sf-f1 { opacity: 0; animation: step1 1.28s infinite steps(1, end); }
-      .f-f2, .sf-f2 { opacity: 0; animation: step2 1.28s infinite steps(1, end); }
-      .f-f3, .sf-f3 { opacity: 0; animation: step3 1.28s infinite steps(1, end); }
-      .f-f4, .sf-f4 { opacity: 0; animation: step4 1.28s infinite steps(1, end); }
-      .f-f5, .sf-f5 { opacity: 0; animation: step5 1.28s infinite steps(1, end); }
-      .f-f6, .sf-f6 { opacity: 0; animation: step6 1.28s infinite steps(1, end); }
-      .f-f7, .sf-f7 { opacity: 0; animation: step7 1.28s infinite steps(1, end); }
-
-      @keyframes step0 { 0%, 100% { opacity: 1; } 12.5% { opacity: 0; } }
-      @keyframes step1 { 0%, 12.49% { opacity: 0; } 12.5%, 24.99% { opacity: 1; } 25% { opacity: 0; } }
-      @keyframes step2 { 0%, 24.99% { opacity: 0; } 25%, 37.49% { opacity: 1; } 37.5% { opacity: 0; } }
-      @keyframes step3 { 0%, 37.49% { opacity: 0; } 37.5%, 49.99% { opacity: 1; } 50% { opacity: 0; } }
-      @keyframes step4 { 0%, 49.99% { opacity: 0; } 50%, 62.49% { opacity: 1; } 62.5% { opacity: 0; } }
-      @keyframes step5 { 0%, 62.49% { opacity: 0; } 62.5%, 74.99% { opacity: 1; } 75% { opacity: 0; } }
-      @keyframes step6 { 0%, 74.99% { opacity: 0; } 75%, 87.49% { opacity: 1; } 87.5% { opacity: 0; } }
-      @keyframes step7 { 0%, 87.49% { opacity: 0; } 87.5%, 99.99% { opacity: 1; } 100% { opacity: 0; } }
-
-      @keyframes pulseLogo {
-        0%, 100% { opacity: 0.92; }
-        50% { opacity: 1; }
-      }
-    </style>
+      .f0 { opacity: 0; animation: s0 1.2s infinite steps(1, end); }
+      .f1 { opacity: 0; animation: s1 1.2s infinite steps(1, end); }
+      .f2 { opacity: 0; animation: s2 1.2s infinite steps(1, end); }
+      .f3 { opacity: 0; animation: s3 1.2s infinite steps(1, end); }
+      .f4 { opacity: 0; animation: s4 1.2s infinite steps(1, end); }
+      .f5 { opacity: 0; animation: s5 1.2s infinite steps(1, end); }
+      @keyframes s0 { 0%, 100% { opacity: 1; } 16.67% { opacity: 0; } }
+      @keyframes s1 { 0%, 16.66% { opacity: 0; } 16.67%, 33.33% { opacity: 1; } 33.34% { opacity: 0; } }
+      @keyframes s2 { 0%, 33.33% { opacity: 0; } 33.34%, 50.00% { opacity: 1; } 50.01% { opacity: 0; } }
+      @keyframes s3 { 0%, 50.00% { opacity: 0; } 50.01%, 66.66% { opacity: 1; } 66.67% { opacity: 0; } }
+      @keyframes s4 { 0%, 66.66% { opacity: 0; } 66.67%, 83.33% { opacity: 1; } 83.34% { opacity: 0; } }
+      @keyframes s5 { 0%, 83.33% { opacity: 0; } 83.34%, 99.99% { opacity: 1; } 100% { opacity: 0; } }
+</style>
   </defs>
-
-  <!-- Deep Space Canvas & Border -->
-  <rect width="960" height="340" rx="14" fill="url(#deepSpaceBg)" stroke="#4a1f6b" stroke-width="2"/>
-  <rect width="960" height="340" rx="14" fill="url(#nebulaCenter)"/>
-  <rect x="10" y="10" width="940" height="320" rx="9" fill="none" stroke="#e5b75f" stroke-opacity="0.25" stroke-dasharray="8 4"/>
-
-  <!-- Subtle Ambient Glow Behind Both 3D ASCII Celestial Bodies -->
-  <circle cx="165" cy="140" r="105" fill="url(#planetAtmoLeft)"/>
-  <circle cx="790" cy="140" r="105" fill="url(#accretionGlowRight)"/>
-
-  <!-- ================= LAYER 1: 3D RADIAL WARP ASCII STARFIELD (asciiart.eu style) ================= -->
-  <g class="sf-f0">
-    <text x="713.4" y="231.1" class="mono c-gold" font-size="12.0">#</text>
-    <text x="279.2" y="37.9" class="mono c-bright" font-size="12.0">*</text>
-    <text x="293.6" y="78.7" class="mono c-bright" font-size="11.5">+</text>
-    <text x="735.9" y="91.4" class="mono c-gold" font-size="12.0">#</text>
-    <text x="84.3" y="158.8" class="mono c-gold" font-size="12.5">@</text>
-    <text x="807.1" y="152.5" class="mono c-bright" font-size="12.0">*</text>
-    <text x="802.5" y="164.1" class="mono c-bright" font-size="12.0">#</text>
-    <text x="700.3" y="115.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="816.8" y="204.2" class="mono c-gold" font-size="12.5">#</text>
-    <text x="614.0" y="211.1" class="mono c-bright" font-size="11.5">+</text>
-    <text x="676.1" y="195.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="696.3" y="52.4" class="mono c-bright" font-size="12.0">#</text>
-    <text x="733.9" y="70.1" class="mono c-gold" font-size="12.0">#</text>
-    <text x="68.6" y="207.5" class="mono c-gold" font-size="12.5">#</text>
-    <text x="66.1" y="98.3" class="mono c-gold" font-size="12.5">#</text>
-    <text x="807.9" y="211.7" class="mono c-gold" font-size="12.5">@</text>
-    <text x="665.4" y="99.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="288.6" y="190.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="90.1" y="186.7" class="mono c-gold" font-size="12.5">#</text>
-    <text x="676.7" y="139.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="561.3" y="46.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="824.9" y="139.4" class="mono c-bright" font-size="12.0">*</text>
-    <text x="177.9" y="221.2" class="mono c-gold" font-size="12.0">#</text>
-    <text x="788.0" y="172.1" class="mono c-gold" font-size="12.0">#</text>
-    <text x="886.1" y="136.4" class="mono c-gold" font-size="12.5">#</text>
-    <text x="130.2" y="185.7" class="mono c-bright" font-size="12.0">#</text>
-    <text x="767.1" y="249.1" class="mono c-gold" font-size="12.5">#</text>
-    <text x="614.6" y="189.1" class="mono c-bright" font-size="11.5">*</text>
-    <text x="724.9" y="64.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="343.4" y="238.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="137.6" y="43.6" class="mono c-gold" font-size="12.5">#</text>
-    <text x="340.4" y="130.7" class="mono c-mid" font-size="10.5">:</text>
-    <text x="246.0" y="193.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="181.4" y="42.1" class="mono c-gold" font-size="12.5">#</text>
-    <text x="903.5" y="160.8" class="mono c-gold" font-size="12.5">@</text>
-    <text x="313.5" y="53.3" class="mono c-bright" font-size="12.0">*</text>
-    <text x="321.6" y="118.2" class="mono c-bright" font-size="11.5">+</text>
-    <text x="462.4" y="46.7" class="mono c-bright" font-size="12.0">*</text>
-    <text x="608.0" y="135.3" class="mono c-mid" font-size="10.5">:</text>
-    <text x="702.9" y="231.4" class="mono c-bright" font-size="12.0">#</text>
-    <text x="359.5" y="237.5" class="mono c-bright" font-size="12.0">*</text>
-    <text x="446.5" y="212.6" class="mono c-bright" font-size="11.5">*</text>
-    <text x="419.3" y="63.7" class="mono c-bright" font-size="11.5">*</text>
-    <text x="614.8" y="111.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="727.2" y="61.6" class="mono c-bright" font-size="12.0">*</text>
-    <text x="780.7" y="220.1" class="mono c-bright" font-size="12.0">#</text>
+  <rect width="960" height="330" rx="14" fill="url(#deepSpaceBg)" stroke="#4a1f6b" stroke-width="2"/>
+  <rect width="960" height="330" rx="14" fill="url(#nebulaCenter)"/>
+  <rect x="10" y="10" width="940" height="310" rx="9" fill="none" stroke="#e5b75f" stroke-opacity="0.25" stroke-dasharray="8 4"/>
+  <circle cx="160" cy="136" r="108" fill="url(#planetAtmoLeft)"/>
+  <circle cx="792" cy="136" r="108" fill="url(#accretionGlowRight)"/>
+  <g class="mono">
+  <g class="f0" font-size="11.5">
+    <text class="c-bright"><tspan x="280.0" y="40.3">*</tspan><tspan x="292.5" y="76.9">+</tspan><tspan x="807.0" y="144.8">*</tspan><tspan x="802.5" y="155.5">#</tspan><tspan x="702.4" y="110.8">+</tspan><tspan x="677.8" y="184.8">+</tspan><tspan x="695.9" y="53.3">#</tspan><tspan x="667.4" y="95.7">*</tspan><tspan x="286.6" y="180.5">+</tspan><tspan x="679.8" y="132.9">+</tspan><tspan x="561.5" y="47.6">#</tspan><tspan x="824.3" y="132.8">*</tspan><tspan x="131.6" y="175.1">#</tspan><tspan x="724.6" y="64.6">#</tspan></text>
+    <text class="c-gold"><tspan x="713.1" y="216.8">#</tspan><tspan x="736.5" y="88.8">#</tspan><tspan x="86.7" y="150.5">@</tspan><tspan x="815.3" y="192.0">#</tspan><tspan x="733.6" y="69.5">#</tspan><tspan x="72.6" y="194.7">#</tspan><tspan x="69.7" y="95.6">#</tspan><tspan x="806.4" y="198.8">@</tspan><tspan x="92.8" y="175.9">#</tspan><tspan x="179.2" y="207.5">#</tspan><tspan x="788.2" y="162.8">#</tspan><tspan x="883.4" y="130.2">#</tspan><tspan x="765.0" y="232.6">#</tspan></text>
   </g>
-  <g class="sf-f1">
-    <text x="734.1" y="238.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="262.3" y="28.9" class="mono c-gold" font-size="12.5">#</text>
-    <text x="274.5" y="71.9" class="mono c-gold" font-size="12.0">#</text>
-    <text x="760.4" y="86.3" class="mono c-gold" font-size="12.0">#</text>
-    <text x="52.4" y="159.9" class="mono c-gold" font-size="12.5">@</text>
-    <text x="836.8" y="153.1" class="mono c-bright" font-size="12.0">*</text>
-    <text x="831.8" y="165.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="574.6" y="215.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="343.2" y="161.6" class="mono c-mid" font-size="10.5">:</text>
-    <text x="724.7" y="112.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="844.8" y="209.1" class="mono c-gold" font-size="12.5">#</text>
-    <text x="629.0" y="218.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="697.4" y="201.1" class="mono c-gold" font-size="12.0">#</text>
-    <text x="715.3" y="44.3" class="mono c-bright" font-size="12.0">#</text>
-    <text x="613.3" y="142.5" class="mono c-mid" font-size="10.5">:</text>
-    <text x="756.6" y="63.4" class="mono c-gold" font-size="12.0">#</text>
-    <text x="835.1" y="217.2" class="mono c-gold" font-size="12.5">@</text>
-    <text x="686.5" y="94.1" class="mono c-bright" font-size="11.5">*</text>
-    <text x="267.1" y="196.1" class="mono c-bright" font-size="11.5">+</text>
-    <text x="339.8" y="130.7" class="mono c-mid" font-size="10.5">:</text>
-    <text x="59.2" y="190.0" class="mono c-gold" font-size="12.5">#</text>
-    <text x="701.2" y="138.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="615.8" y="141.4" class="mono c-mid" font-size="10.5">:</text>
-    <text x="569.1" y="37.1" class="mono c-bright" font-size="12.0">#</text>
-    <text x="855.3" y="138.9" class="mono c-bright" font-size="12.0">*</text>
-    <text x="152.7" y="227.6" class="mono c-gold" font-size="12.5">@</text>
-    <text x="816.5" y="174.6" class="mono c-gold" font-size="12.0">#</text>
-    <text x="918.4" y="135.7" class="mono c-gold" font-size="12.5">#</text>
-    <text x="342.3" y="124.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="100.7" y="189.1" class="mono c-gold" font-size="12.5">#</text>
-    <text x="631.9" y="194.8" class="mono c-bright" font-size="11.5">*</text>
-    <text x="746.7" y="57.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="330.4" y="247.7" class="mono c-bright" font-size="12.0">#</text>
-    <text x="319.5" y="128.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="222.2" y="198.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="158.2" y="34.1" class="mono c-gold" font-size="12.5">#</text>
-    <text x="936.3" y="162.0" class="mono c-gold" font-size="12.5">@</text>
-    <text x="472.4" y="56.9" class="mono c-bright" font-size="11.5">*</text>
-    <text x="298.0" y="44.8" class="mono c-bright" font-size="12.0">*</text>
-    <text x="300.5" y="114.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="494.9" y="59.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="460.7" y="37.0" class="mono c-bright" font-size="12.0">*</text>
-    <text x="628.5" y="133.7" class="mono c-bright" font-size="11.5">+</text>
-    <text x="722.8" y="239.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="347.8" y="246.5" class="mono c-bright" font-size="12.0">*</text>
-    <text x="442.4" y="221.0" class="mono c-bright" font-size="11.5">*</text>
-    <text x="412.7" y="54.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="633.4" y="106.8" class="mono c-bright" font-size="11.5">*</text>
-    <text x="748.9" y="54.3" class="mono c-bright" font-size="12.0">*</text>
-    <text x="806.0" y="226.4" class="mono c-gold" font-size="12.5">#</text>
+  <g class="f1" font-size="11.5">
+    <text class="c-mid"><tspan x="333.1" y="154.3">:</tspan><tspan x="623.8" y="135.5">:</tspan><tspan x="329.5" y="124.0">:</tspan><tspan x="626.3" y="134.5">:</tspan><tspan x="332.4" y="117.8">:</tspan></text>
+    <text class="c-bright"><tspan x="845.5" y="145.6">*</tspan><tspan x="840.5" y="157.5">#</tspan><tspan x="734.5" y="106.8">+</tspan><tspan x="635.0" y="208.1">+</tspan><tspan x="705.7" y="191.4">+</tspan><tspan x="695.1" y="89.4">*</tspan><tspan x="258.5" y="186.7">+</tspan><tspan x="712.0" y="132.1">+</tspan><tspan x="571.7" y="36.3">#</tspan><tspan x="639.8" y="186.0">*</tspan></text>
+    <text class="c-gold"><tspan x="739.8" y="225.8">@</tspan><tspan x="258.1" y="29.6">#</tspan><tspan x="267.5" y="68.8">#</tspan><tspan x="768.5" y="82.7">#</tspan><tspan x="45.5" y="151.9">@</tspan><tspan x="851.4" y="197.8">#</tspan><tspan x="720.5" y="43.7">#</tspan><tspan x="763.2" y="61.5">#</tspan><tspan x="841.4" y="205.3">@</tspan><tspan x="52.9" y="179.8">#</tspan><tspan x="863.6" y="132.3">#</tspan><tspan x="146.6" y="215.1">@</tspan><tspan x="825.2" y="165.8">#</tspan><tspan x="925.0" y="129.4">#</tspan><tspan x="93.4" y="179.2">#</tspan><tspan x="793.9" y="242.2">#</tspan><tspan x="752.9" y="56.1">#</tspan></text>
   </g>
-  <g class="sf-f2">
-    <text x="755.4" y="246.6" class="mono c-gold" font-size="12.5">@</text>
-    <text x="244.9" y="19.6" class="mono c-gold" font-size="12.5">#</text>
-    <text x="254.6" y="64.8" class="mono c-gold" font-size="12.0">#</text>
-    <text x="785.9" y="81.0" class="mono c-gold" font-size="12.0">#</text>
-    <text x="19.5" y="161.0" class="mono c-gold" font-size="12.5">@</text>
-    <text x="609.0" y="182.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="867.5" y="153.8" class="mono c-gold" font-size="12.5">#</text>
-    <text x="862.1" y="167.6" class="mono c-gold" font-size="12.5">#</text>
-    <text x="585.5" y="223.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="322.6" y="164.0" class="mono c-bright" font-size="11.5">*</text>
-    <text x="750.2" y="108.9" class="mono c-bright" font-size="12.0">*</text>
-    <text x="873.7" y="214.2" class="mono c-gold" font-size="12.5">#</text>
-    <text x="644.6" y="226.2" class="mono c-bright" font-size="12.0">*</text>
-    <text x="719.5" y="206.8" class="mono c-gold" font-size="12.0">#</text>
-    <text x="735.0" y="35.9" class="mono c-gold" font-size="12.5">#</text>
-    <text x="634.4" y="142.1" class="mono c-bright" font-size="11.5">*</text>
-    <text x="780.1" y="56.5" class="mono c-gold" font-size="12.5">@</text>
-    <text x="863.0" y="222.9" class="mono c-gold" font-size="12.5">@</text>
-    <text x="708.4" y="88.7" class="mono c-bright" font-size="12.0">#</text>
-    <text x="244.8" y="201.4" class="mono c-gold" font-size="12.0">#</text>
-    <text x="318.8" y="128.6" class="mono c-bright" font-size="11.5">*</text>
-    <text x="726.7" y="138.2" class="mono c-bright" font-size="11.5">+</text>
-    <text x="637.0" y="140.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="577.2" y="27.3" class="mono c-bright" font-size="12.0">#</text>
-    <text x="886.6" y="138.4" class="mono c-gold" font-size="12.5">#</text>
-    <text x="126.6" y="234.2" class="mono c-gold" font-size="12.5">@</text>
-    <text x="845.9" y="177.2" class="mono c-gold" font-size="12.5">@</text>
-    <text x="622.9" y="146.0" class="mono c-mid" font-size="10.5">:</text>
-    <text x="322.0" y="121.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="70.3" y="192.6" class="mono c-gold" font-size="12.5">#</text>
-    <text x="650.1" y="200.8" class="mono c-bright" font-size="11.5">*</text>
-    <text x="578.9" y="64.8" class="mono c-bright" font-size="11.5">*</text>
-    <text x="769.2" y="50.2" class="mono c-gold" font-size="12.5">#</text>
-    <text x="297.4" y="126.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="197.6" y="203.8" class="mono c-gold" font-size="12.0">#</text>
-    <text x="471.5" y="47.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="281.9" y="35.9" class="mono c-bright" font-size="12.0">*</text>
-    <text x="278.4" y="110.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="496.5" y="50.4" class="mono c-gold" font-size="12.0">#</text>
-    <text x="458.9" y="26.9" class="mono c-bright" font-size="12.0">*</text>
-    <text x="650.2" y="132.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="743.4" y="247.2" class="mono c-gold" font-size="12.5">#</text>
-    <text x="438.0" y="229.7" class="mono c-bright" font-size="11.5">*</text>
-    <text x="405.9" y="45.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="653.0" y="101.9" class="mono c-bright" font-size="11.5">*</text>
-    <text x="771.3" y="46.7" class="mono c-gold" font-size="12.5">#</text>
-    <text x="832.1" y="232.9" class="mono c-gold" font-size="12.5">#</text>
+  <g class="f2" font-size="11.5">
+    <text class="c-mid"><tspan x="640.7" y="139.0">:</tspan></text>
+    <text class="c-bright"><tspan x="623.1" y="176.1">*</tspan><tspan x="593.6" y="215.4">*</tspan><tspan x="305.2" y="157.4">*</tspan><tspan x="768.2" y="102.7">*</tspan><tspan x="655.6" y="217.4">*</tspan><tspan x="652.5" y="135.0">*</tspan><tspan x="724.1" y="82.9">#</tspan><tspan x="301.1" y="121.3">*</tspan><tspan x="746.0" y="131.3">+</tspan><tspan x="655.2" y="133.8">+</tspan><tspan x="582.3" y="24.5">#</tspan><tspan x="305.0" y="114.0">*</tspan><tspan x="664.1" y="193.3">*</tspan></text>
+    <text class="c-gold"><tspan x="767.6" y="235.2">@</tspan><tspan x="235.5" y="18.5">#</tspan><tspan x="241.3" y="60.2">#</tspan><tspan x="801.8" y="76.3">@</tspan><tspan x="885.6" y="146.5">#</tspan><tspan x="880.1" y="159.7">#</tspan><tspan x="889.0" y="203.9">#</tspan><tspan x="734.9" y="198.3">#</tspan><tspan x="746.2" y="33.6">#</tspan><tspan x="793.9" y="53.2">@</tspan><tspan x="229.0" y="193.2">#</tspan><tspan x="904.5" y="131.6">#</tspan><tspan x="112.7" y="222.9">@</tspan><tspan x="863.8" y="168.9">@</tspan><tspan x="53.8" y="183.4">#</tspan><tspan x="782.3" y="47.3">#</tspan></text>
   </g>
-  <g class="sf-f3">
-    <text x="777.4" y="254.7" class="mono c-gold" font-size="12.5">@</text>
-    <text x="619.2" y="135.9" class="mono c-mid" font-size="10.5">:</text>
-    <text x="234.0" y="57.5" class="mono c-gold" font-size="12.0">#</text>
-    <text x="812.2" y="75.5" class="mono c-gold" font-size="12.5">@</text>
-    <text x="626.6" y="187.6" class="mono c-bright" font-size="11.5">*</text>
-    <text x="500.0" y="216.4" class="mono c-bright" font-size="11.5">+</text>
-    <text x="899.1" y="154.6" class="mono c-gold" font-size="12.5">#</text>
-    <text x="893.4" y="169.4" class="mono c-gold" font-size="12.5">#</text>
-    <text x="596.8" y="231.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="300.9" y="166.7" class="mono c-bright" font-size="11.5">*</text>
-    <text x="776.7" y="105.4" class="mono c-bright" font-size="12.0">*</text>
-    <text x="660.8" y="234.2" class="mono c-bright" font-size="12.0">*</text>
-    <text x="742.5" y="212.8" class="mono c-gold" font-size="12.0">#</text>
-    <text x="755.2" y="27.2" class="mono c-gold" font-size="12.5">#</text>
-    <text x="656.7" y="141.7" class="mono c-bright" font-size="11.5">*</text>
-    <text x="804.4" y="49.3" class="mono c-gold" font-size="12.5">@</text>
-    <text x="731.2" y="83.1" class="mono c-bright" font-size="12.0">#</text>
-    <text x="221.6" y="207.0" class="mono c-gold" font-size="12.0">#</text>
-    <text x="296.7" y="126.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="753.4" y="137.4" class="mono c-gold" font-size="12.0">#</text>
-    <text x="659.5" y="140.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="918.9" y="137.8" class="mono c-gold" font-size="12.5">#</text>
-    <text x="876.4" y="179.9" class="mono c-gold" font-size="12.5">@</text>
-    <text x="644.6" y="146.1" class="mono c-bright" font-size="11.5">+</text>
-    <text x="300.6" y="118.2" class="mono c-bright" font-size="11.5">*</text>
-    <text x="669.1" y="207.0" class="mono c-bright" font-size="11.5">*</text>
-    <text x="589.4" y="56.3" class="mono c-bright" font-size="12.0">#</text>
-    <text x="792.5" y="42.6" class="mono c-gold" font-size="12.5">#</text>
-    <text x="274.2" y="123.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="172.1" y="209.1" class="mono c-gold" font-size="12.0">#</text>
-    <text x="470.7" y="37.9" class="mono c-bright" font-size="12.0">#</text>
-    <text x="265.4" y="26.8" class="mono c-gold" font-size="12.5">#</text>
-    <text x="255.3" y="107.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="498.2" y="40.9" class="mono c-gold" font-size="12.0">#</text>
-    <text x="673.0" y="130.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="433.5" y="238.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="398.7" y="36.0" class="mono c-bright" font-size="12.0">#</text>
-    <text x="673.5" y="96.8" class="mono c-bright" font-size="11.5">*</text>
-    <text x="794.4" y="38.9" class="mono c-gold" font-size="12.5">#</text>
+  <g class="f3" font-size="11.5">
+    <text class="c-bright"><tspan x="643.9" y="128.2">+</tspan><tspan x="647.2" y="182.5">*</tspan><tspan x="608.7" y="225.7">#</tspan><tspan x="275.5" y="160.7">*</tspan><tspan x="803.5" y="98.4">*</tspan><tspan x="677.2" y="227.2">*</tspan><tspan x="683.2" y="134.5">*</tspan><tspan x="754.5" y="76.0">#</tspan><tspan x="270.8" y="118.5">*</tspan><tspan x="686.0" y="133.0">+</tspan><tspan x="670.6" y="139.2">+</tspan><tspan x="275.8" y="110.0">*</tspan><tspan x="689.6" y="201.0">#</tspan><tspan x="600.6" y="48.4">#</tspan></text>
+    <text class="c-gold"><tspan x="214.0" y="51.3">@</tspan><tspan x="836.5" y="69.6">@</tspan><tspan x="927.3" y="147.4">#</tspan><tspan x="921.2" y="161.9">#</tspan><tspan x="765.5" y="205.5">#</tspan><tspan x="825.8" y="44.6">@</tspan><tspan x="198.1" y="200.0">#</tspan><tspan x="781.8" y="130.4">#</tspan><tspan x="903.8" y="172.2">@</tspan><tspan x="812.8" y="38.1">#</tspan></text>
   </g>
-  <g class="sf-f4">
-    <text x="640.5" y="134.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="212.7" y="49.9" class="mono c-gold" font-size="12.5">@</text>
-    <text x="839.3" y="69.8" class="mono c-gold" font-size="12.5">@</text>
-    <text x="645.2" y="192.9" class="mono c-bright" font-size="11.5">*</text>
-    <text x="502.4" y="225.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="931.8" y="155.3" class="mono c-gold" font-size="12.5">#</text>
-    <text x="506.9" y="211.1" class="mono c-bright" font-size="11.5">+</text>
-    <text x="925.7" y="171.3" class="mono c-gold" font-size="12.5">#</text>
-    <text x="608.5" y="240.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="391.1" y="210.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="278.1" y="169.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="450.0" y="56.6" class="mono c-bright" font-size="11.5">*</text>
-    <text x="804.1" y="101.7" class="mono c-bright" font-size="12.0">*</text>
-    <text x="677.6" y="242.5" class="mono c-bright" font-size="12.0">*</text>
-    <text x="766.3" y="218.9" class="mono c-gold" font-size="12.0">#</text>
-    <text x="495.7" y="60.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="680.2" y="141.2" class="mono c-bright" font-size="11.5">*</text>
-    <text x="829.5" y="42.0" class="mono c-gold" font-size="12.5">@</text>
-    <text x="609.6" y="206.7" class="mono c-bright" font-size="11.5">+</text>
-    <text x="754.8" y="77.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="197.6" y="212.8" class="mono c-gold" font-size="12.0">#</text>
-    <text x="273.4" y="124.0" class="mono c-bright" font-size="11.5">*</text>
-    <text x="781.1" y="136.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="683.1" y="139.7" class="mono c-bright" font-size="11.5">+</text>
-    <text x="350.7" y="101.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="907.8" y="182.6" class="mono c-gold" font-size="12.5">@</text>
-    <text x="667.5" y="146.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="278.2" y="114.8" class="mono c-bright" font-size="11.5">*</text>
-    <text x="688.8" y="213.5" class="mono c-bright" font-size="12.0">#</text>
-    <text x="600.4" y="47.4" class="mono c-bright" font-size="12.0">#</text>
-    <text x="816.4" y="34.8" class="mono c-gold" font-size="12.5">#</text>
-    <text x="249.9" y="121.4" class="mono c-bright" font-size="11.5">+</text>
-    <text x="145.7" y="214.6" class="mono c-gold" font-size="12.5">@</text>
-    <text x="469.8" y="27.9" class="mono c-bright" font-size="12.0">#</text>
-    <text x="231.2" y="102.9" class="mono c-gold" font-size="12.0">#</text>
-    <text x="499.9" y="31.0" class="mono c-gold" font-size="12.0">#</text>
-    <text x="696.9" y="128.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="428.8" y="248.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="391.3" y="26.1" class="mono c-bright" font-size="12.0">#</text>
-    <text x="353.9" y="157.0" class="mono c-mid" font-size="10.5">:</text>
-    <text x="694.8" y="91.5" class="mono c-bright" font-size="11.5">*</text>
+  <g class="f4" font-size="11.5">
+    <text class="c-mid"><tspan x="621.4" y="121.2">:</tspan></text>
+    <text class="c-bright"><tspan x="340.4" y="176.7">+</tspan><tspan x="673.6" y="126.4">+</tspan><tspan x="672.8" y="189.3">*</tspan><tspan x="506.0" y="222.8">+</tspan><tspan x="624.6" y="236.5">#</tspan><tspan x="244.1" y="164.1">*</tspan><tspan x="445.7" y="45.3">#</tspan><tspan x="498.0" y="48.8">*</tspan><tspan x="715.7" y="133.9">*</tspan><tspan x="630.9" y="203.8">+</tspan><tspan x="238.9" y="115.5">*</tspan><tspan x="718.6" y="132.3">+</tspan><tspan x="325.8" y="90.9">+</tspan><tspan x="702.4" y="139.4">+</tspan><tspan x="245.0" y="105.8">*</tspan><tspan x="716.3" y="209.0">#</tspan><tspan x="615.3" y="37.5">#</tspan></text>
+    <text class="c-gold"><tspan x="185.6" y="42.1">@</tspan><tspan x="872.5" y="62.7">@</tspan><tspan x="840.2" y="93.9">#</tspan><tspan x="699.7" y="237.3">#</tspan><tspan x="797.4" y="213.1">@</tspan><tspan x="786.3" y="68.8">#</tspan><tspan x="165.9" y="207.1">@</tspan><tspan x="819.2" y="129.4">#</tspan></text>
   </g>
-  <g class="sf-f5">
-    <text x="348.6" y="184.8" class="mono c-bright" font-size="11.5">+</text>
-    <text x="662.9" y="133.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="190.7" y="42.1" class="mono c-gold" font-size="12.5">@</text>
-    <text x="867.3" y="63.9" class="mono c-gold" font-size="12.5">@</text>
-    <text x="583.0" y="61.1" class="mono c-bright" font-size="11.5">*</text>
-    <text x="611.5" y="127.9" class="mono c-mid" font-size="10.5">:</text>
-    <text x="664.6" y="198.6" class="mono c-bright" font-size="11.5">*</text>
-    <text x="505.0" y="233.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="510.3" y="219.4" class="mono c-bright" font-size="11.5">+</text>
-    <text x="620.7" y="249.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="380.5" y="218.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="254.3" y="172.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="446.8" y="47.3" class="mono c-bright" font-size="12.0">#</text>
-    <text x="832.5" y="97.9" class="mono c-gold" font-size="12.5">#</text>
-    <text x="694.9" y="251.1" class="mono c-bright" font-size="12.0">*</text>
-    <text x="791.0" y="225.3" class="mono c-gold" font-size="12.5">@</text>
-    <text x="497.4" y="51.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="704.8" y="140.7" class="mono c-bright" font-size="11.5">*</text>
-    <text x="624.6" y="213.9" class="mono c-bright" font-size="11.5">+</text>
-    <text x="779.3" y="71.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="172.7" y="218.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="249.1" y="121.5" class="mono c-bright" font-size="11.5">*</text>
-    <text x="604.0" y="210.7" class="mono c-bright" font-size="11.5">+</text>
-    <text x="809.8" y="135.9" class="mono c-gold" font-size="12.0">#</text>
-    <text x="707.8" y="139.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="333.7" y="96.2" class="mono c-bright" font-size="11.5">+</text>
-    <text x="691.5" y="146.4" class="mono c-bright" font-size="11.5">+</text>
-    <text x="254.8" y="111.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="352.7" y="142.8" class="mono c-mid" font-size="10.5">:</text>
-    <text x="709.3" y="220.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="611.7" y="38.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="224.6" y="118.8" class="mono c-bright" font-size="11.5">+</text>
-    <text x="118.4" y="220.3" class="mono c-gold" font-size="12.5">@</text>
-    <text x="206.2" y="98.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="501.7" y="20.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="722.0" y="126.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="333.6" y="158.9" class="mono c-bright" font-size="11.5">*</text>
-    <text x="717.0" y="86.0" class="mono c-bright" font-size="12.0">#</text>
-    <text x="605.8" y="170.7" class="mono c-mid" font-size="10.5">:</text>
+  <g class="f5" font-size="11.5">
+    <text class="c-bright"><tspan x="316.8" y="183.3">+</tspan><tspan x="705.2" y="124.5">+</tspan><tspan x="601.2" y="47.5">#</tspan><tspan x="648.8" y="117.9">*</tspan><tspan x="699.6" y="196.4">#</tspan><tspan x="516.5" y="220.2">+</tspan><tspan x="361.2" y="218.2">+</tspan><tspan x="211.1" y="167.8">#</tspan><tspan x="441.3" y="33.6">#</tspan><tspan x="500.4" y="37.3">#</tspan><tspan x="749.9" y="133.3">*</tspan><tspan x="651.6" y="212.9">*</tspan><tspan x="205.2" y="112.4">#</tspan><tspan x="321.6" y="121.6">+</tspan><tspan x="628.7" y="210.1">+</tspan><tspan x="753.0" y="131.4">+</tspan><tspan x="619.1" y="102.7">+</tspan><tspan x="302.0" y="83.6">+</tspan><tspan x="736.0" y="139.6">+</tspan><tspan x="212.6" y="101.4">#</tspan><tspan x="314.0" y="135.3">*</tspan><tspan x="744.2" y="217.4">#</tspan></text>
+    <text class="c-gold"><tspan x="509.4" y="234.1">#</tspan><tspan x="878.4" y="89.2">#</tspan><tspan x="830.5" y="220.9">@</tspan><tspan x="819.3" y="61.4">#</tspan><tspan x="132.3" y="214.4">@</tspan><tspan x="858.2" y="128.4">@</tspan><tspan x="630.7" y="26.0">#</tspan></text>
   </g>
-  <g class="sf-f6">
-    <text x="331.0" y="190.1" class="mono c-bright" font-size="11.5">+</text>
-    <text x="686.5" y="131.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="168.0" y="34.0" class="mono c-gold" font-size="12.5">@</text>
-    <text x="593.7" y="52.4" class="mono c-bright" font-size="12.0">#</text>
-    <text x="631.6" y="125.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="684.8" y="204.5" class="mono c-bright" font-size="11.5">*</text>
-    <text x="507.6" y="243.2" class="mono c-gold" font-size="12.0">#</text>
-    <text x="513.9" y="228.1" class="mono c-bright" font-size="11.5">+</text>
-    <text x="369.4" y="226.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="229.4" y="175.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="443.6" y="37.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="861.8" y="94.0" class="mono c-gold" font-size="12.5">#</text>
-    <text x="816.4" y="231.8" class="mono c-gold" font-size="12.5">@</text>
-    <text x="499.1" y="41.7" class="mono c-bright" font-size="12.0">#</text>
-    <text x="730.6" y="140.3" class="mono c-bright" font-size="11.5">*</text>
-    <text x="640.3" y="221.3" class="mono c-bright" font-size="12.0">*</text>
-    <text x="804.6" y="65.0" class="mono c-gold" font-size="12.5">#</text>
-    <text x="147.0" y="224.9" class="mono c-gold" font-size="12.5">@</text>
-    <text x="223.8" y="118.9" class="mono c-bright" font-size="11.5">*</text>
-    <text x="338.7" y="129.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="618.1" y="218.2" class="mono c-bright" font-size="11.5">+</text>
-    <text x="839.6" y="135.1" class="mono c-gold" font-size="12.0">#</text>
-    <text x="733.7" y="138.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="315.9" y="90.3" class="mono c-bright" font-size="11.5">+</text>
-    <text x="716.7" y="146.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="230.4" y="107.7" class="mono c-bright" font-size="12.0">#</text>
-    <text x="332.0" y="142.4" class="mono c-bright" font-size="11.5">*</text>
-    <text x="730.6" y="227.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="623.5" y="28.7" class="mono c-bright" font-size="12.0">#</text>
-    <text x="198.3" y="116.1" class="mono c-bright" font-size="12.0">*</text>
-    <text x="90.4" y="226.2" class="mono c-gold" font-size="12.5">@</text>
-    <text x="180.2" y="94.3" class="mono c-gold" font-size="12.0">#</text>
-    <text x="748.1" y="124.6" class="mono c-bright" font-size="12.0">*</text>
-    <text x="312.2" y="160.9" class="mono c-bright" font-size="11.5">*</text>
-    <text x="740.1" y="80.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="624.6" y="174.6" class="mono c-bright" font-size="11.5">*</text>
+  <g class="f0" font-size="10.8">
+    <text y="76.8" xml:space="preserve"><tspan x="134.8" class="c-dark">,:;</tspan><tspan x="154.0" class="c-mid">i!ll!</tspan></text>
+    <text y="88.0" xml:space="preserve"><tspan x="58.0" class="c-bright">~</tspan><tspan x="64.4" class="c-gold">+</tspan><tspan x="115.6" class="c-dark">.:i</tspan><tspan x="134.8" class="c-mid">!!lI+</tspan><tspan x="166.8" class="c-bright">~*#MMM</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="45.2" class="c-gold">@</tspan><tspan x="58.0" class="c-bright">==</tspan><tspan x="70.8" class="c-mid">;</tspan><tspan x="77.2" class="c-bright">~~</tspan><tspan x="90.0" class="c-mid">:</tspan><tspan x="109.2" class="c-bright">=</tspan><tspan x="115.6" class="c-mid">:</tspan><tspan x="128.4" class="c-bright">+</tspan><tspan x="134.8" class="c-mid">+</tspan><tspan x="141.2" class="c-bright">~==***##MW</tspan><tspan x="205.2" class="c-gold">&amp;&amp;</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="51.6" class="c-gold">#</tspan><tspan x="58.0" class="c-bright">~</tspan><tspan x="64.4" class="c-gold">@</tspan><tspan x="77.2" class="c-bright">=</tspan><tspan x="96.4" class="c-dark">...:;</tspan><tspan x="128.4" class="c-mid">!I</tspan><tspan x="141.2" class="c-gold">%</tspan><tspan x="147.6" class="c-bright">+</tspan><tspan x="154.0" class="c-gold">@</tspan><tspan x="160.4" class="c-bright">~</tspan><tspan x="166.8" class="c-gold">@W&amp;&amp;&amp;W</tspan><tspan x="205.2" class="c-bright">MM#</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="70.8" class="c-bright">=</tspan><tspan x="77.2" class="c-gold">*</tspan><tspan x="83.6" class="c-bright">~</tspan><tspan x="115.6" class="c-dark">.,:;i</tspan><tspan x="147.6" class="c-mid">i!llI</tspan><tspan x="179.6" class="c-bright">==</tspan><tspan x="192.4" class="c-mid">:</tspan><tspan x="198.8" class="c-gold">@</tspan><tspan x="205.2" class="c-bright">*==</tspan><tspan x="224.4" class="c-mid">I</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="90.0" class="c-dark">....,;</tspan><tspan x="128.4" class="c-mid">!I+</tspan><tspan x="147.6" class="c-bright">=*#M</tspan><tspan x="173.2" class="c-gold">W&amp;8%%@</tspan><tspan x="211.6" class="c-mid">,</tspan><tspan x="224.4" class="c-gold">*</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="122.0" class="c-dark">.,::;i</tspan><tspan x="160.4" class="c-mid">i!!!llII++</tspan><tspan x="224.4" class="c-gold">#</tspan><tspan x="230.8" class="c-bright">~</tspan><tspan x="237.2" class="c-gold">*</tspan><tspan x="243.6" class="c-bright">=</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="96.4" class="c-dark">......:;</tspan><tspan x="147.6" class="c-mid">!lI++</tspan><tspan x="179.6" class="c-bright">~~~</tspan><tspan x="198.8" class="c-mid">~+++</tspan><tspan x="237.2" class="c-bright">=</tspan><tspan x="250.0" class="c-gold">@</tspan><tspan x="256.4" class="c-bright">~</tspan><tspan x="262.8" class="c-gold">#</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="102.8" class="c-dark">.......,;</tspan><tspan x="160.4" class="c-mid">i!lI+++Il :</tspan><tspan x="230.8" class="c-bright">~~</tspan><tspan x="243.6" class="c-mid">;</tspan><tspan x="250.0" class="c-bright">==</tspan><tspan x="269.2" class="c-gold">@</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="115.6" class="c-dark">........,,:;;;</tspan><tspan x="250.0" class="c-gold">+</tspan><tspan x="256.4" class="c-bright">~</tspan></text>
   </g>
-  <g class="sf-f7">
-    <text x="312.6" y="195.7" class="mono c-bright" font-size="11.5">+</text>
-    <text x="711.1" y="129.8" class="mono c-bright" font-size="11.5">+</text>
-    <text x="604.8" y="43.4" class="mono c-bright" font-size="12.0">#</text>
-    <text x="569.5" y="63.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="652.9" y="122.6" class="mono c-bright" font-size="11.5">*</text>
-    <text x="705.9" y="210.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="510.3" y="252.9" class="mono c-gold" font-size="12.0">#</text>
-    <text x="517.5" y="237.2" class="mono c-bright" font-size="12.0">*</text>
-    <text x="357.8" y="235.0" class="mono c-bright" font-size="12.0">*</text>
-    <text x="203.5" y="178.5" class="mono c-bright" font-size="12.0">#</text>
-    <text x="440.2" y="27.6" class="mono c-bright" font-size="12.0">#</text>
-    <text x="892.0" y="89.9" class="mono c-gold" font-size="12.5">#</text>
-    <text x="842.6" y="238.6" class="mono c-gold" font-size="12.5">@</text>
-    <text x="501.0" y="31.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="757.4" y="139.8" class="mono c-bright" font-size="12.0">#</text>
-    <text x="656.6" y="229.1" class="mono c-bright" font-size="12.0">*</text>
-    <text x="830.7" y="58.5" class="mono c-gold" font-size="12.5">#</text>
-    <text x="120.5" y="231.3" class="mono c-gold" font-size="12.5">@</text>
-    <text x="197.4" y="116.2" class="mono c-bright" font-size="12.0">#</text>
-    <text x="317.7" y="126.6" class="mono c-bright" font-size="11.5">+</text>
-    <text x="632.8" y="225.9" class="mono c-bright" font-size="12.0">*</text>
-    <text x="870.4" y="134.2" class="mono c-gold" font-size="12.5">@</text>
-    <text x="760.6" y="137.6" class="mono c-gold" font-size="12.0">#</text>
-    <text x="622.4" y="105.5" class="mono c-bright" font-size="11.5">+</text>
-    <text x="297.2" y="84.0" class="mono c-bright" font-size="11.5">+</text>
-    <text x="742.9" y="146.8" class="mono c-bright" font-size="11.5">+</text>
-    <text x="204.9" y="103.9" class="mono c-bright" font-size="12.0">#</text>
-    <text x="310.0" y="142.0" class="mono c-bright" font-size="11.5">*</text>
-    <text x="752.6" y="234.4" class="mono c-bright" font-size="12.0">#</text>
-    <text x="635.6" y="18.8" class="mono c-gold" font-size="12.5">#</text>
-    <text x="170.9" y="113.3" class="mono c-bright" font-size="12.0">*</text>
-    <text x="153.3" y="89.7" class="mono c-gold" font-size="12.0">#</text>
-    <text x="775.2" y="122.5" class="mono c-bright" font-size="12.0">*</text>
-    <text x="289.7" y="163.0" class="mono c-bright" font-size="11.5">*</text>
-    <text x="764.0" y="74.3" class="mono c-bright" font-size="12.0">#</text>
-    <text x="644.4" y="178.6" class="mono c-bright" font-size="11.5">*</text>
+  <g class="f1" font-size="10.8">
+    <text y="76.8" xml:space="preserve"><tspan x="134.8" class="c-dark">:;</tspan><tspan x="147.6" class="c-mid">ii!!!l</tspan></text>
+    <text y="88.0" xml:space="preserve"><tspan x="58.0" class="c-gold">+</tspan><tspan x="64.4" class="c-bright">=</tspan><tspan x="115.6" class="c-dark">.:</tspan><tspan x="128.4" class="c-mid">ilI</tspan><tspan x="147.6" class="c-bright">~==*=====</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="45.2" class="c-gold">+</tspan><tspan x="51.6" class="c-mid">:</tspan><tspan x="58.0" class="c-gold">@#</tspan><tspan x="83.6" class="c-mid">,;;</tspan><tspan x="102.8" class="c-bright">=</tspan><tspan x="109.2" class="c-gold">@#</tspan><tspan x="122.0" class="c-bright">=</tspan><tspan x="128.4" class="c-gold">@</tspan><tspan x="134.8" class="c-mid">lI</tspan><tspan x="147.6" class="c-bright">~*#M</tspan><tspan x="173.2" class="c-gold">&amp;8888&amp;</tspan><tspan x="211.6" class="c-bright">#</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="51.6" class="c-gold"># *</tspan><tspan x="70.8" class="c-bright">~</tspan><tspan x="77.2" class="c-gold">@</tspan><tspan x="96.4" class="c-dark">...:</tspan><tspan x="122.0" class="c-mid">i!l</tspan><tspan x="141.2" class="c-bright">~ =</tspan><tspan x="166.8" class="c-gold">*</tspan><tspan x="173.2" class="c-bright">*#M</tspan><tspan x="192.4" class="c-gold">W&amp;88&amp;</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="70.8" class="c-gold">@*</tspan><tspan x="115.6" class="c-dark">.:;</tspan><tspan x="134.8" class="c-mid">i!lII++</tspan><tspan x="179.6" class="c-gold">@*</tspan><tspan x="198.8" class="c-bright">~</tspan><tspan x="205.2" class="c-mid">++++</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="90.0" class="c-dark">....,;</tspan><tspan x="128.4" class="c-mid">!I+</tspan><tspan x="147.6" class="c-bright">=*#M</tspan><tspan x="173.2" class="c-gold">W&amp;8%%#</tspan><tspan x="211.6" class="c-bright">+=</tspan><tspan x="224.4" class="c-gold">%</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="122.0" class="c-dark">.,:;i</tspan><tspan x="154.0" class="c-mid">!llII++IIIl</tspan><tspan x="224.4" class="c-bright">=</tspan><tspan x="237.2" class="c-gold">*@</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="96.4" class="c-dark">......,:;</tspan><tspan x="154.0" class="c-mid">i!lI+</tspan><tspan x="186.0" class="c-bright">~=***=</tspan><tspan x="237.2" class="c-gold">@</tspan><tspan x="243.6" class="c-bright">~</tspan><tspan x="250.0" class="c-gold">* #</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="102.8" class="c-dark">......,:;</tspan><tspan x="160.4" class="c-mid">ii!!lllIl;;,</tspan><tspan x="250.0" class="c-gold">#@</tspan><tspan x="262.8" class="c-mid">:</tspan><tspan x="269.2" class="c-gold">+</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="134.8" class="c-dark">....,::;;::</tspan><tspan x="250.0" class="c-bright">=</tspan><tspan x="256.4" class="c-gold">+</tspan></text>
   </g>
-
-  <!-- ================= LAYER 2: 3D RAYMARCHED RINGED GAS GIANT (Character Morphing) ================= -->
-  <g class="f-f0">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    +                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     ~=*                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   =*M                      </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                      W&amp;8%%8&amp;               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;;                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">    :       ;      i!!llIII+++I             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">   =    =+                                  </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">     *@*  ## +@                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">               i   ,                        </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">      ~~        + ~  M                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">    %   @           + W&amp;8%BB@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,:;                          </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">         ;        i!lI ; :++++++I           </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">       ~                                    </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">      # *             @ %                   </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">           ....,:                           </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                 i!lI+                      </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                      ~*#MW +~  W           </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                           #  %&amp;            </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           .....:;                          </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                  !llI++         :          </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                        ~==**#M==           </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">                 .,:;                       </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                     ii!!llllll!!           </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                  %+ *      </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ......,:                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!lI+           ,       </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                         ~==***=   +  =     </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                     % +    </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">                     .,,:::::::             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                                      :     </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                +           </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                 %@@@*  @   </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,,::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f2" font-size="10.8">
+    <text y="76.8" xml:space="preserve"><tspan x="134.8" class="c-dark">,:;</tspan><tspan x="154.0" class="c-mid">i!ll!</tspan></text>
+    <text y="88.0" xml:space="preserve"><tspan x="58.0" class="c-bright">~</tspan><tspan x="64.4" class="c-gold">+</tspan><tspan x="115.6" class="c-dark">.:i</tspan><tspan x="134.8" class="c-mid">!!lI+</tspan><tspan x="166.8" class="c-bright">~*#MMM</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="45.2" class="c-gold">@</tspan><tspan x="58.0" class="c-bright">==</tspan><tspan x="70.8" class="c-mid">;</tspan><tspan x="77.2" class="c-bright">~~</tspan><tspan x="90.0" class="c-mid">:</tspan><tspan x="109.2" class="c-bright">=</tspan><tspan x="115.6" class="c-mid">:</tspan><tspan x="128.4" class="c-bright">+</tspan><tspan x="134.8" class="c-mid">+</tspan><tspan x="141.2" class="c-bright">~==***##MW</tspan><tspan x="205.2" class="c-gold">&amp;&amp;</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="51.6" class="c-gold">#</tspan><tspan x="58.0" class="c-bright">~</tspan><tspan x="64.4" class="c-gold">@</tspan><tspan x="77.2" class="c-bright">=</tspan><tspan x="96.4" class="c-dark">...:;</tspan><tspan x="128.4" class="c-mid">!I</tspan><tspan x="141.2" class="c-gold">%</tspan><tspan x="147.6" class="c-bright">+</tspan><tspan x="154.0" class="c-gold">@</tspan><tspan x="160.4" class="c-bright">~</tspan><tspan x="166.8" class="c-gold">@W&amp;&amp;&amp;W</tspan><tspan x="205.2" class="c-bright">WM#</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="70.8" class="c-bright">=</tspan><tspan x="77.2" class="c-gold">*</tspan><tspan x="83.6" class="c-bright">~</tspan><tspan x="115.6" class="c-dark">.,:;i</tspan><tspan x="147.6" class="c-mid">i!lII</tspan><tspan x="179.6" class="c-bright">==</tspan><tspan x="192.4" class="c-mid">:</tspan><tspan x="198.8" class="c-gold">@</tspan><tspan x="205.2" class="c-bright">**=</tspan><tspan x="224.4" class="c-mid">+</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="90.0" class="c-dark">....,;</tspan><tspan x="128.4" class="c-mid">!I+</tspan><tspan x="147.6" class="c-bright">=*MW</tspan><tspan x="173.2" class="c-gold">&amp;8%%B@</tspan><tspan x="211.6" class="c-mid">,</tspan><tspan x="224.4" class="c-gold">*</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="102.8" class="c-dark">.. .,::;i</tspan><tspan x="160.4" class="c-mid">i!!lI+</tspan><tspan x="198.8" class="c-bright">~=#M</tspan><tspan x="224.4" class="c-gold">#</tspan><tspan x="230.8" class="c-bright">~</tspan><tspan x="237.2" class="c-gold">*</tspan><tspan x="243.6" class="c-bright">=</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="96.4" class="c-dark">......:;</tspan><tspan x="147.6" class="c-mid">!lI+</tspan><tspan x="173.2" class="c-bright">~~===**=</tspan><tspan x="237.2" class="c-bright">=</tspan><tspan x="250.0" class="c-gold">@</tspan><tspan x="256.4" class="c-bright">~</tspan><tspan x="262.8" class="c-gold">#</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="102.8" class="c-dark">.......,;</tspan><tspan x="160.4" class="c-mid">i!lI+~</tspan><tspan x="198.8" class="c-bright">~</tspan><tspan x="205.2" class="c-mid">+l :</tspan><tspan x="230.8" class="c-bright">~~</tspan><tspan x="243.6" class="c-mid">;</tspan><tspan x="250.0" class="c-bright">==</tspan><tspan x="269.2" class="c-gold">@</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="115.6" class="c-dark">........,::;;;</tspan><tspan x="250.0" class="c-gold">+</tspan><tspan x="256.4" class="c-bright">~</tspan></text>
   </g>
-  <g class="f-f1">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    I                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     ~**                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   =#MW                     </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                       W&amp;&amp;888               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;;                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">     ;       :     i!llIIIII++I             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">           ~  +                             </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">   *  @@%*+                                 </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">               i                            </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">     =+          ~ + M                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">    %   #       @ # @ &amp;8%BB@@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,:;                          </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">                  ii!!   ;I++~              </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">      =               = +     ~~~           </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">        %#                                  </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">              .,;                           </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                 !l+                        </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                    ~=*#MMM = =##           </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                           @                </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           ..  .,:                          </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                  i!lI+          ;          </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                       =*#MW                </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                            WWW+@           </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">                 .,::;;                     </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                       ii!!!llIII   :       </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                                  ~~        </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                     @      </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ......,:                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!lI+                   </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                         ~==**==    =  +    </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   % *      </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">                     .,,:::::::             </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                               ~   += +~    </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                @@%  *  #   </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,:::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f3" font-size="10.8">
+    <text y="76.8" xml:space="preserve"><tspan x="134.8" class="c-dark">:;</tspan><tspan x="147.6" class="c-mid">ii!!!l</tspan></text>
+    <text y="88.0" xml:space="preserve"><tspan x="58.0" class="c-gold">+</tspan><tspan x="64.4" class="c-bright">=</tspan><tspan x="115.6" class="c-dark">.:</tspan><tspan x="128.4" class="c-mid">ilI</tspan><tspan x="147.6" class="c-bright">~==**====</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="45.2" class="c-gold">+</tspan><tspan x="51.6" class="c-mid">:</tspan><tspan x="58.0" class="c-gold">@#</tspan><tspan x="83.6" class="c-mid">,;;</tspan><tspan x="102.8" class="c-bright">=</tspan><tspan x="109.2" class="c-gold">@#</tspan><tspan x="122.0" class="c-bright">=</tspan><tspan x="128.4" class="c-gold">@</tspan><tspan x="134.8" class="c-mid">lI</tspan><tspan x="147.6" class="c-bright">~*#W</tspan><tspan x="173.2" class="c-gold">&amp;8888&amp;</tspan><tspan x="211.6" class="c-bright">#</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="51.6" class="c-gold"># *</tspan><tspan x="70.8" class="c-bright">~</tspan><tspan x="77.2" class="c-gold">@</tspan><tspan x="96.4" class="c-dark">...:</tspan><tspan x="122.0" class="c-mid">i!I</tspan><tspan x="141.2" class="c-bright">~ =</tspan><tspan x="166.8" class="c-gold">*</tspan><tspan x="173.2" class="c-bright">*#M</tspan><tspan x="192.4" class="c-gold">W&amp;88&amp;</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="70.8" class="c-gold">@*</tspan><tspan x="109.2" class="c-dark">.,:;</tspan><tspan x="134.8" class="c-mid">!lII+++</tspan><tspan x="179.6" class="c-gold">@*</tspan><tspan x="198.8" class="c-bright">~</tspan><tspan x="205.2" class="c-mid">+++I</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="90.0" class="c-dark">...,,i</tspan><tspan x="128.4" class="c-mid">l+</tspan><tspan x="141.2" class="c-bright">=#M</tspan><tspan x="160.4" class="c-gold">W&amp;8%%%B#</tspan><tspan x="211.6" class="c-bright">+=</tspan><tspan x="224.4" class="c-gold">%</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="102.8" class="c-dark">...,:</tspan><tspan x="134.8" class="c-mid">il+</tspan><tspan x="154.0" class="c-bright">=**==~~</tspan><tspan x="198.8" class="c-mid">++Il</tspan><tspan x="224.4" class="c-bright">=</tspan><tspan x="237.2" class="c-gold">*@</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="96.4" class="c-dark">....,,;</tspan><tspan x="141.2" class="c-mid">ilI+</tspan><tspan x="166.8" class="c-bright">~~==****~</tspan><tspan x="237.2" class="c-gold">@</tspan><tspan x="243.6" class="c-bright">~</tspan><tspan x="250.0" class="c-gold">* #</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="102.8" class="c-dark">.....,,;</tspan><tspan x="154.0" class="c-mid">i!!lllllIl;;,</tspan><tspan x="250.0" class="c-gold">#@</tspan><tspan x="262.8" class="c-mid">:</tspan><tspan x="269.2" class="c-gold">+</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="115.6" class="c-dark">.......,:;;;;:</tspan><tspan x="250.0" class="c-bright">=</tspan><tspan x="256.4" class="c-gold">+</tspan></text>
   </g>
-  <g class="f-f2">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    +                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     ===                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   ~*#M                     </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                       &amp;8%%%8               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;;                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">    :;      :      i!!llIII+++I             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">      +      ~                              </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">   @   *%@@#  #                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">     ; ;       i   ;                        </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">    =   +        ~   W                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">      %         @ * + &amp;8%BB@@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,::;                         </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">                   i!! ,        +           </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">        ~             =   ~====~            </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">      %  *              @*                  </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">           ....:;                           </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                 ilII+      ,               </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                      ~~=*#                 </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                           #  %88           </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">              ..:;                          </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                  !lI~                      </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                      ==***####             </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                               @#           </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">                 .,::;                      </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                      i!!lIIIIIII   ;       </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                                  =         </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                   % +      </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ......,:                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!lI+           , ;     </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                         ~=*****     ~      </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   @   @    </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">                    ..,,,::;;;:             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                               ,            </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                + =+    =   </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                 +  %@+     </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,:::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f4" font-size="10.8">
+    <text y="76.8" xml:space="preserve"><tspan x="134.8" class="c-dark">,:;</tspan><tspan x="154.0" class="c-mid">i!ll!</tspan></text>
+    <text y="88.0" xml:space="preserve"><tspan x="58.0" class="c-bright">~</tspan><tspan x="64.4" class="c-gold">+</tspan><tspan x="115.6" class="c-dark">.:i</tspan><tspan x="134.8" class="c-mid">!!lI+</tspan><tspan x="166.8" class="c-bright">~*#MMM</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="45.2" class="c-gold">@</tspan><tspan x="58.0" class="c-bright">==</tspan><tspan x="70.8" class="c-mid">;</tspan><tspan x="77.2" class="c-bright">~~</tspan><tspan x="90.0" class="c-mid">:</tspan><tspan x="109.2" class="c-bright">=</tspan><tspan x="115.6" class="c-mid">:</tspan><tspan x="128.4" class="c-bright">+</tspan><tspan x="134.8" class="c-mid">+</tspan><tspan x="141.2" class="c-bright">~==***##MW</tspan><tspan x="205.2" class="c-gold">&amp;&amp;</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="51.6" class="c-gold">#</tspan><tspan x="58.0" class="c-bright">~</tspan><tspan x="64.4" class="c-gold">@</tspan><tspan x="77.2" class="c-bright">=</tspan><tspan x="96.4" class="c-dark">...:i</tspan><tspan x="128.4" class="c-mid">!I</tspan><tspan x="141.2" class="c-gold">%</tspan><tspan x="147.6" class="c-bright">+</tspan><tspan x="154.0" class="c-gold">@</tspan><tspan x="160.4" class="c-bright">~</tspan><tspan x="166.8" class="c-gold">@W&amp;&amp;&amp;W</tspan><tspan x="205.2" class="c-bright">MM#</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="70.8" class="c-bright">=</tspan><tspan x="77.2" class="c-gold">*</tspan><tspan x="83.6" class="c-bright">~</tspan><tspan x="90.0" class="c-dark">....,::;</tspan><tspan x="141.2" class="c-mid">ii!llI</tspan><tspan x="179.6" class="c-bright">==</tspan><tspan x="192.4" class="c-mid">:</tspan><tspan x="198.8" class="c-gold">@</tspan><tspan x="205.2" class="c-bright">*==</tspan><tspan x="224.4" class="c-mid">I</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="90.0" class="c-dark">:::::i</tspan><tspan x="128.4" class="c-mid">!I+</tspan><tspan x="147.6" class="c-bright">=*#W</tspan><tspan x="173.2" class="c-gold">W&amp;8%%@</tspan><tspan x="211.6" class="c-mid">,</tspan><tspan x="224.4" class="c-gold">*</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="90.0" class="c-dark">,</tspan><tspan x="96.4" class="c-mid">!i</tspan><tspan x="109.2" class="c-dark">:,,::;;</tspan><tspan x="154.0" class="c-mid">ii!!!llII++</tspan><tspan x="224.4" class="c-gold">#</tspan><tspan x="230.8" class="c-bright">~</tspan><tspan x="237.2" class="c-gold">*</tspan><tspan x="243.6" class="c-bright">=</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="96.4" class="c-dark">:;:,,,:i</tspan><tspan x="147.6" class="c-mid">!lI++</tspan><tspan x="179.6" class="c-bright">~~~</tspan><tspan x="198.8" class="c-mid">~+++</tspan><tspan x="237.2" class="c-bright">=</tspan><tspan x="250.0" class="c-gold">@</tspan><tspan x="256.4" class="c-bright">~</tspan><tspan x="262.8" class="c-gold">#</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="102.8" class="c-dark">,,,...,:;</tspan><tspan x="160.4" class="c-mid">i!lI+++Il :</tspan><tspan x="230.8" class="c-bright">~~</tspan><tspan x="243.6" class="c-mid">;</tspan><tspan x="250.0" class="c-bright">==</tspan><tspan x="269.2" class="c-gold">@</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="115.6" class="c-dark">........,,:;;;</tspan><tspan x="250.0" class="c-gold">+</tspan><tspan x="256.4" class="c-bright">~</tspan></text>
   </g>
-  <g class="f-f3">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    +~                      </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                      =*                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   =#M                      </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                      W&amp;8888&amp;               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;;                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">    ;              i!!llII++++I             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">        =   ~                               </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">   + *%+ +%% *@                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">               i  ~                         </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">      =~        +   =M                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">    #   @             W&amp;8%B@@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,:;                          </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">       ; ;        i!lI   ;+++++++           </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">                       ~                    </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">      % +             @ @                   </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">           .  .,:                           </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                 i!I+                       </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                     ~*#M   =~  M           </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                         W&amp;*  @&amp;            </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           .....:;                          </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                  i!lI+          ,          </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                       ~=*#M   ==           </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                            &amp;8%             </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">                 ,,:;                       </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                     i!!llI+   +I           </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                            ~*=      +      </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                  %*        </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ......,;                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!I+                    </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                        ~=*#MM#*      +     </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   + # *    </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">                    ..,,::;;;;:             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                                      :     </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                =           </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                 #%@@#  %   </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,,::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f5" font-size="10.8">
+    <text y="76.8" xml:space="preserve"><tspan x="134.8" class="c-dark">:;</tspan><tspan x="147.6" class="c-mid">ii!!!l</tspan></text>
+    <text y="88.0" xml:space="preserve"><tspan x="58.0" class="c-gold">+</tspan><tspan x="64.4" class="c-bright">=</tspan><tspan x="115.6" class="c-dark">.:</tspan><tspan x="128.4" class="c-mid">ilI</tspan><tspan x="147.6" class="c-bright">~==*=====</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="45.2" class="c-gold">+</tspan><tspan x="51.6" class="c-mid">:</tspan><tspan x="58.0" class="c-gold">@#</tspan><tspan x="83.6" class="c-mid">,;;</tspan><tspan x="102.8" class="c-bright">=</tspan><tspan x="109.2" class="c-gold">@#</tspan><tspan x="122.0" class="c-bright">=</tspan><tspan x="128.4" class="c-gold">@</tspan><tspan x="134.8" class="c-mid">lI</tspan><tspan x="147.6" class="c-bright">~*#M</tspan><tspan x="173.2" class="c-gold">&amp;8888W</tspan><tspan x="211.6" class="c-bright">#</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="51.6" class="c-gold"># *</tspan><tspan x="70.8" class="c-bright">~</tspan><tspan x="77.2" class="c-gold">@</tspan><tspan x="96.4" class="c-dark">...:</tspan><tspan x="122.0" class="c-mid">i!l</tspan><tspan x="141.2" class="c-bright">~ =</tspan><tspan x="166.8" class="c-gold">*</tspan><tspan x="173.2" class="c-bright">*#M</tspan><tspan x="192.4" class="c-gold">W&amp;88&amp;</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="70.8" class="c-gold">@*</tspan><tspan x="90.0" class="c-dark">.</tspan><tspan x="115.6" class="c-dark">,:;</tspan><tspan x="134.8" class="c-mid">i!lII++</tspan><tspan x="179.6" class="c-gold">@*</tspan><tspan x="198.8" class="c-bright">~</tspan><tspan x="205.2" class="c-mid">+++I</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="90.0" class="c-dark">,...,;</tspan><tspan x="128.4" class="c-mid">!I+</tspan><tspan x="147.6" class="c-bright">=*#M</tspan><tspan x="173.2" class="c-gold">W&amp;8%%#</tspan><tspan x="211.6" class="c-bright">+=</tspan><tspan x="224.4" class="c-gold">%</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="90.0" class="c-dark">..</tspan><tspan x="122.0" class="c-dark">.,:;i</tspan><tspan x="154.0" class="c-mid">!llII++IIIl</tspan><tspan x="224.4" class="c-bright">=</tspan><tspan x="237.2" class="c-gold">*@</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="96.4" class="c-dark">......,:;</tspan><tspan x="154.0" class="c-mid">i!lI+</tspan><tspan x="186.0" class="c-bright">~=***~</tspan><tspan x="237.2" class="c-gold">@</tspan><tspan x="243.6" class="c-bright">~</tspan><tspan x="250.0" class="c-gold">* #</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="102.8" class="c-dark">......,:;</tspan><tspan x="160.4" class="c-mid">ii!!lllll;;,</tspan><tspan x="250.0" class="c-gold">#@</tspan><tspan x="262.8" class="c-mid">:</tspan><tspan x="269.2" class="c-gold">+</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="115.6" class="c-dark">.</tspan><tspan x="134.8" class="c-dark">....,::;;::</tspan><tspan x="250.0" class="c-bright">=</tspan><tspan x="256.4" class="c-gold">+</tspan></text>
   </g>
-  <g class="f-f4">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    I                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     ~**                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   =*#MW                    </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                        &amp;&amp;8%8               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;i                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">             :     i!lllIII+++I             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">     ~   ++~                                </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">   +  @@#     +                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">               i ;                          </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">     ==            = W                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">    @   @       @ # @ &amp;8%BB@@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,:;                          </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">       ,          ii!!   :+~                </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">      =                 =   ~===~           </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">        @*            +                     </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">            ...:                            </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                ilI~         ,              </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                    =*###MM   =MM           </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                           @+               </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           ....,:                           </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                 ilI                        </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                    ~*#MWW   WM= ~          </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                          WWW   %           </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">             ....:;                         </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                   il+ +IIIIII+Il   ,       </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                      ~           =~        </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                     @      </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            .....,:                         </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                   ilI+               ,     </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                       ~==*****=    =  =    </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   # #      </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">                   ..,,::::;;::             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                               ;            </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                    + =~    </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                %@@* +  %   </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,:::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f0" font-size="10.8">
+    <text y="88.0" xml:space="preserve"><tspan x="773.2" class="c-dark">,</tspan><tspan x="779.6" class="c-mid">=</tspan><tspan x="786.0" class="c-bright">##*</tspan><tspan x="805.2" class="c-mid">~</tspan><tspan x="811.6" class="c-dark">:</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="741.2" class="c-dark">:</tspan><tspan x="747.6" class="c-mid">~; ~</tspan><tspan x="773.2" class="c-bright">W</tspan><tspan x="779.6" class="c-gold">%</tspan><tspan x="786.0" class="c-bright">W</tspan><tspan x="792.4" class="c-mid">=</tspan><tspan x="798.8" class="c-dark">:</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="734.8" class="c-dark">:</tspan><tspan x="741.2" class="c-bright">*W</tspan><tspan x="754.0" class="c-mid">=</tspan><tspan x="818.0" class="c-dark">:, :</tspan><tspan x="843.6" class="c-mid">~=+==~</tspan><tspan x="882.0" class="c-dark">;</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="734.8" class="c-dark">;</tspan><tspan x="741.2" class="c-bright">W</tspan><tspan x="747.6" class="c-gold">%</tspan><tspan x="754.0" class="c-mid">*</tspan><tspan x="798.8" class="c-mid">+~=~~</tspan><tspan x="830.8" class="c-dark">;;</tspan><tspan x="843.6" class="c-bright">*</tspan><tspan x="850.0" class="c-mid">+</tspan><tspan x="856.4" class="c-dark">;</tspan><tspan x="862.8" class="c-mid">=</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="715.6" class="c-mid">~+</tspan><tspan x="728.4" class="c-bright">#</tspan><tspan x="734.8" class="c-gold">$8%8</tspan><tspan x="760.4" class="c-bright">W</tspan><tspan x="818.0" class="c-mid">~~=~+</tspan><tspan x="850.0" class="c-dark">:,</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="696.4" class="c-mid">=~=</tspan><tspan x="715.6" class="c-gold">B</tspan><tspan x="722.0" class="c-bright">W</tspan><tspan x="728.4" class="c-gold">$$</tspan><tspan x="741.2" class="c-bright">WM&amp;&amp;</tspan><tspan x="766.8" class="c-gold">8</tspan><tspan x="773.2" class="c-bright">M&amp;</tspan><tspan x="824.4" class="c-dark">:</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="670.8" class="c-dark">::;</tspan><tspan x="690.0" class="c-mid">=</tspan><tspan x="696.4" class="c-bright">M</tspan><tspan x="702.8" class="c-gold">%@$$@8</tspan><tspan x="741.2" class="c-mid">+</tspan><tspan x="747.6" class="c-dark">;</tspan><tspan x="754.0" class="c-mid">==</tspan><tspan x="818.0" class="c-bright">#</tspan><tspan x="824.4" class="c-mid">+</tspan><tspan x="830.8" class="c-dark">,</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="747.6" class="c-mid">=</tspan><tspan x="754.0" class="c-bright">M</tspan><tspan x="760.4" class="c-gold">B$@8</tspan><tspan x="786.0" class="c-bright">*</tspan><tspan x="792.4" class="c-dark">:</tspan><tspan x="805.2" class="c-mid">=</tspan><tspan x="811.6" class="c-bright">WW</tspan><tspan x="824.4" class="c-mid">=</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="766.8" class="c-dark">,,</tspan><tspan x="792.4" class="c-dark">:</tspan><tspan x="798.8" class="c-mid">=+=</tspan><tspan x="818.0" class="c-dark">:</tspan></text>
   </g>
-  <g class="f-f5">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    +                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     ~=*                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   ~*#W                     </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                       &amp;8%%%&amp;               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;;                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">    ,:       ;     i!!llIII+++I             </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">   @  +#@@@*  *                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">       :       i                            </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">    =~  +        = ~ W                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">      %         @ # * &amp;8%%BB@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,:;                          </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">                  i!!l        ++I           </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">        =             ~   ~~~~              </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">      #  #              %*                  </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">           .,,,:                            </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                i!llI+      :               </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                      ~=*#M                 </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                           %  #8&amp;           </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           ,::::                            </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                i!lI++                      </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                      ~====***#             </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                               @%           </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">           .:  ;:::;;                       </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">             i!      i!!lllIIll!!   ~       </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                                  ~         </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                   # *      </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ,,::,,:;                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!lI+           ; ,     </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                         ~=****=     ~      </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   @   @    </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">              ..... ..,,:::::::             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                               :            </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                  ==    =   </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                **  #@*     </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,:::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f1" font-size="10.8">
+    <text y="88.0" xml:space="preserve"><tspan x="760.4" class="c-dark">;;</tspan><tspan x="786.0" class="c-dark">:</tspan><tspan x="792.4" class="c-mid">~=~</tspan><tspan x="811.6" class="c-dark">;</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="747.6" class="c-mid">=</tspan><tspan x="754.0" class="c-bright">WM</tspan><tspan x="766.8" class="c-dark">;,</tspan><tspan x="779.6" class="c-mid">=</tspan><tspan x="786.0" class="c-bright">MWM</tspan><tspan x="805.2" class="c-mid">+=</tspan><tspan x="818.0" class="c-dark">;:</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="741.2" class="c-mid">~</tspan><tspan x="747.6" class="c-gold">8@</tspan><tspan x="760.4" class="c-bright">*</tspan><tspan x="818.0" class="c-dark">;</tspan><tspan x="824.4" class="c-mid">~</tspan><tspan x="830.8" class="c-dark">;::::::</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="741.2" class="c-dark">;</tspan><tspan x="747.6" class="c-bright">W&amp;</tspan><tspan x="798.8" class="c-mid">*+~</tspan><tspan x="824.4" class="c-dark">::;</tspan><tspan x="843.6" class="c-mid">~</tspan><tspan x="850.0" class="c-dark">,</tspan><tspan x="856.4" class="c-mid">~=</tspan><tspan x="869.2" class="c-dark">;</tspan><tspan x="875.6" class="c-mid">~</tspan><tspan x="882.0" class="c-dark">:</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="715.6" class="c-dark">;</tspan><tspan x="722.0" class="c-mid">+</tspan><tspan x="728.4" class="c-dark">;</tspan><tspan x="734.8" class="c-bright">W</tspan><tspan x="741.2" class="c-mid">=</tspan><tspan x="747.6" class="c-gold">$8</tspan><tspan x="760.4" class="c-mid">=</tspan><tspan x="818.0" class="c-dark">,</tspan><tspan x="824.4" class="c-mid">~</tspan><tspan x="830.8" class="c-bright">#</tspan><tspan x="837.2" class="c-dark">,</tspan><tspan x="843.6" class="c-mid">;</tspan><tspan x="856.4" class="c-dark">:</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="683.6" class="c-dark">:;</tspan><tspan x="696.4" class="c-bright">#</tspan><tspan x="702.8" class="c-gold">8</tspan><tspan x="709.2" class="c-bright">M</tspan><tspan x="715.6" class="c-gold">$%</tspan><tspan x="728.4" class="c-mid">+</tspan><tspan x="734.8" class="c-gold">%</tspan><tspan x="741.2" class="c-bright">M**</tspan><tspan x="760.4" class="c-mid">~</tspan><tspan x="766.8" class="c-bright">&amp;</tspan><tspan x="773.2" class="c-gold">%8</tspan><tspan x="830.8" class="c-dark">,;,</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="670.8" class="c-dark">:</tspan><tspan x="677.2" class="c-mid">;</tspan><tspan x="683.6" class="c-dark">;:</tspan><tspan x="696.4" class="c-mid">;=</tspan><tspan x="709.2" class="c-bright">*##*</tspan><tspan x="734.8" class="c-mid">++</tspan><tspan x="747.6" class="c-bright">M&amp;#</tspan><tspan x="818.0" class="c-mid">~</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="747.6" class="c-dark">:</tspan><tspan x="754.0" class="c-mid">=</tspan><tspan x="760.4" class="c-bright">*#</tspan><tspan x="773.2" class="c-mid">=</tspan><tspan x="779.6" class="c-dark">: ;</tspan><tspan x="798.8" class="c-bright">#</tspan><tspan x="805.2" class="c-gold">8</tspan><tspan x="811.6" class="c-bright">&amp;</tspan><tspan x="818.0" class="c-mid">~</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="773.2" class="c-dark">:</tspan><tspan x="779.6" class="c-mid">~*</tspan><tspan x="792.4" class="c-bright">MW</tspan><tspan x="805.2" class="c-mid">*</tspan><tspan x="811.6" class="c-dark">:</tspan></text>
   </g>
-  <g class="f-f6">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    I                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     ~=*                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   =#M                      </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                      W&amp;&amp;8&amp;&amp;&amp;               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;;                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">    ;              i!!lIII+++II             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">       +=   ~                               </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">   * *#  #@% *@                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">               i                            </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">       =        + ~ =M                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">    * + @             W&amp;%BB@@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,:;                          </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">       ; ;        i!!l    II++++            </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">        =              ~ ~      ~           </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">      @               % @                   </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">           ....,;                           </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                 ilI                        </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                    ~=*#MW  ~~ M#           </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                          W+  @             </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           ,....:;                          </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                  i!lI+                     </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                       ~=*#MW   =           </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                             WW+            </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">           ,... .,,:;;                      </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                      iii!!!!llll           </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                                     =      </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                  ##        </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ,.....,:                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!lI+                   </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                         ~=***=~      +     </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   * * %    </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">             .      ..,,,:::;::             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                                      :     </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                ~           </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                 *#@@%  #   </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,,::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f2" font-size="10.8">
+    <text y="88.0" xml:space="preserve"><tspan x="760.4" class="c-dark">;</tspan><tspan x="766.8" class="c-mid">+*~</tspan><tspan x="786.0" class="c-dark">:</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="754.0" class="c-bright">#</tspan><tspan x="760.4" class="c-gold">B%</tspan><tspan x="773.2" class="c-mid">+</tspan><tspan x="786.0" class="c-dark">:</tspan><tspan x="792.4" class="c-mid">=</tspan><tspan x="798.8" class="c-bright">#M#</tspan><tspan x="818.0" class="c-mid">+~</tspan><tspan x="830.8" class="c-dark">,</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="747.6" class="c-mid">~</tspan><tspan x="754.0" class="c-gold">8%</tspan><tspan x="824.4" class="c-dark">:;::;</tspan><tspan x="856.4" class="c-mid">~;</tspan><tspan x="869.2" class="c-dark">;:,,,</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="734.8" class="c-dark">:,,</tspan><tspan x="754.0" class="c-mid">=</tspan><tspan x="798.8" class="c-bright">M *</tspan><tspan x="818.0" class="c-mid">=</tspan><tspan x="824.4" class="c-dark">:;</tspan><tspan x="837.2" class="c-mid">+*~+</tspan><tspan x="862.8" class="c-dark">:,:</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="709.2" class="c-dark">,:</tspan><tspan x="722.0" class="c-bright">##</tspan><tspan x="734.8" class="c-gold">B@8</tspan><tspan x="754.0" class="c-mid">+</tspan><tspan x="760.4" class="c-gold">8</tspan><tspan x="818.0" class="c-mid">=</tspan><tspan x="824.4" class="c-dark">:</tspan><tspan x="830.8" class="c-mid">~==</tspan><tspan x="850.0" class="c-dark">;:</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="683.6" class="c-dark">, :</tspan><tspan x="702.8" class="c-bright">#</tspan><tspan x="709.2" class="c-mid">=</tspan><tspan x="715.6" class="c-bright">#</tspan><tspan x="722.0" class="c-gold">$%$$</tspan><tspan x="747.6" class="c-bright">M*</tspan><tspan x="760.4" class="c-gold">%$</tspan><tspan x="773.2" class="c-mid">;</tspan><tspan x="779.6" class="c-gold">$</tspan><tspan x="824.4" class="c-dark">:</tspan><tspan x="830.8" class="c-mid">+~</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="670.8" class="c-dark">:</tspan><tspan x="677.2" class="c-mid">~+++</tspan><tspan x="702.8" class="c-bright">#W&amp;&amp;M**#</tspan><tspan x="754.0" class="c-mid">+</tspan><tspan x="760.4" class="c-dark">:</tspan><tspan x="824.4" class="c-dark">:</tspan><tspan x="830.8" class="c-mid">=</tspan><tspan x="837.2" class="c-dark">;</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="766.8" class="c-dark">,:</tspan><tspan x="779.6" class="c-mid">~</tspan><tspan x="786.0" class="c-bright">*&amp;</tspan><tspan x="798.8" class="c-gold">%</tspan><tspan x="805.2" class="c-bright">M</tspan><tspan x="811.6" class="c-dark">; ::</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="760.4" class="c-dark">:</tspan><tspan x="766.8" class="c-mid">=</tspan><tspan x="773.2" class="c-bright">#W&amp;M</tspan><tspan x="798.8" class="c-mid">=</tspan><tspan x="805.2" class="c-dark">,</tspan></text>
   </g>
-  <g class="f-f7">
-    <text x="24" y="80.0" class="mono c-mid" font-size="10.5">                    I                       </text>
-    <text x="24" y="80.0" class="mono c-bright" font-size="10.5">                     =*=                    </text>
-    <text x="24" y="91.0" class="mono c-dark" font-size="10.5">               ,                            </text>
-    <text x="24" y="91.0" class="mono c-mid" font-size="10.5">                il+                         </text>
-    <text x="24" y="91.0" class="mono c-bright" font-size="10.5">                   =*#MW                    </text>
-    <text x="24" y="91.0" class="mono c-gold" font-size="10.5">                        &amp;8%%8               </text>
-    <text x="24" y="102.0" class="mono c-dark" font-size="10.5">               ,:;i                         </text>
-    <text x="24" y="102.0" class="mono c-mid" font-size="10.5">             ;     i!!llII+++II             </text>
-    <text x="24" y="102.0" class="mono c-bright" font-size="10.5">   = =   = =                                </text>
-    <text x="24" y="102.0" class="mono c-gold" font-size="10.5">      @@* +   *                             </text>
-    <text x="24" y="113.0" class="mono c-dark" font-size="10.5">            ..:                             </text>
-    <text x="24" y="113.0" class="mono c-mid" font-size="10.5">               i :                          </text>
-    <text x="24" y="113.0" class="mono c-bright" font-size="10.5">     ~~            ~ W                      </text>
-    <text x="24" y="113.0" class="mono c-gold" font-size="10.5">    @   @       % * % &amp;8%BB@@@@B            </text>
-    <text x="24" y="124.0" class="mono c-dark" font-size="10.5">              .,::;                         </text>
-    <text x="24" y="124.0" class="mono c-mid" font-size="10.5">       :           ii!   ,~     +           </text>
-    <text x="24" y="124.0" class="mono c-bright" font-size="10.5">      =  +              +  ~====            </text>
-    <text x="24" y="124.0" class="mono c-gold" font-size="10.5">        %             *                     </text>
-    <text x="24" y="135.0" class="mono c-dark" font-size="10.5">           ....:;                           </text>
-    <text x="24" y="135.0" class="mono c-mid" font-size="10.5">                 !lI+        :              </text>
-    <text x="24" y="135.0" class="mono c-bright" font-size="10.5">                     ~~==**   +             </text>
-    <text x="24" y="135.0" class="mono c-gold" font-size="10.5">                           @*  WW           </text>
-    <text x="24" y="146.0" class="mono c-dark" font-size="10.5">           .   .:;                          </text>
-    <text x="24" y="146.0" class="mono c-mid" font-size="10.5">                  !lI~                      </text>
-    <text x="24" y="146.0" class="mono c-bright" font-size="10.5">                      =**##MM##~ ~          </text>
-    <text x="24" y="146.0" class="mono c-gold" font-size="10.5">                                #           </text>
-    <text x="24" y="157.0" class="mono c-dark" font-size="10.5">                 .,,:;;                     </text>
-    <text x="24" y="157.0" class="mono c-mid" font-size="10.5">                       i!!lIIIII!           </text>
-    <text x="24" y="157.0" class="mono c-bright" font-size="10.5">                                   ~        </text>
-    <text x="24" y="157.0" class="mono c-gold" font-size="10.5">                                  +  @      </text>
-    <text x="24" y="168.0" class="mono c-dark" font-size="10.5">            ......,:                        </text>
-    <text x="24" y="168.0" class="mono c-mid" font-size="10.5">                    i!lI+             :     </text>
-    <text x="24" y="168.0" class="mono c-bright" font-size="10.5">                         ~==***=    ~  =    </text>
-    <text x="24" y="168.0" class="mono c-gold" font-size="10.5">                                   * %      </text>
-    <text x="24" y="179.0" class="mono c-dark" font-size="10.5">                     .,,,::::::             </text>
-    <text x="24" y="179.0" class="mono c-mid" font-size="10.5">                               ;       ;    </text>
-    <text x="24" y="179.0" class="mono c-bright" font-size="10.5">                                     +~     </text>
-    <text x="24" y="179.0" class="mono c-gold" font-size="10.5">                                %@@#+   @   </text>
-    <text x="24" y="190.0" class="mono c-dark" font-size="10.5">               .........,:::,               </text>
-    <text x="24" y="201.0" class="mono c-dark" font-size="10.5">                    ....                    </text>
+  <g class="f3" font-size="10.8">
+    <text y="88.0" xml:space="preserve"><tspan x="766.8" class="c-dark">;</tspan><tspan x="773.2" class="c-bright">*M#</tspan><tspan x="792.4" class="c-mid">=</tspan><tspan x="798.8" class="c-dark">:</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="760.4" class="c-bright">*</tspan><tspan x="766.8" class="c-gold">B@</tspan><tspan x="779.6" class="c-bright">#</tspan><tspan x="786.0" class="c-dark">:</tspan><tspan x="805.2" class="c-dark">;</tspan><tspan x="811.6" class="c-mid">~</tspan><tspan x="818.0" class="c-dark">;:</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="734.8" class="c-dark">:</tspan><tspan x="741.2" class="c-mid">~</tspan><tspan x="747.6" class="c-dark">::</tspan><tspan x="760.4" class="c-bright">*</tspan><tspan x="818.0" class="c-dark">:;</tspan><tspan x="830.8" class="c-mid">=~</tspan><tspan x="843.6" class="c-dark">:</tspan><tspan x="888.4" class="c-dark">,</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="734.8" class="c-mid">=</tspan><tspan x="741.2" class="c-bright">#</tspan><tspan x="747.6" class="c-mid">=</tspan><tspan x="798.8" class="c-mid">++~~~~=</tspan><tspan x="843.6" class="c-dark">,;</tspan><tspan x="856.4" class="c-mid">=</tspan><tspan x="862.8" class="c-dark">;</tspan><tspan x="869.2" class="c-mid">=~</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="709.2" class="c-dark">::</tspan><tspan x="722.0" class="c-mid">=</tspan><tspan x="728.4" class="c-bright">*</tspan><tspan x="734.8" class="c-mid">~</tspan><tspan x="741.2" class="c-gold">%%%</tspan><tspan x="760.4" class="c-bright">&amp;</tspan><tspan x="818.0" class="c-mid">~==~</tspan><tspan x="850.0" class="c-dark">:</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="683.6" class="c-dark">;</tspan><tspan x="690.0" class="c-mid">==</tspan><tspan x="702.8" class="c-gold">&amp;@</tspan><tspan x="715.6" class="c-bright">W</tspan><tspan x="722.0" class="c-gold">$</tspan><tspan x="728.4" class="c-bright">M</tspan><tspan x="734.8" class="c-mid">+</tspan><tspan x="741.2" class="c-gold">B%</tspan><tspan x="754.0" class="c-bright">WWM</tspan><tspan x="773.2" class="c-gold">%&amp;</tspan><tspan x="824.4" class="c-mid">=~</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="677.2" class="c-dark">;</tspan><tspan x="683.6" class="c-mid">=+~;</tspan><tspan x="709.2" class="c-dark">;;;</tspan><tspan x="728.4" class="c-mid">~</tspan><tspan x="734.8" class="c-bright">*&amp;</tspan><tspan x="747.6" class="c-gold">8</tspan><tspan x="754.0" class="c-bright">M</tspan><tspan x="760.4" class="c-mid">=</tspan><tspan x="818.0" class="c-mid">~</tspan><tspan x="824.4" class="c-bright">#</tspan><tspan x="830.8" class="c-mid">+</tspan><tspan x="837.2" class="c-dark">,</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="747.6" class="c-dark">:</tspan><tspan x="754.0" class="c-mid">=</tspan><tspan x="760.4" class="c-bright">*M&amp;</tspan><tspan x="779.6" class="c-gold">%%</tspan><tspan x="792.4" class="c-bright">&amp;</tspan><tspan x="798.8" class="c-mid">=</tspan><tspan x="811.6" class="c-dark">:</tspan><tspan x="818.0" class="c-mid">++</tspan><tspan x="830.8" class="c-dark">;</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="760.4" class="c-mid">;+</tspan><tspan x="773.2" class="c-bright">**</tspan><tspan x="786.0" class="c-mid">=</tspan><tspan x="792.4" class="c-dark">:</tspan><tspan x="811.6" class="c-dark">::</tspan></text>
   </g>
-
-  <!-- ================= LAYER 3: 3D RELATIVISTIC BLACK HOLE & ACCRETION DISK (Character Morphing) ================= -->
-  <g class="f-f0">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                     ^  ,`                  </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                      ::                    </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">              `  `^      ^`                 </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">               :,       ;                   </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                   +  W+                    </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                    &amp;8                      </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">             ,   `        `'   `^^^^```     </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">                :                           </text>
-    <text x="650" y="113.0" class="mono c-bright" font-size="10.5">              *#                            </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">                             ^`^  , `^      </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">             ~             =:   :;          </text>
-    <text x="650" y="124.0" class="mono c-gold" font-size="10.5">              %&amp;                            </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">                             ,    ^^        </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">            ; =             , ::=:          </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">             =      #                       </text>
-    <text x="650" y="135.0" class="mono c-gold" font-size="10.5">               %   %                        </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">      `^                     ^^`            </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">                       ~    ;               </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">        ++    #M        =                   </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">          &amp;$88                              </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">   `                        `               </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">     , ;:    =                              </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">      +  M  * =W                            </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">          B&amp;    $                           </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5">  ^           `             ^               </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">   :;~=      :                              </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">       =+***=  #WM        M+                </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">               ,     ^`                     </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">                =   ~  ,   :                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                 #M#    *W#                 </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                     `   ^                  </text>
-    <text x="650" y="190.0" class="mono c-mid" font-size="10.5">                      ,;;                   </text>
+  <g class="f4" font-size="10.8">
+    <text y="88.0" xml:space="preserve"><tspan x="773.2" class="c-dark">,</tspan><tspan x="779.6" class="c-mid">=</tspan><tspan x="786.0" class="c-bright">##*</tspan><tspan x="805.2" class="c-mid">~</tspan><tspan x="811.6" class="c-dark">:</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="741.2" class="c-dark">:</tspan><tspan x="747.6" class="c-mid">~; ~</tspan><tspan x="773.2" class="c-bright">W</tspan><tspan x="779.6" class="c-gold">%</tspan><tspan x="786.0" class="c-bright">W</tspan><tspan x="792.4" class="c-mid">=</tspan><tspan x="798.8" class="c-dark">:</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="734.8" class="c-dark">:</tspan><tspan x="741.2" class="c-bright">*W</tspan><tspan x="754.0" class="c-mid">=</tspan><tspan x="830.8" class="c-dark">:</tspan><tspan x="837.2" class="c-mid">~~~~;;</tspan><tspan x="875.6" class="c-dark">;;:</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="734.8" class="c-dark">;</tspan><tspan x="741.2" class="c-bright">W</tspan><tspan x="747.6" class="c-gold">%</tspan><tspan x="754.0" class="c-mid">*</tspan><tspan x="798.8" class="c-mid">=~~*===~</tspan><tspan x="850.0" class="c-bright">*</tspan><tspan x="856.4" class="c-mid">~</tspan><tspan x="862.8" class="c-dark">:</tspan><tspan x="869.2" class="c-mid">;</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="709.2" class="c-dark">:</tspan><tspan x="715.6" class="c-mid">;~</tspan><tspan x="728.4" class="c-gold">%</tspan><tspan x="734.8" class="c-bright">&amp;</tspan><tspan x="741.2" class="c-gold">$</tspan><tspan x="747.6" class="c-mid">+</tspan><tspan x="754.0" class="c-gold">%$</tspan><tspan x="818.0" class="c-mid">*=</tspan><tspan x="830.8" class="c-dark">:</tspan><tspan x="837.2" class="c-bright">*</tspan><tspan x="843.6" class="c-mid">;~</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="690.0" class="c-dark">;:</tspan><tspan x="702.8" class="c-mid">;</tspan><tspan x="709.2" class="c-bright">&amp;*</tspan><tspan x="722.0" class="c-gold">%$%@@B$</tspan><tspan x="766.8" class="c-bright">WMW</tspan><tspan x="824.4" class="c-dark">:</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="677.2" class="c-dark">:</tspan><tspan x="683.6" class="c-mid">+</tspan><tspan x="690.0" class="c-bright">MW&amp;&amp;&amp;</tspan><tspan x="722.0" class="c-gold">&amp;8%</tspan><tspan x="741.2" class="c-bright">&amp;</tspan><tspan x="747.6" class="c-mid">+</tspan><tspan x="754.0" class="c-dark">:;</tspan><tspan x="818.0" class="c-bright">#</tspan><tspan x="824.4" class="c-mid">+</tspan><tspan x="830.8" class="c-dark">,</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="747.6" class="c-mid">=</tspan><tspan x="754.0" class="c-bright">M</tspan><tspan x="760.4" class="c-gold">B$@8</tspan><tspan x="786.0" class="c-bright">*</tspan><tspan x="792.4" class="c-dark">:</tspan><tspan x="805.2" class="c-mid">=</tspan><tspan x="811.6" class="c-bright">WW</tspan><tspan x="824.4" class="c-mid">=</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="766.8" class="c-dark">,,</tspan><tspan x="792.4" class="c-dark">:</tspan><tspan x="798.8" class="c-mid">=+=</tspan><tspan x="818.0" class="c-dark">:</tspan></text>
   </g>
-  <g class="f-f1">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                    ^   ,`                  </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                     :;:                    </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">              `^`       ^`                  </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">                  :    ~                    </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                   M  #                     </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                    %8                      </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">                ^^        ^^   ```````'     </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">             ,                              </text>
-    <text x="650" y="113.0" class="mono c-bright" font-size="10.5">              +=                            </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            '                `  `  ` `'     </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">                            :    ,:         </text>
-    <text x="650" y="124.0" class="mono c-bright" font-size="10.5">             + #           +                </text>
-    <text x="650" y="124.0" class="mono c-gold" font-size="10.5">              8                             </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">                                   `        </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">            ;~              ,::~;:          </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">              #     =                       </text>
-    <text x="650" y="135.0" class="mono c-gold" font-size="10.5">               B   &amp;                        </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">       ^                     ,``            </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">        ~:             :~   ~               </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">              WM                            </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">          8%$8                              </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">                            ^               </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">     ;=,~  =::;                             </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">          W    W                            </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">         &amp;      $                           </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5"> `,           `                             </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">   :;;~~~~~~~:              :               </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">               +**        ##                </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">                      ``                    </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">               ,     ;  ~  ;                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                +W  #    ##                 </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                  8&amp;                        </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                      ^  ,                  </text>
-    <text x="650" y="190.0" class="mono c-mid" font-size="10.5">                       ::                   </text>
+  <g class="f5" font-size="10.8">
+    <text y="88.0" xml:space="preserve"><tspan x="760.4" class="c-dark">;;</tspan><tspan x="786.0" class="c-dark">:</tspan><tspan x="792.4" class="c-mid">~=~</tspan><tspan x="811.6" class="c-dark">;</tspan></text>
+    <text y="99.2" xml:space="preserve"><tspan x="747.6" class="c-mid">=</tspan><tspan x="754.0" class="c-bright">WM</tspan><tspan x="766.8" class="c-dark">;,</tspan><tspan x="779.6" class="c-mid">=</tspan><tspan x="786.0" class="c-bright">MWM</tspan><tspan x="805.2" class="c-mid">+=</tspan><tspan x="818.0" class="c-dark">;:</tspan></text>
+    <text y="110.4" xml:space="preserve"><tspan x="741.2" class="c-mid">~</tspan><tspan x="747.6" class="c-gold">8@</tspan><tspan x="760.4" class="c-bright">*</tspan><tspan x="818.0" class="c-mid">;</tspan><tspan x="824.4" class="c-dark">::</tspan><tspan x="837.2" class="c-mid">~~</tspan><tspan x="850.0" class="c-dark">;:::::</tspan></text>
+    <text y="121.6" xml:space="preserve"><tspan x="741.2" class="c-dark">;</tspan><tspan x="747.6" class="c-bright">W&amp;</tspan><tspan x="798.8" class="c-dark">;</tspan><tspan x="805.2" class="c-bright">M</tspan><tspan x="811.6" class="c-dark">,;</tspan><tspan x="824.4" class="c-mid">==</tspan><tspan x="837.2" class="c-dark">::</tspan><tspan x="850.0" class="c-mid">=</tspan><tspan x="856.4" class="c-dark">:</tspan><tspan x="862.8" class="c-mid">==</tspan><tspan x="875.6" class="c-dark">::</tspan></text>
+    <text y="132.8" xml:space="preserve"><tspan x="715.6" class="c-mid">~</tspan><tspan x="722.0" class="c-dark">;</tspan><tspan x="728.4" class="c-bright">*</tspan><tspan x="734.8" class="c-mid">+</tspan><tspan x="741.2" class="c-bright">M</tspan><tspan x="747.6" class="c-gold">%$</tspan><tspan x="760.4" class="c-bright">M</tspan><tspan x="818.0" class="c-mid">;</tspan><tspan x="824.4" class="c-bright">*</tspan><tspan x="830.8" class="c-mid">=</tspan><tspan x="837.2" class="c-dark">;::</tspan></text>
+    <text y="144.0" xml:space="preserve"><tspan x="683.6" class="c-dark">,</tspan><tspan x="690.0" class="c-mid">=</tspan><tspan x="696.4" class="c-bright">M#</tspan><tspan x="709.2" class="c-gold">B@</tspan><tspan x="722.0" class="c-bright">#</tspan><tspan x="728.4" class="c-gold">B</tspan><tspan x="734.8" class="c-bright">**</tspan><tspan x="747.6" class="c-gold">BB</tspan><tspan x="760.4" class="c-bright">#</tspan><tspan x="766.8" class="c-mid">=</tspan><tspan x="773.2" class="c-gold">$</tspan><tspan x="779.6" class="c-mid">+</tspan><tspan x="830.8" class="c-dark">,;,</tspan></text>
+    <text y="155.2" xml:space="preserve"><tspan x="664.4" class="c-dark">,,,;</tspan><tspan x="690.0" class="c-mid">=</tspan><tspan x="696.4" class="c-bright">#####W&amp;W#*M</tspan><tspan x="818.0" class="c-mid">~</tspan></text>
+    <text y="166.4" xml:space="preserve"><tspan x="747.6" class="c-dark">:</tspan><tspan x="754.0" class="c-mid">=</tspan><tspan x="760.4" class="c-bright">*#</tspan><tspan x="773.2" class="c-mid">=</tspan><tspan x="779.6" class="c-dark">: ;</tspan><tspan x="798.8" class="c-bright">#</tspan><tspan x="805.2" class="c-gold">8</tspan><tspan x="811.6" class="c-bright">&amp;</tspan><tspan x="818.0" class="c-mid">~</tspan></text>
+    <text y="177.6" xml:space="preserve"><tspan x="773.2" class="c-dark">:</tspan><tspan x="779.6" class="c-mid">~*</tspan><tspan x="792.4" class="c-bright">MW</tspan><tspan x="805.2" class="c-mid">*</tspan><tspan x="811.6" class="c-dark">:</tspan></text>
   </g>
-  <g class="f-f2">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                    ,   ,`                  </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                     ;;:                    </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">              `` `      `                   </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">                  ~    ,                    </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                      =                     </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                   &amp;B&amp;                      </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">                `           `               </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">             ,=; :        ,,                </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            `                ^```^ , ``     </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">                            :     :         </text>
-    <text x="650" y="124.0" class="mono c-bright" font-size="10.5">             +&amp;=           +                </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">                            ,   ^           </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">            ::      ~        ;:  ,          </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">              M    M           =            </text>
-    <text x="650" y="135.0" class="mono c-gold" font-size="10.5">               8                            </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">       ^ ,                                  </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">        ,              ,;   ;:              </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">          W*   #                            </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">            $8%                             </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">    ^                                       </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">      ~;   ;~               :               </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">     =  M *  =+W                            </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">         %      $                           </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5"> ^       ,^,  ^                             </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">  ,::::::   :: ~~~          ;               </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">                          *#                </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">                      ,`    `               </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">               :        ,  ~                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                *    +   +*                 </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                 &amp;BB&amp;                       </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                       ^ ,`                 </text>
-    <text x="650" y="190.0" class="mono c-mid" font-size="10.5">                        ,                   </text>
   </g>
-  <g class="f-f3">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                   `    ^                   </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                    :~~:                    </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">                 ^     `                    </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">                      ;                     </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                  #  #                      </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                   B%                       </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">             , ^`           ^               </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">              ;  =        ;:                </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            ^                   ^^  ^`^     </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">               :           ~;;:,  ;;        </text>
-    <text x="650" y="124.0" class="mono c-bright" font-size="10.5">             +#                             </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">            ^^              ,   `^          </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">                    ~        ;:=            </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">              #*   *                        </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">       ,^                   ,               </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">         : ;           ,:    ,              </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">          #    #                            </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">            $8B                             </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">   `                         `              </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">    ; =                     ;               </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">     + #  #*W                               </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">        @B   %%8B                           </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5">`^^^,    ^``,                `              </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">     ,::,    ::,,,        = =               </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">                           #                </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">              `        ``   `               </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">               :      ;  ; ~                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                *    M    +                 </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                 &amp;B$B                       </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                       `^^`                 </text>
+  <rect x="348" y="56" width="264" height="162" rx="10" fill="#12031f" fill-opacity="0.82" stroke="#4a1f6b" stroke-width="1.2"/>
+  <g class="mono" fill="#e5b75f" font-size="16" font-weight="bold" xml:space="preserve">
+    <text x="358" y="88">       ██╗ ███████████╗</text>
+    <text x="358" y="106">       ██║ ╚══██╔══██╔╝</text>
+    <text x="358" y="124">       ██║    ██║  ██║ </text>
+    <text x="358" y="142"> ██╗   ██║    ██║  ██║ </text>
+    <text x="358" y="160"> ╚██████╔╝    ██║  ███╗</text>
+    <text x="358" y="178">  ╚═════╝     ╚═╝  ╚══╝</text>
   </g>
-  <g class="f-f4">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                   ,    `                   </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                    ;~;,                    </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">                      ,                     </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">                 ;                          </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                  W  +                      </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                   B8                       </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">             ^ `,            `'             </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">              ,           ~;,               </text>
-    <text x="650" y="113.0" class="mono c-bright" font-size="10.5">                 #                          </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            ^  ^           ,         ```    </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">                            ;  =;,;~:       </text>
-    <text x="650" y="124.0" class="mono c-bright" font-size="10.5">             ++              ==             </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">             ^                  `^^         </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">               ;            ,;;:            </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">              +    **                       </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">      ',^                   `^              </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">           ~           ;:                   </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">         ++    M                            </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">            %%B                             </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">   ^                         ^              </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">    =                       =               </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">     ++   &amp;     #                           </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">       %$% B$$$B                            </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5">'```^     ,^,  ```           ^              </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">     ,::::   ;~           :                 </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">                           *+               </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">              `        ,    ^               </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">               :         ,=~                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                +W    +                     </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                  B$$8                      </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                  ```   ```                 </text>
-  </g>
-  <g class="f-f5">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                  `    ^                    </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                   :~~:                     </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">                `     `  `                  </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">                 =   ;                      </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                    M                       </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                  %B                        </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">             ``              `  `````       </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">                ;         ~~:               </text>
-    <text x="650" y="113.0" class="mono c-gold" font-size="10.5">                 &amp;                          </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            ^  `           `         ^``    </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">             ~;             ~    ;:~;       </text>
-    <text x="650" y="124.0" class="mono c-bright" font-size="10.5">                             +*+=           </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">                               ^,^          </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">             :;:            :;;   ,         </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">                   MM                       </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">      ^,                    '`              </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">        :              =;                   </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">         M=#*  W                            </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">             %8                             </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">   ,~~          ~            :              </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">      *                     =               </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">       @$8B$$$$@                            </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5">   `^                     ^  ,              </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">     :;~===;::;                             </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">                           ++               </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">                        ``  ^               </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">               ,=      ;  ;;                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                 M    W                     </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                  8@$B                      </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                 `^,^`   `                  </text>
-  </g>
-  <g class="f-f6">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                  ^    `                    </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                   :~;,                     </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">                ^    ,  ^^^                 </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                 #  *                       </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                  B%                        </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">             ` `               `^,^^``      </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">                          ~~:               </text>
-    <text x="650" y="113.0" class="mono c-bright" font-size="10.5">                +                           </text>
-    <text x="650" y="113.0" class="mono c-gold" font-size="10.5">                 %                          </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            ^ ,`           ^         ^      </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">             ;              ;=   ~,,:       </text>
-    <text x="650" y="124.0" class="mono c-bright" font-size="10.5">                              =++           </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">            `                  ` ^ `        </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">             ~:=            ::; ; :         </text>
-    <text x="650" y="135.0" class="mono c-gold" font-size="10.5">                   &amp;&amp;                       </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">      ^,                    ^ `             </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">        =   ~           ~                   </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">          *   WW       +                    </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">         &amp; @ %                              </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">  '                                         </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">   ,::          =            ;              </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">      * WW                  =               </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">       %  $$$$$B                            </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5">   `            ``        `                 </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">    ,;~     ~::            ~ :              </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">       =*##*                =               </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">               ^        ^ , ^               </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">                ;          :                </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                 +W    +                    </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                   %@$8                     </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                 `,  ^                      </text>
-    <text x="650" y="190.0" class="mono c-mid" font-size="10.5">                   ::                       </text>
-  </g>
-  <g class="f-f7">
-    <text x="650" y="91.0" class="mono c-dark" font-size="10.5">                  ^   ^                     </text>
-    <text x="650" y="91.0" class="mono c-mid" font-size="10.5">                   ;;:                      </text>
-    <text x="650" y="102.0" class="mono c-dark" font-size="10.5">                     ` ^  ,`                </text>
-    <text x="650" y="102.0" class="mono c-mid" font-size="10.5">                :   ~   ,:                  </text>
-    <text x="650" y="102.0" class="mono c-bright" font-size="10.5">                 W &amp;                        </text>
-    <text x="650" y="102.0" class="mono c-gold" font-size="10.5">                  B                         </text>
-    <text x="650" y="113.0" class="mono c-dark" font-size="10.5">               ,               ^, ,^^``     </text>
-    <text x="650" y="113.0" class="mono c-mid" font-size="10.5">                          ;;:    ,          </text>
-    <text x="650" y="113.0" class="mono c-bright" font-size="10.5">                W                           </text>
-    <text x="650" y="113.0" class="mono c-gold" font-size="10.5">                 @                          </text>
-    <text x="650" y="124.0" class="mono c-dark" font-size="10.5">            ^,`^                  ,`,^      </text>
-    <text x="650" y="124.0" class="mono c-mid" font-size="10.5">                           :;::;~~          </text>
-    <text x="650" y="135.0" class="mono c-dark" font-size="10.5">            ,                , ^   ^        </text>
-    <text x="650" y="135.0" class="mono c-mid" font-size="10.5">              ;             : : =,,         </text>
-    <text x="650" y="135.0" class="mono c-bright" font-size="10.5">             = M    W                       </text>
-    <text x="650" y="135.0" class="mono c-gold" font-size="10.5">                   %                        </text>
-    <text x="650" y="146.0" class="mono c-dark" font-size="10.5">      ^^                     `^             </text>
-    <text x="650" y="146.0" class="mono c-mid" font-size="10.5">                            :               </text>
-    <text x="650" y="146.0" class="mono c-bright" font-size="10.5">        *WM + #W       ==                   </text>
-    <text x="650" y="146.0" class="mono c-gold" font-size="10.5">           $ 8                              </text>
-    <text x="650" y="157.0" class="mono c-dark" font-size="10.5">  `^^,                        `             </text>
-    <text x="650" y="157.0" class="mono c-mid" font-size="10.5">        =                   =~              </text>
-    <text x="650" y="157.0" class="mono c-bright" font-size="10.5">      *# M      W                           </text>
-    <text x="650" y="157.0" class="mono c-gold" font-size="10.5">          $$@888                            </text>
-    <text x="650" y="168.0" class="mono c-dark" font-size="10.5">  ',          ^ ^^                          </text>
-    <text x="650" y="168.0" class="mono c-mid" font-size="10.5">    :~=      :             :~:              </text>
-    <text x="650" y="168.0" class="mono c-bright" font-size="10.5">       +*MM#=                               </text>
-    <text x="650" y="179.0" class="mono c-dark" font-size="10.5">               `          `,^               </text>
-    <text x="650" y="179.0" class="mono c-mid" font-size="10.5">                ,~      :                   </text>
-    <text x="650" y="179.0" class="mono c-bright" font-size="10.5">                  *W   M                    </text>
-    <text x="650" y="179.0" class="mono c-gold" font-size="10.5">                    %@B                     </text>
-    <text x="650" y="190.0" class="mono c-dark" font-size="10.5">                 `    ^                     </text>
-    <text x="650" y="190.0" class="mono c-mid" font-size="10.5">                  ,;;:                      </text>
-  </g>
-
-  <!-- ================= LAYER 4: CENTRAL Jπ MONOGRAM & CLEAN TITLE HUD ================= -->
-  <rect x="348" y="68" width="264" height="145" rx="10" fill="#12031f" fill-opacity="0.78" stroke="#4a1f6b" stroke-width="1" stroke-opacity="0.7"/>
-  
-  <g class="logo-main" font-size="16">
-    <text x="358" y="98"  class="mono">       ██╗ ███████████╗</text>
-    <text x="358" y="116" class="mono">       ██║ ╚══██╔══██╔╝</text>
-    <text x="358" y="134" class="mono">       ██║    ██║  ██║ </text>
-    <text x="358" y="152" class="mono"> ██╗   ██║    ██║  ██║ </text>
-    <text x="358" y="170" class="mono"> ╚██████╔╝    ██║  ███╗</text>
-    <text x="358" y="188" class="mono">  ╚═════╝     ╚═╝  ╚══╝</text>
-  </g>
-  <text x="480" y="205" text-anchor="middle" class="mono" fill="#9d5ce6" font-size="9.5" letter-spacing="2.5">
-    [ 3D ASCII ENGINE // 60FPS ]
+  <text x="480" y="202" text-anchor="middle" class="mono" fill="#9d5ce6" font-size="10" letter-spacing="2.2">
+    [ 3D ASCII ENGINE // LIVE ]
   </text>
-
-  <!-- Clean Bottom Title Panel -->
-  <line x1="60" y1="258" x2="900" y2="258" stroke="#e5b75f" stroke-opacity="0.32" stroke-width="1"/>
-
-  <text x="480" y="283" text-anchor="middle" class="mono" fill="#e5b75f" font-size="16.5" font-weight="bold" letter-spacing="3.5" filter="url(#goldGlow)">
+  <line x1="50" y1="252" x2="910" y2="252" stroke="#e5b75f" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="480" y="277" text-anchor="middle" class="mono" fill="#e5b75f" font-size="16.5" font-weight="bold" letter-spacing="3.5">
     JUAN PABLO MARASCIO  //  Jπ STUDIO
   </text>
-  <text x="480" y="305" text-anchor="middle" class="mono" fill="#dfdbe5" font-size="11.5" letter-spacing="1.4">
+  <text x="480" y="298" text-anchor="middle" class="mono" fill="#e6dff0" font-size="11.5" letter-spacing="1.3">
     CREATIVE WEB &amp; 3D ARCHITECTURE  •  PHYSICS &amp; DATA SCIENCE (UNLP)  •  OFFENSIVE SECURITY
   </text>
-  <text x="480" y="324" text-anchor="middle" class="mono" fill="#9d5ce6" font-size="10.5" letter-spacing="2.2">
+  <text x="480" y="316" text-anchor="middle" class="mono" fill="#9d5ce6" font-size="10.5" letter-spacing="2">
     ───═══╬  LA PLATA, ARGENTINA  •  SHOWROOM-JPI.PAGES.DEV  ╬═══───
   </text>
 </svg>

@@ -44,7 +44,7 @@
 <!-- BLOQUE 1: FÍSICA AVANZADA, MATEMÁTICA & CIENCIA DE DATOS (UNLP) -->
 <table width="100%">
   <tr>
-    <td width="60%" valign="top">
+    <td width="54%" valign="middle">
       <h3><code>🪐 01 // FÍSICA AVANZADA, MATEMÁTICA & DATA SCIENCE (UNLP)</code></h3>
       <p>
         Formación académica en la <b>Universidad Nacional de La Plata (UNLP)</b> centrada en el modelado físico-matemático del universo, sumando a partir de <b>2027</b> una segunda carrera enfocada en <b>Ciencia de Datos</b>.
@@ -63,7 +63,7 @@
         </a>
       </p>
     </td>
-    <td width="40%" valign="center" align="center">
+    <td width="46%" valign="middle" align="center">
       <img src="./assets/card-physics.svg" width="100%" alt="Física Avanzada y Ciencia de Datos UNLP" />
     </td>
   </tr>
@@ -74,7 +74,7 @@
 <!-- BLOQUE 2: Jπ STUDIO — CREATIVE WEB, 3D & MOTION ARCHITECTURE -->
 <table width="100%">
   <tr>
-    <td width="60%" valign="top">
+    <td width="54%" valign="middle">
       <h3><code>🚀 02 // Jπ STUDIO — INGENIERÍA WEB INMERSIVA, 3D & MOTION</code></h3>
       <p>
         Laboratorio creativo y estudio de desarrollo independiente especializado en experiencias digitales de autor, aplicaciones móviles y sistemas interactivos de alto impacto visual.
@@ -93,7 +93,7 @@
         </a>
       </p>
     </td>
-    <td width="40%" valign="center" align="center">
+    <td width="46%" valign="middle" align="center">
       <img src="./assets/card-jpi-studio.svg" width="100%" alt="Jπ Studio Interactive Architecture" />
     </td>
   </tr>
@@ -104,7 +104,7 @@
 <!-- BLOQUE 3: CIBERSEGURIDAD OFENSIVA & PENTESTING LAB -->
 <table width="100%">
   <tr>
-    <td width="60%" valign="top">
+    <td width="54%" valign="middle">
       <h3><code>🛡️ 03 // CIBERSEGURIDAD OFENSIVA & PENTESTING LAB</code></h3>
       <p>
         Estudio metódico y técnico de seguridad informática desde la arquitectura de redes y el kernel hasta metodologías de reconocimiento, enumeración y pruebas de penetración.
@@ -118,7 +118,7 @@
         <img src="https://img.shields.io/badge/LAB_STATUS-OFFENSIVE_SECURITY_&_RESEARCH-2e0d44?style=for-the-badge&logo=kalilinux&logoColor=e5b75f&labelColor=1f0830" alt="Cybersecurity Lab" />
       </p>
     </td>
-    <td width="40%" valign="center" align="center">
+    <td width="46%" valign="middle" align="center">
       <img src="./assets/card-cybersec.svg" width="100%" alt="Cybersecurity & Pentesting Lab" />
     </td>
   </tr>
