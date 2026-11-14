@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- BANNER PRINCIPAL: ARTE ASCII ESPACIAL & TELEMETRÍA FÍSICA -->
-<img src="./assets/banner-cosmos-jpi.svg" width="100%" alt="Jπ Studio - Physics & Creative Development Banner" />
+<!-- BANNER PRINCIPAL: ARTE ASCII 3D EN TIEMPO REAL & STARFIELD -->
+<img src="./assets/banner-cosmos-jpi.svg" width="100%" alt="Jπ Studio - 3D ASCII Cosmos & Creative Development Banner" />
 
 <br/>
 
@@ -158,7 +158,7 @@
 
 ```ansi
 [2;35m══════════════════════════════════════════════════════════════════════════════════════════════[0m
-[1;33m  ∇ × B = μ₀J + μ₀ε₀ ∂E/∂t  │  Jπ STUDIO • LA PLATA, ARGENTINA  │  R_μν - ½Rg_μν = κT_μν [0m
+[1;33m      Jπ STUDIO  •  CREATIVE ARCHITECTURE, PHYSICS & OFFENSIVE SECURITY  •  LA PLATA, AR      [0m
 [2;35m══════════════════════════════════════════════════════════════════════════════════════════════[0m
 ```
 

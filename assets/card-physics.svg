@@ -1,39 +1,274 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" width="100%" height="100%">
   <defs>
     <linearGradient id="cardBg1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#160524"/>
-      <stop offset="100%" stop-color="#2e0d44"/>
+      <stop offset="0%" stop-color="#0e021a"/>
+      <stop offset="100%" stop-color="#250838"/>
     </linearGradient>
     <style>
-      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
-      .orbit-1 { stroke: #e5b75f; fill: none; stroke-width: 1.5; stroke-dasharray: 6 4; animation: rot 14s linear infinite; transform-origin: 210px 120px; }
-      .orbit-2 { stroke: #b87aff; fill: none; stroke-width: 1.5; opacity: 0.75; animation: rotRev 18s linear infinite; transform-origin: 210px 120px; }
-      .wave { fill: none; stroke: #e5b75f; stroke-width: 2; stroke-dasharray: 300; animation: waveFlow 5s linear infinite; }
-      @keyframes rot { to { transform: rotate(360deg); } }
-      @keyframes rotRev { to { transform: rotate(-360deg); } }
-      @keyframes waveFlow { to { stroke-dashoffset: -600; } }
-    </style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; white-space: pre; }
+      .c-dark { fill: #693696; }
+      .c-mid { fill: #9d5ce6; }
+      .c-bright { fill: #dfdbe5; }
+      .c-gold { fill: #e5b75f; font-weight: bold; }
+      .f-f0 { opacity: 0; animation: s0 1.28s infinite steps(1, end); }
+      .f-f1 { opacity: 0; animation: s1 1.28s infinite steps(1, end); }
+      .f-f2 { opacity: 0; animation: s2 1.28s infinite steps(1, end); }
+      .f-f3 { opacity: 0; animation: s3 1.28s infinite steps(1, end); }
+      .f-f4 { opacity: 0; animation: s4 1.28s infinite steps(1, end); }
+      .f-f5 { opacity: 0; animation: s5 1.28s infinite steps(1, end); }
+      .f-f6 { opacity: 0; animation: s6 1.28s infinite steps(1, end); }
+      .f-f7 { opacity: 0; animation: s7 1.28s infinite steps(1, end); }
+      @keyframes s0 { 0%, 100% { opacity: 1; } 12.5% { opacity: 0; } }
+      @keyframes s1 { 0%, 12.49% { opacity: 0; } 12.5%, 24.99% { opacity: 1; } 25% { opacity: 0; } }
+      @keyframes s2 { 0%, 24.99% { opacity: 0; } 25%, 37.49% { opacity: 1; } 37.5% { opacity: 0; } }
+      @keyframes s3 { 0%, 37.49% { opacity: 0; } 37.5%, 49.99% { opacity: 1; } 50% { opacity: 0; } }
+      @keyframes s4 { 0%, 49.99% { opacity: 0; } 50%, 62.49% { opacity: 1; } 62.5% { opacity: 0; } }
+      @keyframes s5 { 0%, 62.49% { opacity: 0; } 62.5%, 74.99% { opacity: 1; } 75% { opacity: 0; } }
+      @keyframes s6 { 0%, 74.99% { opacity: 0; } 75%, 87.49% { opacity: 1; } 87.5% { opacity: 0; } }
+      @keyframes s7 { 0%, 87.49% { opacity: 0; } 87.5%, 99.99% { opacity: 1; } 100% { opacity: 0; } }
+</style>
   </defs>
-
   <rect width="420" height="270" rx="12" fill="url(#cardBg1)" stroke="#4a1f6b" stroke-width="2"/>
-  <rect x="8" y="8" width="404" height="254" rx="8" fill="none" stroke="#e5b75f" stroke-opacity="0.22"/>
-
-  <g stroke="#4a1f6b" stroke-width="0.6" opacity="0.45">
-    <line x1="20" y1="60" x2="400" y2="60"/><line x1="20" y1="120" x2="400" y2="120"/><line x1="20" y1="180" x2="400" y2="180"/>
-    <line x1="105" y1="35" x2="105" y2="210"/><line x1="210" y1="35" x2="210" y2="210"/><line x1="315" y1="35" x2="315" y2="210"/>
+  <rect x="10" y="10" width="400" height="250" rx="8" fill="none" stroke="#e5b75f" stroke-opacity="0.22"/>
+  <rect x="14" y="14" width="392" height="24" rx="5" fill="#12031f" stroke="#4a1f6b"/>
+  <text x="24" y="30" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">UNLP // 3D MANIFOLD &amp; PHYSICS SIM</text>
+  <text x="396" y="30" text-anchor="end" class="mono" fill="#9d5ce6" font-size="10">[LaTeX • 2027]</text>
+  <g class="f-f0">
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">                      @@@@@@      </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">                  @@@@@@@@@@@%    </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">                              #   </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">              %@@@@@@@@@@@%%%#    </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">                              *   </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">           #@@@@@@@@@@@%%%#%##    </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">                            **=   </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">         %@@@@@@@@%%%%%#####      </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">                       #***+=     </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">      %%%%%@%@%%@%%%%##           </text>
+    <text x="98" y="125.0" class="mono c-mid" font-size="11">                          =;      </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">                 #  ##***=        </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">     %%%%%%%%%%%% ##              </text>
+    <text x="98" y="136.5" class="mono c-mid" font-size="11">                       =~         </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">   #            #***+++           </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">    #####%%#####                  </text>
+    <text x="98" y="148.0" class="mono c-dark" font-size="11">                      ,           </text>
+    <text x="98" y="148.0" class="mono c-mid" font-size="11">                    =~            </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">   ***  *##*#***+*=+              </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">      ##                          </text>
+    <text x="98" y="159.5" class="mono c-mid" font-size="11">               ===~;              </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">   +*+*****++++                   </text>
+    <text x="98" y="171.0" class="mono c-mid" font-size="11">         = ===~;                  </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">    +++++ =                       </text>
+    <text x="98" y="182.5" class="mono c-dark" font-size="11">           :                      </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">      ;~;~;                       </text>
   </g>
-
-  <text x="20" y="27" class="mono" fill="#e5b75f" font-size="11" font-weight="bold">UNLP // PHYSICS &amp; DATA SCIENCE LAB</text>
-  <text x="400" y="27" text-anchor="end" class="mono" fill="#b87aff" font-size="10">[LaTeX • R²=0.998]</text>
-
-  <ellipse cx="210" cy="120" rx="85" ry="30" transform="rotate(-28 210 120)" class="orbit-1"/>
-  <ellipse cx="210" cy="120" rx="85" ry="30" transform="rotate(28 210 120)" class="orbit-2"/>
-  <circle cx="210" cy="120" r="42" class="orbit-1"/>
-  <circle cx="210" cy="120" r="8" fill="#e5b75f"/>
-
-  <path d="M 30 120 Q 60 75, 90 120 T 150 120 T 210 120 T 270 120 T 330 120 T 390 120" class="wave"/>
-
-  <rect x="18" y="205" width="384" height="48" rx="6" fill="#12031d" stroke="#4a1f6b"/>
-  <text x="30" y="224" class="mono" fill="#e5b75f" font-size="10.5">▸ ELECTROMAGNETISM • RELATIVITY • OPTICS</text>
-  <text x="30" y="242" class="mono" fill="#d7b5ff" font-size="10">▸ LAB PAPERS (LaTeX)  |  DATA SCIENCE [2027]</text>
+  <g class="f-f1">
+    <text x="98" y="56.0" class="mono c-bright" font-size="11">                   #  #           </text>
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">       @@@@@%%%%%%# #% ###        </text>
+    <text x="98" y="67.5" class="mono c-bright" font-size="11">                #**********       </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">     %@@@%%%%%##                  </text>
+    <text x="98" y="79.0" class="mono c-mid" font-size="11">                   ==             </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">             ##**++  ==++**       </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">   %%%%%%%%##                     </text>
+    <text x="98" y="90.5" class="mono c-mid" font-size="11">                 ~;;;;~~=         </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">          #***+==        =+       </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">  #%%%%%#%                        </text>
+    <text x="98" y="102.0" class="mono c-dark" font-size="11">                 . ,:             </text>
+    <text x="98" y="102.0" class="mono c-mid" font-size="11">               ~;    ;;~=         </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">         #**++=          =+       </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">  #%%%###                         </text>
+    <text x="98" y="113.5" class="mono c-mid" font-size="11">             =;    ====           </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">       #***+=          ==++       </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">  #####                           </text>
+    <text x="98" y="125.0" class="mono c-mid" font-size="11">            =~                    </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">  ####****+=        *****+=       </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">                 #%%              </text>
+    <text x="98" y="136.5" class="mono c-mid" font-size="11">            =~                    </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">  *******++=  *       ##*=        </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">               %@@@@@%            </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">  +*****++++==*        *=         </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">               #%@@@%##           </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">   +++++++++++*#     #+           </text>
+    <text x="98" y="159.5" class="mono c-gold" font-size="11">                ####%             </text>
+    <text x="98" y="171.0" class="mono c-mid" font-size="11">    =               =             </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">     +++++++++****#*              </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">      ~====      =;               </text>
+    <text x="98" y="182.5" class="mono c-bright" font-size="11">           ==+===                 </text>
+  </g>
+  <g class="f-f2">
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">        @@@@%%%%%%%%%@@@@@        </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">      %@%%%%%%%#####%%%%%@@%      </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">            ****++***#            </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">     %%%%%##          #%%%%%%     </text>
+    <text x="98" y="90.5" class="mono c-mid" font-size="11">              =~;;~~=             </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">          #*++       +*#          </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">    %%%%%#              #%%%%%    </text>
+    <text x="98" y="102.0" class="mono c-dark" font-size="11">              ,    ,              </text>
+    <text x="98" y="102.0" class="mono c-mid" font-size="11">            =~      ~=            </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">         #*+          +*          </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">   #%%%%#               ##%%%%#   </text>
+    <text x="98" y="113.5" class="mono c-mid" font-size="11">            ~        =            </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">          *+          +*#         </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">   #%%%%##               #%%%%#   </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">   #       #*        *        #   </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">    #%%%%%#           #%#%%%%#    </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">   *                          *   </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">    ##%%%%%%%%%    #%%%%%%%%##    </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">    *                        *    </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">     #%%%%@@@@@@@@@@@@@%%%%%#     </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">     *#                    #*     </text>
+    <text x="98" y="159.5" class="mono c-gold" font-size="11">       #%%%%@@@@@@@@@@%%%%#       </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">      +*#                 *+      </text>
+    <text x="98" y="171.0" class="mono c-gold" font-size="11">         #%%%%%%%%%%%%%%##        </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">        ~                =        </text>
+    <text x="98" y="182.5" class="mono c-bright" font-size="11">         +*##         **+         </text>
+    <text x="98" y="182.5" class="mono c-gold" font-size="11">             #%%%%%%##            </text>
+  </g>
+  <g class="f-f3">
+    <text x="98" y="56.0" class="mono c-bright" font-size="11">           # *                    </text>
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">          # # ###%%%@@@@@@@@      </text>
+    <text x="98" y="67.5" class="mono c-bright" font-size="11">         # ****+**#               </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">          #        #%%%@@@@@@%    </text>
+    <text x="98" y="79.0" class="mono c-mid" font-size="11">             ===                  </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">        ***+=   ++***             </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">                     #%%%%%@@%%   </text>
+    <text x="98" y="90.5" class="mono c-dark" font-size="11">              :                   </text>
+    <text x="98" y="90.5" class="mono c-mid" font-size="11">           =~; :;~                </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">        **+       ++*             </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">                     ##%%%%%%%%   </text>
+    <text x="98" y="102.0" class="mono c-dark" font-size="11">               :                  </text>
+    <text x="98" y="102.0" class="mono c-mid" font-size="11">           =~;:   ~               </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">        **+        =+*#           </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">                       ##%%%%%%#  </text>
+    <text x="98" y="113.5" class="mono c-mid" font-size="11">              =~   ~              </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">        ****++      ++*#          </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">                        ##%%%%##  </text>
+    <text x="98" y="125.0" class="mono c-mid" font-size="11">                   ~              </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">        *#          +**##      #  </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">          ##@@@%         ######   </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">        =#         ++***###   #*  </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">          %@@@@@@%         ###    </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">         *        ********##***+  </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">          #%%@@@%#                </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">          *      #************+   </text>
+    <text x="98" y="159.5" class="mono c-gold" font-size="11">           ###%%#                 </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">           +#  *************++    </text>
+    <text x="98" y="171.0" class="mono c-gold" font-size="11">             ##                   </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">             =             =      </text>
+    <text x="98" y="182.5" class="mono c-bright" font-size="11">              +*+****++++++       </text>
+  </g>
+  <g class="f-f4">
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">      #%@@@@@@@@@                 </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">      ##%@@@@@@@@@@               </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">      *                           </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">       #%%%@@@@@@@@%%             </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">      +*                          </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">        #%%%%@%@@@@@%%            </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">       +*#                        </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">          ##%%%%%%%@@%%%          </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">        ++**                      </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">            #%%%%%%%%%%%#         </text>
+    <text x="98" y="125.0" class="mono c-mid" font-size="11">         =                        </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">          +*#*#                   </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">               ##%%%%%%%%#        </text>
+    <text x="98" y="136.5" class="mono c-mid" font-size="11">          =                       </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">           =+**##                 </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">                 #####%####       </text>
+    <text x="98" y="148.0" class="mono c-mid" font-size="11">            =                     </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">             +*+*#* #   ###*      </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">                   # ###          </text>
+    <text x="98" y="159.5" class="mono c-mid" font-size="11">             ~=                   </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">               +++*****#****      </text>
+    <text x="98" y="171.0" class="mono c-mid" font-size="11">               ~=                 </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">                 +++*+******      </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">                 ~==              </text>
+    <text x="98" y="182.5" class="mono c-bright" font-size="11">                    =+++++++      </text>
+  </g>
+  <g class="f-f5">
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">      @@@@@@@%@@@@@@              </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">             *                    </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">    @@@@@@%%# ####%%@@@           </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">            *+***#                </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">  #@@@@@@%%#      #%%@@@@#        </text>
+    <text x="98" y="102.0" class="mono c-mid" font-size="11">             =~~==                </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">            +     *               </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">  %@@@@@@@%#       #%%@@@@@       </text>
+    <text x="98" y="113.5" class="mono c-dark" font-size="11">                .                 </text>
+    <text x="98" y="113.5" class="mono c-mid" font-size="11">                 ;=               </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11"> *                 +*             </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">  %@@@@@@@@%#        #%@@@@@      </text>
+    <text x="98" y="125.0" class="mono c-mid" font-size="11">                   ~              </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11"> *                  +             </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">  #%@@@@@@@@@%%      %%@@@@@%     </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">  ##%%%@@@@@@@@@@@%%%@@@@@@@%     </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">  +#                              </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">    ##%%%@@@@@@@@@@@@@@@@@@%%     </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">   +*                             </text>
+    <text x="98" y="159.5" class="mono c-gold" font-size="11">     #%%%%%%%@@@@@@@@@@@@%%##     </text>
+    <text x="98" y="171.0" class="mono c-mid" font-size="11">    ~                             </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">     +*                    #+     </text>
+    <text x="98" y="171.0" class="mono c-gold" font-size="11">       ##%%%%%%%%%%%%%%%##%       </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">                           =      </text>
+    <text x="98" y="182.5" class="mono c-bright" font-size="11">      =++*##             **       </text>
+    <text x="98" y="182.5" class="mono c-gold" font-size="11">            #%#####%#####         </text>
+  </g>
+  <g class="f-f6">
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">        @@@@@%%%%%%%%%@@@@        </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">      %@@%%%%%#####%%%%%%%@%      </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">            #***++***             </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">     %%%%%%#         ###%%%%%     </text>
+    <text x="98" y="90.5" class="mono c-mid" font-size="11">             =~~;;~=              </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">          #*+       ++*#          </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">    %%%%%#              #%%%%%    </text>
+    <text x="98" y="102.0" class="mono c-dark" font-size="11">              ,    ,              </text>
+    <text x="98" y="102.0" class="mono c-mid" font-size="11">            =~      ~=            </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">          *+          +*#         </text>
+    <text x="98" y="102.0" class="mono c-gold" font-size="11">   #%%%%##               #%%%%#   </text>
+    <text x="98" y="113.5" class="mono c-mid" font-size="11">            =        ~            </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">         #*+          +*          </text>
+    <text x="98" y="113.5" class="mono c-gold" font-size="11">   #%%%%#               ##%%%%#   </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">   #        *        *#       #   </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">    #%%%%#%#           #%%%%%#    </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">   *                          *   </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">    ##%%%%%%%%#    %%%%%%%%%##    </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">    *                        *    </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">     #%%%%%@@@@@@@@@@@@@%%%%#     </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">     *#                    #*     </text>
+    <text x="98" y="159.5" class="mono c-gold" font-size="11">       #%%%%%@@@@@@@@@%%%%#       </text>
+    <text x="98" y="171.0" class="mono c-bright" font-size="11">      +*                 #*+      </text>
+    <text x="98" y="171.0" class="mono c-gold" font-size="11">        ##%%%%%%%%%%%%%%#         </text>
+    <text x="98" y="182.5" class="mono c-mid" font-size="11">        =                ~        </text>
+    <text x="98" y="182.5" class="mono c-bright" font-size="11">         +**         ##*+         </text>
+    <text x="98" y="182.5" class="mono c-gold" font-size="11">            ##%%%%%%#             </text>
+  </g>
+  <g class="f-f7">
+    <text x="98" y="56.0" class="mono c-gold" font-size="11">      @@@@%%%@%%%%%%%%%%%%%%      </text>
+    <text x="98" y="67.5" class="mono c-bright" font-size="11">                          #       </text>
+    <text x="98" y="67.5" class="mono c-gold" font-size="11">    %%%%%%%%%%############ %%%    </text>
+    <text x="98" y="79.0" class="mono c-bright" font-size="11">           ##*************## ##   </text>
+    <text x="98" y="79.0" class="mono c-gold" font-size="11">   ########                 #     </text>
+    <text x="98" y="90.5" class="mono c-mid" font-size="11">                  === ==          </text>
+    <text x="98" y="90.5" class="mono c-bright" font-size="11">  # ##*#**++++====   =  +++****   </text>
+    <text x="98" y="90.5" class="mono c-gold" font-size="11">   #                              </text>
+    <text x="98" y="102.0" class="mono c-mid" font-size="11">          ==~~;;;;;;;;;;~==       </text>
+    <text x="98" y="102.0" class="mono c-bright" font-size="11">  #****+++                 +++*   </text>
+    <text x="98" y="113.5" class="mono c-dark" font-size="11">             :.      ,::          </text>
+    <text x="98" y="113.5" class="mono c-mid" font-size="11">        ==~;:           ;~~==     </text>
+    <text x="98" y="113.5" class="mono c-bright" font-size="11">  *++++=            *        =+   </text>
+    <text x="98" y="125.0" class="mono c-mid" font-size="11">       =~;;::        =;;~~~~==    </text>
+    <text x="98" y="125.0" class="mono c-bright" font-size="11">  +++==      *      #             </text>
+    <text x="98" y="125.0" class="mono c-gold" font-size="11">              %@@@@%              </text>
+    <text x="98" y="136.5" class="mono c-mid" font-size="11">    ===~~~~~           =====~     </text>
+    <text x="98" y="136.5" class="mono c-bright" font-size="11">   =        +#       *+           </text>
+    <text x="98" y="136.5" class="mono c-gold" font-size="11">              %@@@@%#             </text>
+    <text x="98" y="148.0" class="mono c-mid" font-size="11">    ~======              =~       </text>
+    <text x="98" y="148.0" class="mono c-bright" font-size="11">           +**      #*++=         </text>
+    <text x="98" y="148.0" class="mono c-gold" font-size="11">              #%%%%%              </text>
+    <text x="98" y="159.5" class="mono c-mid" font-size="11">      ~~~==           =~;         </text>
+    <text x="98" y="159.5" class="mono c-bright" font-size="11">           ++**   ##*+            </text>
+    <text x="98" y="159.5" class="mono c-gold" font-size="11">               ###                </text>
+    <text x="98" y="171.0" class="mono c-mid" font-size="11">           ;~~==~~;               </text>
+  </g>
+  <rect x="18" y="204" width="384" height="48" rx="6" fill="#12031d" stroke="#4a1f6b"/>
+  <text x="30" y="223" class="mono" fill="#e5b75f" font-size="10.5">▸ ELECTROMAGNETISM • RELATIVITY • QUANTUM</text>
+  <text x="30" y="241" class="mono" fill="#dfdbe5" font-size="10">▸ LAB PAPERS (LaTeX)  |  DATA SCIENCE [2027]</text>
 </svg>
