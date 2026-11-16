@@ -1,36 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" width="100%" height="100%">
-  <defs>
-    <linearGradient id="cardBg1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d0218"/>
-      <stop offset="100%" stop-color="#240837"/>
-    </linearGradient>
-    <style>
-      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
-      .c-dark { fill: #693696; }
-      .c-mid { fill: #9d5ce6; }
-      .c-bright { fill: #e6dff0; }
+  <defs><style>
+      .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Courier New', monospace; }
+      .c-dark { fill: #6c389c; }
+      .c-mid { fill: #a86bf0; }
+      .c-bright { fill: #eee8f6; }
       .c-gold { fill: #e5b75f; font-weight: bold; }
-      .f0 { opacity: 0; animation: s0 1.2s infinite steps(1, end); }
-      .f1 { opacity: 0; animation: s1 1.2s infinite steps(1, end); }
-      .f2 { opacity: 0; animation: s2 1.2s infinite steps(1, end); }
-      .f3 { opacity: 0; animation: s3 1.2s infinite steps(1, end); }
-      .f4 { opacity: 0; animation: s4 1.2s infinite steps(1, end); }
-      .f5 { opacity: 0; animation: s5 1.2s infinite steps(1, end); }
-      @keyframes s0 { 0%, 100% { opacity: 1; } 16.67% { opacity: 0; } }
-      @keyframes s1 { 0%, 16.66% { opacity: 0; } 16.67%, 33.33% { opacity: 1; } 33.34% { opacity: 0; } }
-      @keyframes s2 { 0%, 33.33% { opacity: 0; } 33.34%, 50.00% { opacity: 1; } 50.01% { opacity: 0; } }
-      @keyframes s3 { 0%, 50.00% { opacity: 0; } 50.01%, 66.66% { opacity: 1; } 66.67% { opacity: 0; } }
-      @keyframes s4 { 0%, 66.66% { opacity: 0; } 66.67%, 83.33% { opacity: 1; } 83.34% { opacity: 0; } }
-      @keyframes s5 { 0%, 83.33% { opacity: 0; } 83.34%, 99.99% { opacity: 1; } 100% { opacity: 0; } }
-</style>
-  </defs>
-  <rect width="380" height="340" rx="12" fill="url(#cardBg1)" stroke="#4a1f6b" stroke-width="2"/>
+</style></defs>
+  <rect width="380" height="340" rx="12" fill="#0d0218" stroke="#4a1f6b" stroke-width="2"/>
   <rect x="8" y="8" width="364" height="324" rx="8" fill="none" stroke="#e5b75f" stroke-opacity="0.24"/>
-  <rect x="14" y="14" width="352" height="26" rx="5" fill="#130421" stroke="#4a1f6b"/>
+  <rect x="14" y="14" width="352" height="26" rx="5" fill="#160529" stroke="#4a1f6b"/>
   <text x="24" y="31" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">UNLP // 3D MANIFOLD &amp; PHYSICS</text>
-  <text x="356" y="31" text-anchor="end" class="mono" fill="#9d5ce6" font-size="10">[LaTeX • 2027]</text>
+  <text x="356" y="31" text-anchor="end" class="mono" fill="#a86bf0" font-size="10">[LaTeX • 2027]</text>
   <g class="mono">
-  <g class="f0" font-size="11.5">
+  <g display="inline" font-size="11.5">
+    <animate attributeName="display" values="inline;none;none;none;none;none;none;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
     <text y="56.0" xml:space="preserve"><tspan x="231.0" class="c-gold">@@@@@@@@@</tspan></text>
     <text y="67.5" xml:space="preserve"><tspan x="196.0" class="c-gold">%@@@@@@@@@@@@@@@%</tspan></text>
     <text y="79.0" xml:space="preserve"><tspan x="175.0" class="c-gold">@@@@@@@@@@@@@@@@@%%%#</tspan></text>
@@ -48,7 +31,27 @@
     <text y="217.0" xml:space="preserve"><tspan x="63.0" class="c-mid">=</tspan><tspan x="70.0" class="c-bright">=+=+====</tspan><tspan x="126.0" class="c-mid">=</tspan><tspan x="133.0" class="c-bright">=</tspan><tspan x="140.0" class="c-mid">=~~~;</tspan><tspan x="175.0" class="c-dark">:</tspan></text>
     <text y="228.5" xml:space="preserve"><tspan x="84.0" class="c-mid">~~~~~~;;;</tspan></text>
   </g>
-  <g class="f1" font-size="11.5">
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;inline;none;none;none;none;none;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
+    <text y="56.0" xml:space="preserve"><tspan x="98.0" class="c-gold">@@@@@@@@@@%%%%%%%%%%%##%#</tspan><tspan x="273.0" class="c-bright">#</tspan><tspan x="280.0" class="c-gold">#</tspan></text>
+    <text y="67.5" xml:space="preserve"><tspan x="84.0" class="c-gold">%@@@@@@%@%%%%%%####</tspan><tspan x="217.0" class="c-bright">####******</tspan></text>
+    <text y="79.0" xml:space="preserve"><tspan x="77.0" class="c-gold">%%@%@%%%%%%%%%###</tspan><tspan x="196.0" class="c-bright">*****+++++++*+</tspan></text>
+    <text y="90.5" xml:space="preserve"><tspan x="70.0" class="c-gold">%%%%%%%%%</tspan><tspan x="133.0" class="c-mid">;</tspan><tspan x="140.0" class="c-gold">%</tspan><tspan x="147.0" class="c-mid">:</tspan><tspan x="154.0" class="c-gold">####</tspan><tspan x="182.0" class="c-bright">***++++===</tspan><tspan x="252.0" class="c-mid">===</tspan><tspan x="273.0" class="c-bright">==+</tspan></text>
+    <text y="102.0" xml:space="preserve"><tspan x="63.0" class="c-gold">%%%%%%%%#</tspan><tspan x="126.0" class="c-mid">;</tspan><tspan x="133.0" class="c-gold">###</tspan><tspan x="154.0" class="c-bright">#</tspan><tspan x="161.0" class="c-gold">#</tspan><tspan x="168.0" class="c-bright">***+++==</tspan><tspan x="224.0" class="c-mid">=~~~~~~~=</tspan></text>
+    <text y="113.5" xml:space="preserve"><tspan x="56.0" class="c-gold">%%%%%#######</tspan><tspan x="140.0" class="c-bright">****+++==</tspan><tspan x="203.0" class="c-mid">=~~;:</tspan><tspan x="238.0" class="c-dark">::</tspan><tspan x="252.0" class="c-mid">::;~=</tspan></text>
+    <text y="125.0" xml:space="preserve"><tspan x="49.0" class="c-gold">##%#######</tspan><tspan x="119.0" class="c-bright">#</tspan><tspan x="126.0" class="c-gold">#</tspan><tspan x="133.0" class="c-bright">****+++=</tspan><tspan x="189.0" class="c-mid">=~;</tspan><tspan x="210.0" class="c-dark">:</tspan><tspan x="217.0" class="c-mid">:</tspan><tspan x="224.0" class="c-dark">,,,:</tspan><tspan x="252.0" class="c-mid">:;;~</tspan></text>
+    <text y="136.5" xml:space="preserve"><tspan x="49.0" class="c-gold">########</tspan><tspan x="105.0" class="c-bright">#****++++=</tspan><tspan x="175.0" class="c-mid">=~;</tspan><tspan x="196.0" class="c-dark">:</tspan><tspan x="203.0" class="c-gold">#</tspan><tspan x="210.0" class="c-bright">+=</tspan><tspan x="224.0" class="c-mid">~~~~~~~~</tspan></text>
+    <text y="148.0" xml:space="preserve"><tspan x="42.0" class="c-bright">*#</tspan><tspan x="56.0" class="c-gold">####</tspan><tspan x="84.0" class="c-bright">******+++==</tspan><tspan x="161.0" class="c-mid">=~;:</tspan><tspan x="189.0" class="c-gold">@@%#</tspan><tspan x="217.0" class="c-bright">*++=</tspan><tspan x="245.0" class="c-mid">==~</tspan></text>
+    <text y="159.5" xml:space="preserve"><tspan x="42.0" class="c-bright">**********++++=</tspan><tspan x="147.0" class="c-mid">=~~;</tspan><tspan x="175.0" class="c-gold">@@@@@##</tspan><tspan x="224.0" class="c-bright">**+=</tspan><tspan x="252.0" class="c-mid">~</tspan></text>
+    <text y="171.0" xml:space="preserve"><tspan x="42.0" class="c-bright">********++++=</tspan><tspan x="133.0" class="c-mid">==~~;</tspan><tspan x="168.0" class="c-gold">%@@@@%%##</tspan><tspan x="231.0" class="c-bright">+=</tspan><tspan x="245.0" class="c-mid">:</tspan></text>
+    <text y="182.5" xml:space="preserve"><tspan x="49.0" class="c-bright">+*++++++++==</tspan><tspan x="133.0" class="c-mid">~~~;</tspan><tspan x="161.0" class="c-bright">=*</tspan><tspan x="175.0" class="c-gold">##%###</tspan><tspan x="217.0" class="c-bright">*+</tspan><tspan x="231.0" class="c-mid">=</tspan></text>
+    <text y="194.0" xml:space="preserve"><tspan x="49.0" class="c-bright">++++++++==</tspan><tspan x="119.0" class="c-mid">==~~~~</tspan><tspan x="161.0" class="c-bright">=+***</tspan><tspan x="196.0" class="c-gold">#</tspan><tspan x="203.0" class="c-bright">*+</tspan><tspan x="217.0" class="c-mid">=</tspan></text>
+    <text y="205.5" xml:space="preserve"><tspan x="56.0" class="c-bright">=======</tspan><tspan x="105.0" class="c-mid">==~~~~~=</tspan><tspan x="161.0" class="c-bright">=++*+=</tspan><tspan x="203.0" class="c-mid">~</tspan></text>
+    <text y="217.0" xml:space="preserve"><tspan x="70.0" class="c-mid">======~~~~~~====~</tspan></text>
+    <text y="228.5" xml:space="preserve"><tspan x="84.0" class="c-mid">~~~~~~~~~;;;</tspan></text>
+  </g>
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;inline;none;none;none;none;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
     <text y="56.0" xml:space="preserve"><tspan x="77.0" class="c-gold">@@@@@@%%%%%%%%#%%%#%%####%%%</tspan></text>
     <text y="67.5" xml:space="preserve"><tspan x="70.0" class="c-gold">@@@@%%%%%%#####</tspan><tspan x="175.0" class="c-bright">********</tspan><tspan x="231.0" class="c-gold">#######</tspan></text>
     <text y="79.0" xml:space="preserve"><tspan x="56.0" class="c-gold">%%%%%%%%%%####</tspan><tspan x="154.0" class="c-bright">***++=++++++***#</tspan><tspan x="266.0" class="c-gold">###</tspan></text>
@@ -66,7 +69,27 @@
     <text y="217.0" xml:space="preserve"><tspan x="77.0" class="c-bright">=+++********</tspan><tspan x="161.0" class="c-gold">###%##%###</tspan><tspan x="231.0" class="c-bright">*+</tspan></text>
     <text y="228.5" xml:space="preserve"><tspan x="91.0" class="c-mid">=</tspan><tspan x="98.0" class="c-bright">=++++******#</tspan><tspan x="182.0" class="c-gold">#</tspan><tspan x="189.0" class="c-bright">****+</tspan><tspan x="224.0" class="c-mid">~</tspan></text>
   </g>
-  <g class="f2" font-size="11.5">
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;inline;none;none;none;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
+    <text y="56.0" xml:space="preserve"><tspan x="105.0" class="c-gold">@@@@%%%%%%%%%%%%%%%%@@@@@</tspan></text>
+    <text y="67.5" xml:space="preserve"><tspan x="91.0" class="c-gold">@@@@%%%%%%#########%%%%%%@@@</tspan></text>
+    <text y="79.0" xml:space="preserve"><tspan x="77.0" class="c-gold">%%%%%%%%##</tspan><tspan x="147.0" class="c-bright">#**********</tspan><tspan x="224.0" class="c-gold">###%%%%%%%</tspan></text>
+    <text y="90.5" xml:space="preserve"><tspan x="70.0" class="c-gold">%%%%%%%###</tspan><tspan x="140.0" class="c-bright">**++======++**</tspan><tspan x="238.0" class="c-gold">###%%%%%%%</tspan></text>
+    <text y="102.0" xml:space="preserve"><tspan x="63.0" class="c-gold">#%%%%%%##</tspan><tspan x="126.0" class="c-bright">**++</tspan><tspan x="154.0" class="c-mid">=~~;;;;;~</tspan><tspan x="217.0" class="c-bright">=++**</tspan><tspan x="252.0" class="c-gold">##%%%%%%</tspan></text>
+    <text y="113.5" xml:space="preserve"><tspan x="63.0" class="c-gold">#%%%%%##</tspan><tspan x="119.0" class="c-bright">#*++</tspan><tspan x="147.0" class="c-mid">=~:</tspan><tspan x="168.0" class="c-dark">,</tspan><tspan x="196.0" class="c-dark">.,</tspan><tspan x="210.0" class="c-mid">:~~</tspan><tspan x="231.0" class="c-bright">++**</tspan><tspan x="259.0" class="c-gold">##%%%%%#</tspan></text>
+    <text y="125.0" xml:space="preserve"><tspan x="63.0" class="c-gold">#%%%%%##</tspan><tspan x="119.0" class="c-bright">#*+=</tspan><tspan x="147.0" class="c-mid">~</tspan><tspan x="154.0" class="c-dark">:</tspan><tspan x="217.0" class="c-dark">:</tspan><tspan x="224.0" class="c-mid">;</tspan><tspan x="231.0" class="c-bright">=+**</tspan><tspan x="259.0" class="c-gold">###%%%%#</tspan></text>
+    <text y="136.5" xml:space="preserve"><tspan x="56.0" class="c-bright">*</tspan><tspan x="63.0" class="c-gold">#%%%%%###</tspan><tspan x="126.0" class="c-bright">**+</tspan><tspan x="147.0" class="c-mid">~</tspan><tspan x="224.0" class="c-mid">~</tspan><tspan x="231.0" class="c-bright">=+*</tspan><tspan x="252.0" class="c-gold">###%%%%%#</tspan><tspan x="315.0" class="c-bright">*</tspan></text>
+    <text y="148.0" xml:space="preserve"><tspan x="56.0" class="c-bright">*</tspan><tspan x="63.0" class="c-gold">#%%%%%%%##</tspan><tspan x="133.0" class="c-bright">#*+</tspan><tspan x="224.0" class="c-bright">=**</tspan><tspan x="245.0" class="c-gold">#%#%%%%%%#</tspan><tspan x="315.0" class="c-bright">*</tspan></text>
+    <text y="159.5" xml:space="preserve"><tspan x="63.0" class="c-gold">##%%%%%%%%%%#</tspan><tspan x="154.0" class="c-bright">*</tspan><tspan x="217.0" class="c-bright">*</tspan><tspan x="224.0" class="c-gold">#%#%%%%%%%%##</tspan></text>
+    <text y="171.0" xml:space="preserve"><tspan x="63.0" class="c-bright">*</tspan><tspan x="70.0" class="c-gold">##%%%%%%%%%%%%%#</tspan><tspan x="203.0" class="c-gold">%%%%%%%%%%%%%##</tspan><tspan x="308.0" class="c-bright">*</tspan></text>
+    <text y="182.5" xml:space="preserve"><tspan x="70.0" class="c-bright">*</tspan><tspan x="77.0" class="c-gold">##%%%%%@@@@@@@@@@@@@@@@@%%%%%%##</tspan><tspan x="301.0" class="c-bright">*+</tspan></text>
+    <text y="194.0" xml:space="preserve"><tspan x="70.0" class="c-bright">+*</tspan><tspan x="84.0" class="c-gold">##%%%%@@@@@@@@@@@@@@@@@%%%%%##</tspan><tspan x="294.0" class="c-bright">*=</tspan></text>
+    <text y="205.5" xml:space="preserve"><tspan x="84.0" class="c-bright">**</tspan><tspan x="98.0" class="c-gold">##%%%%%%@@@@@@@@@@@%%%%%##</tspan><tspan x="280.0" class="c-bright">**=</tspan></text>
+    <text y="217.0" xml:space="preserve"><tspan x="91.0" class="c-bright">=**</tspan><tspan x="112.0" class="c-gold">##%%%%%%%@@@@%%%%%%%##</tspan><tspan x="266.0" class="c-bright">**+</tspan></text>
+    <text y="228.5" xml:space="preserve"><tspan x="98.0" class="c-mid">~</tspan><tspan x="105.0" class="c-bright">++*#</tspan><tspan x="133.0" class="c-gold">###%%%%%%%%%%###</tspan><tspan x="245.0" class="c-bright">#**+</tspan></text>
+  </g>
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;inline;none;none;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
     <text y="56.0" xml:space="preserve"><tspan x="126.0" class="c-gold">%%%%##%%#%%#%%%%%@@@@@@@@</tspan></text>
     <text y="67.5" xml:space="preserve"><tspan x="112.0" class="c-gold">%%#######</tspan><tspan x="175.0" class="c-bright">**</tspan><tspan x="189.0" class="c-gold">#</tspan><tspan x="196.0" class="c-bright">**</tspan><tspan x="210.0" class="c-gold">###%%%%@@@@@@@</tspan></text>
     <text y="79.0" xml:space="preserve"><tspan x="105.0" class="c-gold">####</tspan><tspan x="133.0" class="c-bright">****++++++***</tspan><tspan x="224.0" class="c-gold">###%%%%@@@@@%%</tspan></text>
@@ -84,7 +107,27 @@
     <text y="217.0" xml:space="preserve"><tspan x="119.0" class="c-bright">+*</tspan><tspan x="133.0" class="c-gold">###%%%%%#%%#######</tspan><tspan x="259.0" class="c-bright">#*****+</tspan></text>
     <text y="228.5" xml:space="preserve"><tspan x="126.0" class="c-mid">=</tspan><tspan x="133.0" class="c-bright">+*</tspan><tspan x="147.0" class="c-gold">############</tspan><tspan x="231.0" class="c-bright">*#*****++=</tspan></text>
   </g>
-  <g class="f3" font-size="11.5">
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;inline;none;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
+    <text y="56.0" xml:space="preserve"><tspan x="126.0" class="c-bright">****</tspan><tspan x="154.0" class="c-gold">####%%%%@%@@@@@@@@%</tspan></text>
+    <text y="67.5" xml:space="preserve"><tspan x="119.0" class="c-bright">+*+++***</tspan><tspan x="175.0" class="c-gold">###%%%%%@@@@@@@@%</tspan></text>
+    <text y="79.0" xml:space="preserve"><tspan x="119.0" class="c-bright">++=</tspan><tspan x="140.0" class="c-mid">~</tspan><tspan x="147.0" class="c-bright">=++***</tspan><tspan x="189.0" class="c-gold">###%%%%%@@@@@@%%</tspan></text>
+    <text y="90.5" xml:space="preserve"><tspan x="119.0" class="c-bright">+</tspan><tspan x="126.0" class="c-mid">=~;;~</tspan><tspan x="161.0" class="c-bright">=++**#</tspan><tspan x="203.0" class="c-gold">##%%%%%%%%%%%%%</tspan></text>
+    <text y="102.0" xml:space="preserve"><tspan x="119.0" class="c-bright">=</tspan><tspan x="126.0" class="c-mid">~;:</tspan><tspan x="147.0" class="c-dark">::</tspan><tspan x="161.0" class="c-mid">;~</tspan><tspan x="175.0" class="c-bright">++***</tspan><tspan x="210.0" class="c-gold">###%%%%%%%%%%%#</tspan></text>
+    <text y="113.5" xml:space="preserve"><tspan x="119.0" class="c-bright">=</tspan><tspan x="126.0" class="c-mid">=~~;</tspan><tspan x="154.0" class="c-dark">:,,</tspan><tspan x="175.0" class="c-mid">=</tspan><tspan x="182.0" class="c-bright">=+***</tspan><tspan x="217.0" class="c-gold">###%#%%%%%%%%#</tspan></text>
+    <text y="125.0" xml:space="preserve"><tspan x="119.0" class="c-bright">++=</tspan><tspan x="140.0" class="c-mid">=~~~~~=</tspan><tspan x="189.0" class="c-bright">++**#</tspan><tspan x="224.0" class="c-gold">####%%%%%%%%##</tspan></text>
+    <text y="136.5" xml:space="preserve"><tspan x="119.0" class="c-bright">+++++++++</tspan><tspan x="182.0" class="c-mid">;=</tspan><tspan x="196.0" class="c-bright">++***</tspan><tspan x="231.0" class="c-gold">###</tspan><tspan x="252.0" class="c-dark">,</tspan><tspan x="259.0" class="c-gold">#%%%%%###</tspan></text>
+    <text y="148.0" xml:space="preserve"><tspan x="126.0" class="c-bright">+*#</tspan><tspan x="147.0" class="c-gold">##%@@%</tspan><tspan x="189.0" class="c-mid">~</tspan><tspan x="196.0" class="c-bright">++****#</tspan><tspan x="245.0" class="c-gold">###########</tspan></text>
+    <text y="159.5" xml:space="preserve"><tspan x="126.0" class="c-bright">+#</tspan><tspan x="140.0" class="c-gold">#%@@@@@@</tspan><tspan x="196.0" class="c-bright">=++****</tspan><tspan x="245.0" class="c-gold">####</tspan><tspan x="273.0" class="c-mid">;</tspan><tspan x="280.0" class="c-gold">#####</tspan><tspan x="315.0" class="c-bright">*</tspan></text>
+    <text y="171.0" xml:space="preserve"><tspan x="133.0" class="c-bright">*</tspan><tspan x="140.0" class="c-gold">#%@@@@@@</tspan><tspan x="196.0" class="c-bright">=+++****#</tspan><tspan x="259.0" class="c-mid">;</tspan><tspan x="266.0" class="c-gold">#####</tspan><tspan x="301.0" class="c-bright">#**</tspan></text>
+    <text y="182.5" xml:space="preserve"><tspan x="133.0" class="c-bright">=</tspan><tspan x="140.0" class="c-gold">##%%%%#</tspan><tspan x="189.0" class="c-bright">+</tspan><tspan x="196.0" class="c-mid">=</tspan><tspan x="203.0" class="c-bright">+++*******##*****</tspan></text>
+    <text y="194.0" xml:space="preserve"><tspan x="140.0" class="c-bright">+</tspan><tspan x="147.0" class="c-gold">#####</tspan><tspan x="182.0" class="c-bright">*+==+++**</tspan><tspan x="245.0" class="c-mid">~</tspan><tspan x="252.0" class="c-bright">*********</tspan></text>
+    <text y="205.5" xml:space="preserve"><tspan x="147.0" class="c-bright">=****++=+++++*********++</tspan></text>
+    <text y="217.0" xml:space="preserve"><tspan x="154.0" class="c-mid">~</tspan><tspan x="161.0" class="c-bright">*+*++++++++++++++++++</tspan></text>
+    <text y="228.5" xml:space="preserve"><tspan x="168.0" class="c-bright">=+++++++++++++++++=</tspan></text>
+  </g>
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;none;inline;none;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
     <text y="56.0" xml:space="preserve"><tspan x="91.0" class="c-gold">#%@@@@@@@@@@@@@%</tspan></text>
     <text y="67.5" xml:space="preserve"><tspan x="84.0" class="c-bright">*</tspan><tspan x="91.0" class="c-gold">#%%%@@@@@@@@@@@@%%</tspan></text>
     <text y="79.0" xml:space="preserve"><tspan x="84.0" class="c-bright">+</tspan><tspan x="91.0" class="c-gold">##%%%@@@@@@@@@@@@%%</tspan></text>
@@ -102,7 +145,27 @@
     <text y="217.0" xml:space="preserve"><tspan x="161.0" class="c-mid">~~</tspan><tspan x="175.0" class="c-bright">==+++***********+</tspan></text>
     <text y="228.5" xml:space="preserve"><tspan x="175.0" class="c-mid">~=</tspan><tspan x="189.0" class="c-bright">==++++++**++++</tspan></text>
   </g>
-  <g class="f4" font-size="11.5">
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;none;none;inline;none;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
+    <text y="56.0" xml:space="preserve"><tspan x="91.0" class="c-gold">@@@@@@@@@</tspan></text>
+    <text y="67.5" xml:space="preserve"><tspan x="70.0" class="c-gold">@@@@@@@@@%%%%%%%%</tspan></text>
+    <text y="79.0" xml:space="preserve"><tspan x="56.0" class="c-gold">%@@@@@@@@@@%%</tspan><tspan x="147.0" class="c-bright">#***</tspan><tspan x="175.0" class="c-gold">##%%</tspan></text>
+    <text y="90.5" xml:space="preserve"><tspan x="49.0" class="c-gold">%@@@@@@@@@@@%%</tspan><tspan x="147.0" class="c-bright">#+++**</tspan><tspan x="189.0" class="c-gold">#%%%%</tspan></text>
+    <text y="102.0" xml:space="preserve"><tspan x="49.0" class="c-gold">%@@@@@@@@@@@@%%</tspan><tspan x="154.0" class="c-bright">*==+**</tspan><tspan x="196.0" class="c-gold">##%%@@</tspan></text>
+    <text y="113.5" xml:space="preserve"><tspan x="42.0" class="c-bright">#</tspan><tspan x="49.0" class="c-gold">%@@@@@@@@@@@@@%%</tspan><tspan x="161.0" class="c-bright">*</tspan><tspan x="168.0" class="c-mid">~~</tspan><tspan x="182.0" class="c-bright">=+*</tspan><tspan x="203.0" class="c-gold">#%%@@@%</tspan></text>
+    <text y="125.0" xml:space="preserve"><tspan x="42.0" class="c-bright">*</tspan><tspan x="49.0" class="c-gold">%%%@@@@@@@@@@@@%%#</tspan><tspan x="175.0" class="c-mid">;~</tspan><tspan x="189.0" class="c-bright">=*</tspan><tspan x="203.0" class="c-gold">#%%@@@@@</tspan></text>
+    <text y="136.5" xml:space="preserve"><tspan x="42.0" class="c-bright">*</tspan><tspan x="49.0" class="c-gold">#%%%@@@@@@@@@@@@@%%#</tspan><tspan x="189.0" class="c-bright">=*</tspan><tspan x="203.0" class="c-gold">##%@@@@@@%</tspan></text>
+    <text y="148.0" xml:space="preserve"><tspan x="49.0" class="c-gold">##%%%%@@@@@@@@@@@@@%%#</tspan><tspan x="203.0" class="c-bright">*</tspan><tspan x="210.0" class="c-gold">#%%@@@@@@%</tspan></text>
+    <text y="159.5" xml:space="preserve"><tspan x="49.0" class="c-bright">*</tspan><tspan x="56.0" class="c-gold">###%%%@%@@@@@@@@@@@%%%%#%%%@@@@@%</tspan></text>
+    <text y="171.0" xml:space="preserve"><tspan x="56.0" class="c-bright">**</tspan><tspan x="70.0" class="c-gold">#%#%%%%%@@@@@@@@@@@@%%%%%%%@@@%</tspan><tspan x="287.0" class="c-bright">*</tspan></text>
+    <text y="182.5" xml:space="preserve"><tspan x="63.0" class="c-bright">+*</tspan><tspan x="77.0" class="c-gold">###%%%%% %</tspan><tspan x="147.0" class="c-dark">.</tspan><tspan x="154.0" class="c-gold">%%@%@%%%%%%%%%%%%%%#</tspan></text>
+    <text y="194.0" xml:space="preserve"><tspan x="63.0" class="c-bright">=**#*</tspan><tspan x="98.0" class="c-gold">###%%%%%%%%%%%%%%%%%%%%%%%%#</tspan></text>
+    <text y="205.5" xml:space="preserve"><tspan x="77.0" class="c-bright">++**</tspan><tspan x="105.0" class="c-gold">#</tspan><tspan x="112.0" class="c-bright">#</tspan><tspan x="119.0" class="c-gold">#</tspan><tspan x="126.0" class="c-dark">.</tspan><tspan x="133.0" class="c-gold">%</tspan><tspan x="140.0" class="c-dark">.</tspan><tspan x="147.0" class="c-gold">#</tspan><tspan x="154.0" class="c-dark">.</tspan><tspan x="161.0" class="c-gold">%%%%%%%%%%%%%%%%%##</tspan></text>
+    <text y="217.0" xml:space="preserve"><tspan x="91.0" class="c-bright">++***</tspan><tspan x="126.0" class="c-gold">########%%#%%%%#%%###</tspan><tspan x="273.0" class="c-bright">#*+</tspan></text>
+    <text y="228.5" xml:space="preserve"><tspan x="105.0" class="c-bright">+++**#*</tspan><tspan x="154.0" class="c-gold">#</tspan><tspan x="161.0" class="c-bright">*</tspan><tspan x="168.0" class="c-gold">#</tspan><tspan x="175.0" class="c-dark">.</tspan><tspan x="182.0" class="c-gold">###########</tspan><tspan x="259.0" class="c-bright">#***</tspan></text>
+  </g>
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;none;none;none;inline;none;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
     <text y="56.0" xml:space="preserve"><tspan x="126.0" class="c-gold">@@@@@@@@@@@@</tspan></text>
     <text y="67.5" xml:space="preserve"><tspan x="98.0" class="c-gold">@@@@@@@@@@%%%@@@@@@@@</tspan></text>
     <text y="79.0" xml:space="preserve"><tspan x="77.0" class="c-gold">@@@@@@@@@%%###%##%%%%@@@@@</tspan></text>
@@ -120,7 +183,27 @@
     <text y="217.0" xml:space="preserve"><tspan x="70.0" class="c-bright">+*</tspan><tspan x="84.0" class="c-gold">###%%%%%@@%@@@@@@@@@@@@%%%%##</tspan><tspan x="287.0" class="c-bright">*</tspan></text>
     <text y="228.5" xml:space="preserve"><tspan x="77.0" class="c-bright">+***</tspan><tspan x="105.0" class="c-gold">##%%%%%%%%%%%%@%%%%%%%##</tspan><tspan x="273.0" class="c-bright">*+</tspan></text>
   </g>
-  <g class="f5" font-size="11.5">
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;none;none;none;none;inline;none;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
+    <text y="56.0" xml:space="preserve"><tspan x="105.0" class="c-gold">@@@@%%%%%%%%%%%%%%%%@@@@@</tspan></text>
+    <text y="67.5" xml:space="preserve"><tspan x="91.0" class="c-gold">@@@@%%%%%%#########%%%%%%@@@</tspan></text>
+    <text y="79.0" xml:space="preserve"><tspan x="77.0" class="c-gold">%%%%%%%%##</tspan><tspan x="147.0" class="c-bright">***********</tspan><tspan x="224.0" class="c-gold">###%%%%%%%</tspan></text>
+    <text y="90.5" xml:space="preserve"><tspan x="70.0" class="c-gold">%%%%%%%###</tspan><tspan x="140.0" class="c-bright">**++======++**</tspan><tspan x="238.0" class="c-gold">###%%%%%%%</tspan></text>
+    <text y="102.0" xml:space="preserve"><tspan x="63.0" class="c-gold">#%%%%%%##</tspan><tspan x="126.0" class="c-bright">**++</tspan><tspan x="154.0" class="c-mid">=~;;;;;~~</tspan><tspan x="217.0" class="c-bright">=++**</tspan><tspan x="252.0" class="c-gold">##%%%%%%</tspan></text>
+    <text y="113.5" xml:space="preserve"><tspan x="63.0" class="c-gold">#%%%%%##</tspan><tspan x="119.0" class="c-bright">**++</tspan><tspan x="147.0" class="c-mid">~~:</tspan><tspan x="168.0" class="c-dark">,</tspan><tspan x="196.0" class="c-dark">.,</tspan><tspan x="210.0" class="c-mid">:~~</tspan><tspan x="231.0" class="c-bright">++**</tspan><tspan x="259.0" class="c-gold">##%%%%%#</tspan></text>
+    <text y="125.0" xml:space="preserve"><tspan x="63.0" class="c-gold">%%%%%%##</tspan><tspan x="119.0" class="c-bright">#*+=</tspan><tspan x="147.0" class="c-mid">;</tspan><tspan x="154.0" class="c-dark">:</tspan><tspan x="217.0" class="c-dark">:</tspan><tspan x="224.0" class="c-mid">~</tspan><tspan x="231.0" class="c-bright">=+*#</tspan><tspan x="259.0" class="c-gold">##%%%%%#</tspan></text>
+    <text y="136.5" xml:space="preserve"><tspan x="56.0" class="c-bright">*</tspan><tspan x="63.0" class="c-gold">#%%%%%###</tspan><tspan x="126.0" class="c-bright">*+=</tspan><tspan x="147.0" class="c-mid">~</tspan><tspan x="224.0" class="c-mid">~</tspan><tspan x="231.0" class="c-bright">+*#</tspan><tspan x="252.0" class="c-gold">###%%%%%#</tspan><tspan x="315.0" class="c-bright">*</tspan></text>
+    <text y="148.0" xml:space="preserve"><tspan x="56.0" class="c-bright">*</tspan><tspan x="63.0" class="c-gold">#%%%%%###</tspan><tspan x="126.0" class="c-bright">#**+</tspan><tspan x="224.0" class="c-bright">+*</tspan><tspan x="238.0" class="c-gold">##%%%%%%%%#</tspan><tspan x="315.0" class="c-bright">*</tspan></text>
+    <text y="159.5" xml:space="preserve"><tspan x="63.0" class="c-gold">##%%%%%%%%#%#</tspan><tspan x="154.0" class="c-bright">*</tspan><tspan x="217.0" class="c-bright">*</tspan><tspan x="224.0" class="c-gold">#%%%%%%%%%%##</tspan></text>
+    <text y="171.0" xml:space="preserve"><tspan x="63.0" class="c-bright">*</tspan><tspan x="70.0" class="c-gold">##%%%%%%%%%%%%%#</tspan><tspan x="203.0" class="c-gold">%%%%%%%%%%%%%##</tspan><tspan x="308.0" class="c-bright">*</tspan></text>
+    <text y="182.5" xml:space="preserve"><tspan x="70.0" class="c-bright">*</tspan><tspan x="77.0" class="c-gold">##%%%%%@@@@@@@@@@@@@@@@@@%%%%%##</tspan><tspan x="301.0" class="c-bright">*+</tspan></text>
+    <text y="194.0" xml:space="preserve"><tspan x="70.0" class="c-bright">+*</tspan><tspan x="84.0" class="c-gold">##%%%%%@@@@@@@@@@@@@@@@%%%%%##</tspan><tspan x="294.0" class="c-bright">*=</tspan></text>
+    <text y="205.5" xml:space="preserve"><tspan x="84.0" class="c-bright">**</tspan><tspan x="98.0" class="c-gold">##%%%%%%@@@@@@@@@@@%%%%%##</tspan><tspan x="280.0" class="c-bright">**=</tspan></text>
+    <text y="217.0" xml:space="preserve"><tspan x="91.0" class="c-bright">=**</tspan><tspan x="112.0" class="c-gold">##%%%%%%%@@@@%%%%%%%##</tspan><tspan x="266.0" class="c-bright">**+</tspan></text>
+    <text y="228.5" xml:space="preserve"><tspan x="98.0" class="c-mid">~</tspan><tspan x="105.0" class="c-bright">++*#</tspan><tspan x="133.0" class="c-gold">###%%%%%%%%%%###</tspan><tspan x="245.0" class="c-bright">#**+</tspan></text>
+  </g>
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;none;none;none;none;none;inline;none" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
     <text y="56.0" xml:space="preserve"><tspan x="77.0" class="c-gold">%%%%%%%%%%%%%%%%%%%%%%%##%%%%%%%</tspan></text>
     <text y="67.5" xml:space="preserve"><tspan x="70.0" class="c-gold">%%%%%#####</tspan><tspan x="140.0" class="c-bright">#</tspan><tspan x="147.0" class="c-gold">#</tspan><tspan x="154.0" class="c-bright">**********</tspan><tspan x="224.0" class="c-gold">#</tspan><tspan x="231.0" class="c-bright">#</tspan><tspan x="238.0" class="c-gold">####%%%%%%</tspan></text>
     <text y="79.0" xml:space="preserve"><tspan x="63.0" class="c-gold">#%%%####</tspan><tspan x="119.0" class="c-bright">******+++++++++******</tspan><tspan x="266.0" class="c-gold">####%%#</tspan></text>
@@ -138,11 +221,28 @@
     <text y="217.0" xml:space="preserve"><tspan x="126.0" class="c-mid">~</tspan><tspan x="133.0" class="c-bright">=++*********+++=</tspan><tspan x="245.0" class="c-mid">~</tspan></text>
     <text y="228.5" xml:space="preserve"><tspan x="168.0" class="c-mid">;;~~;;</tspan></text>
   </g>
+  <g display="none" font-size="11.5">
+    <animate attributeName="display" values="none;none;none;none;none;none;none;none;none;none;none;inline" dur="0.96s" repeatCount="indefinite" calcMode="discrete"/>
+    <text y="56.0" xml:space="preserve"><tspan x="91.0" class="c-gold">@@@@@@@@@@@@@%@%%@%%@%%%%%%%%%</tspan></text>
+    <text y="67.5" xml:space="preserve"><tspan x="77.0" class="c-gold">@@@@@@#%%%%</tspan><tspan x="154.0" class="c-bright">+</tspan><tspan x="161.0" class="c-gold">%%%%</tspan><tspan x="189.0" class="c-mid">=</tspan><tspan x="196.0" class="c-gold">%%%%%%%%####%%%%</tspan></text>
+    <text y="79.0" xml:space="preserve"><tspan x="63.0" class="c-gold">%%%%%%%%%%</tspan><tspan x="133.0" class="c-bright">=</tspan><tspan x="140.0" class="c-gold">%%#%#%</tspan><tspan x="182.0" class="c-mid">~</tspan><tspan x="189.0" class="c-gold">##</tspan><tspan x="203.0" class="c-mid">~</tspan><tspan x="210.0" class="c-gold">##</tspan><tspan x="224.0" class="c-mid">~</tspan><tspan x="231.0" class="c-gold">####</tspan><tspan x="259.0" class="c-bright">*</tspan><tspan x="266.0" class="c-gold">#######</tspan></text>
+    <text y="90.5" xml:space="preserve"><tspan x="56.0" class="c-gold">%%%%%%#</tspan><tspan x="105.0" class="c-bright">+</tspan><tspan x="112.0" class="c-gold">%%</tspan><tspan x="126.0" class="c-mid">=</tspan><tspan x="133.0" class="c-gold">#</tspan><tspan x="140.0" class="c-mid">~</tspan><tspan x="147.0" class="c-gold">##</tspan><tspan x="161.0" class="c-bright">###*</tspan><tspan x="189.0" class="c-gold">##</tspan><tspan x="203.0" class="c-bright">***</tspan><tspan x="224.0" class="c-mid">~</tspan><tspan x="231.0" class="c-bright">*********#***</tspan></text>
+    <text y="102.0" xml:space="preserve"><tspan x="49.0" class="c-gold">###%#####</tspan><tspan x="112.0" class="c-bright">=</tspan><tspan x="119.0" class="c-gold">##</tspan><tspan x="133.0" class="c-mid">~</tspan><tspan x="140.0" class="c-bright">********+**+=+++++++++*+**</tspan></text>
+    <text y="113.5" xml:space="preserve"><tspan x="42.0" class="c-gold">######</tspan><tspan x="84.0" class="c-bright">#</tspan><tspan x="91.0" class="c-gold">#</tspan><tspan x="98.0" class="c-bright">******</tspan><tspan x="140.0" class="c-dark">:</tspan><tspan x="147.0" class="c-bright">++</tspan><tspan x="161.0" class="c-dark">.</tspan><tspan x="168.0" class="c-bright">++=</tspan><tspan x="189.0" class="c-mid">=</tspan><tspan x="196.0" class="c-bright">===</tspan><tspan x="217.0" class="c-mid">========</tspan><tspan x="273.0" class="c-bright">===++++</tspan></text>
+    <text y="125.0" xml:space="preserve"><tspan x="42.0" class="c-bright">#*********+++++</tspan><tspan x="147.0" class="c-mid">=</tspan><tspan x="154.0" class="c-bright">==</tspan><tspan x="168.0" class="c-mid">==~~~~~~~~~~~~~~~~~=</tspan><tspan x="308.0" class="c-bright">==</tspan></text>
+    <text y="136.5" xml:space="preserve"><tspan x="42.0" class="c-bright">******+++=++=</tspan><tspan x="133.0" class="c-mid">==~~~~;;;;</tspan><tspan x="203.0" class="c-dark">::,,,:::</tspan><tspan x="259.0" class="c-mid">::;;;~~~</tspan></text>
+    <text y="148.0" xml:space="preserve"><tspan x="42.0" class="c-bright">+++++++=</tspan><tspan x="98.0" class="c-mid">===~~~;;;</tspan><tspan x="161.0" class="c-dark">::.</tspan><tspan x="182.0" class="c-gold">@@@%#</tspan><tspan x="217.0" class="c-bright">*=</tspan><tspan x="231.0" class="c-mid">;</tspan><tspan x="238.0" class="c-dark">:,,::</tspan><tspan x="273.0" class="c-mid">:;;~</tspan></text>
+    <text y="159.5" xml:space="preserve"><tspan x="42.0" class="c-bright">+++==</tspan><tspan x="77.0" class="c-mid">=</tspan><tspan x="84.0" class="c-bright">=</tspan><tspan x="91.0" class="c-mid">=~~~;;:</tspan><tspan x="140.0" class="c-dark">:,</tspan><tspan x="154.0" class="c-bright">*</tspan><tspan x="161.0" class="c-gold">#%@@@%%#</tspan><tspan x="217.0" class="c-bright">*+=</tspan><tspan x="238.0" class="c-mid">~~;;;;;;</tspan></text>
+    <text y="171.0" xml:space="preserve"><tspan x="49.0" class="c-bright">==</tspan><tspan x="63.0" class="c-mid">==~~~;;;::</tspan><tspan x="133.0" class="c-dark">:</tspan><tspan x="140.0" class="c-mid">;</tspan><tspan x="147.0" class="c-bright">=+#</tspan><tspan x="168.0" class="c-gold">%%%%%%#</tspan><tspan x="217.0" class="c-bright">*++</tspan><tspan x="238.0" class="c-mid">=~~~;:</tspan></text>
+    <text y="182.5" xml:space="preserve"><tspan x="56.0" class="c-mid">~~~~~~;;;;;~~</tspan><tspan x="147.0" class="c-bright">=+*#</tspan><tspan x="175.0" class="c-gold">####</tspan><tspan x="203.0" class="c-bright">**+=</tspan><tspan x="231.0" class="c-mid">=~;</tspan><tspan x="252.0" class="c-dark">:</tspan></text>
+    <text y="194.0" xml:space="preserve"><tspan x="77.0" class="c-mid">;;;;;;;~~==</tspan><tspan x="154.0" class="c-bright">+++++==</tspan><tspan x="203.0" class="c-mid">=~;</tspan></text>
+    <text y="205.5" xml:space="preserve"><tspan x="112.0" class="c-mid">:;;;;;;</tspan><tspan x="161.0" class="c-dark">:</tspan></text>
   </g>
-  <rect x="14" y="236" width="352" height="34" rx="5" fill="#130421" stroke="#4a1f6b" stroke-dasharray="4 2"/>
-  <text x="24" y="251" class="mono" fill="#9d5ce6" font-size="9.5">FIELD: ELECTROMAGNETISM &amp; RELATIVITY</text>
+  </g>
+  <rect x="14" y="236" width="352" height="34" rx="5" fill="#160529" stroke="#4a1f6b" stroke-dasharray="4 2"/>
+  <text x="24" y="251" class="mono" fill="#a86bf0" font-size="9.5">FIELD: ELECTROMAGNETISM &amp; RELATIVITY</text>
   <text x="24" y="264" class="mono" fill="#e5b75f" font-size="9.5">NEXT:  DATA SCIENCE DEGREE [UNLP 2027]</text>
-  <rect x="14" y="278" width="352" height="48" rx="6" fill="#0b0114" stroke="#4a1f6b"/>
+  <rect x="14" y="278" width="352" height="48" rx="6" fill="#110320" stroke="#4a1f6b"/>
   <text x="24" y="298" class="mono" fill="#e5b75f" font-size="10.5" font-weight="bold">▸ INFORMES DE LAB TIPO PAPER (LaTeX)</text>
-  <text x="24" y="315" class="mono" fill="#e6dff0" font-size="10">▸ CLASES DE CONSULTA &amp; ARCHIVO ACADÉMICO</text>
+  <text x="24" y="315" class="mono" fill="#eee8f6" font-size="10">▸ CLASES DE CONSULTA &amp; ARCHIVO ACADÉMICO</text>
 </svg>
