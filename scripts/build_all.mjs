@@ -6,7 +6,7 @@ import * as lwMod from "./pieces_src/lava-wall.ts";
 import * as ccMod from "./pieces_src/command-city.ts";
 import * as eoMod from "./pieces_src/edge-orbit.ts";
 
-const W = 200, H = 100, CW = 10, CH = 10;
+const W = 200, H = 100, CW = 6, CH = 6;
 const DOTS = " ·•●";
 const COVER = [0, 0.3, 0.6, 1];
 const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => v / 16 - 0.47);
@@ -15,103 +15,159 @@ const smooth = (a, b, v) => {
   const k = clamp((v - a) / (b - a));
   return k * k * (3 - 2 * k);
 };
-const mix = (a, b, k) => a + (b - a) * k;
 
 const CLS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
 const hexRgb = (s) => [1, 3, 5].map((i) => parseInt(s.slice(i, i + 2), 16));
-const colorDist = (rgbA, rgbB) =>
-  Math.hypot(rgbA[0] - rgbB[0], rgbA[1] - rgbB[1], rgbA[2] - rgbA[2]);
+const colorDist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
 
 /**
- * Encode a sequence of { txt: string[], c: Uint8Array } frames into a compact,
- * 100% GitHub-compatible animated SVG with static base layer + delta frame layers.
+ * Lock cells whose dot size (character) is 100% invariant across all frames
+ * and whose color only jitters across an adjacent palette step (< maxSameCharDist),
+ * moving them into the static base layer with zero perceptible change.
  */
-function encodeSvg({ shots, palette, ground, every, label }) {
+function lockSubtleCells(shots, palette, maxSameCharDist = 52, maxAnyDist = 32, protectPred = null) {
   const N = shots.length;
-  const isDyn = new Uint8Array(W * H);
+  const rgb = palette.map(hexRgb);
+  const grid = shots.map((s) => s.txt.map((row) => [...row]));
+
+  for (let r = 0; r < H; r++) {
+    for (let x = 0; x < W; x++) {
+      if (protectPred && protectPred(x, r)) continue;
+      const k = r * W + x;
+      const ch0 = grid[0][r][x];
+      const c0 = shots[0].c[k];
+      let sameChar = true;
+      let maxD = 0;
+      for (let i = 1; i < N; i++) {
+        if (grid[i][r][x] !== ch0) sameChar = false;
+        const d = colorDist(rgb[c0], rgb[shots[i].c[k]]);
+        if (d > maxD) maxD = d;
+      }
+      if ((sameChar && maxD < maxSameCharDist) || maxD < maxAnyDist) {
+        for (let i = 1; i < N; i++) {
+          grid[i][r][x] = ch0;
+          shots[i].c[k] = c0;
+        }
+      }
+    }
+  }
+  for (let i = 0; i < N; i++) {
+    shots[i].txt = grid[i].map((row) => row.join(""));
+  }
+}
+
+/**
+ * Encode a sequence of { txt: string[], c: Uint8Array } frames into an ultra-compact,
+ * 100% GitHub-compatible animated SVG using:
+ * 1. Static base layer (<g>) + delta frame layers (<g class="f k...">)
+ * 2. Color-grouped horizontal run merging across Bayer dither patterns (bridging same-color
+ *    cells separated by <= MAX_GAP spaces, since spaces render zero ink and advance by CW)
+ * 3. Single-run <text> flattening (eliminating nested <tspan> when a row has 1 run)
+ * 4. Row-level dominant color class inheritance on <text> (omitting redundant class="..." on <tspan>)
+ */
+function encodeSvg({ shots, palette, ground, every, label, maxGap = 38 }) {
+  const N = shots.length;
+  const baseChar = new Array(W * H).fill(" ");
+  const baseCol = new Uint8Array(W * H);
 
   for (let k = 0; k < W * H; k++) {
     const r = (k / W) | 0, x = k % W;
-    const ch0 = shots[0].txt[r][x], c0 = shots[0].c[k];
-    for (let i = 1; i < N; i++) {
-      const chi = shots[i].txt[r][x], ci = shots[i].c[k];
-      if (chi !== ch0 || (chi !== " " && ci !== c0)) {
-        isDyn[k] = 1;
-        break;
+    let minStep = 3;
+    const freq = new Map();
+    let bestKey = "", bestCnt = 0, bestCh = " ", bestC = 0;
+
+    for (let i = 0; i < N; i++) {
+      const ch = shots[i].txt[r][x];
+      const st = DOTS.indexOf(ch);
+      if (st < minStep) minStep = st;
+      const c = ch === " " ? 0 : shots[i].c[k];
+      const key = `${ch}:${c}`;
+      const cnt = (freq.get(key) || 0) + 1;
+      freq.set(key, cnt);
+      if (cnt > bestCnt) {
+        bestCnt = cnt;
+        bestKey = key;
+        bestCh = ch;
+        bestC = c;
       }
+    }
+
+    // If the modal state's dot step is <= every frame's dot step at cell k,
+    // place the modal state in the static base layer so only frames that differ need to draw over it!
+    const bestStep = DOTS.indexOf(bestCh);
+    if (bestCnt === N || (bestCh !== " " && bestStep <= minStep && bestCnt >= 2)) {
+      baseChar[k] = bestCh;
+      baseCol[k] = bestC;
     }
   }
 
   const used = new Set();
-  const renderLayer = (shot, wantDyn) => {
+  const renderLayer = (shot, isStaticLayer) => {
     let out = "";
     for (let r = 0; r < H; r++) {
-      let rowSpans = "", x = 0;
       const line = shot.txt[r];
-      while (x < W) {
+      const byColor = new Map();
+
+      for (let x = 0; x < W; x++) {
         const k = r * W + x;
-        const ch = isDyn[k] === wantDyn ? line[x] : " ";
-        if (ch === " ") {
-          x++;
-          continue;
+        let ch, col;
+        if (isStaticLayer) {
+          ch = baseChar[k];
+          col = baseCol[k];
+        } else {
+          ch = line[x];
+          col = shot.c[k];
+          if (ch === baseChar[k] && (ch === " " || col === baseCol[k])) continue;
         }
-        const col = shot.c[k];
+        if (ch === " ") continue;
         used.add(col);
-        const x0 = x;
-        let run = "";
-        while (x < W) {
-          const kk = r * W + x;
-          const cc = isDyn[kk] === wantDyn ? line[x] : " ";
-          if (cc !== " " && shot.c[kk] === col) {
-            run += cc;
-            x++;
-          } else if (
-            cc === " " &&
-            x + 1 < W &&
-            isDyn[kk + 1] === wantDyn &&
-            line[x + 1] !== " " &&
-            shot.c[kk + 1] === col
-          ) {
-            run += " ";
-            x++;
-          } else if (
-            cc === " " &&
-            x + 2 < W &&
-            (isDyn[kk + 1] === wantDyn ? line[x + 1] : " ") === " " &&
-            isDyn[kk + 2] === wantDyn &&
-            line[x + 2] !== " " &&
-            shot.c[kk + 2] === col
-          ) {
-            run += "  ";
-            x += 2;
-          } else {
-            break;
-          }
+        let list = byColor.get(col);
+        if (!list) {
+          list = [];
+          byColor.set(col, list);
         }
-        rowSpans += `<tspan x="${x0 * CW}" class="${CLS[col]}">${esc(run)}</tspan>`;
+        list.push({ x, ch });
       }
-      if (rowSpans) out += `<text y="${(r + 0.5) * CH}">${rowSpans}</text>`;
+
+      if (byColor.size === 0) continue;
+
+      const yVal = (r + 0.5) * CH;
+      const entries = [...byColor.entries()];
+
+      if (entries.length === 1) {
+        const [col, cells] = entries[0];
+        const xs = cells.map((c) => c.x * CW).join(" ");
+        const str = cells.map((c) => c.ch).join("");
+        out += `<text x="${xs}" y="${yVal}" class="${CLS[col]}">${esc(str)}</text>`;
+        continue;
+      }
+
+      let rowSpans = "";
+      const domCol = entries[0][0];
+      for (let i = 0; i < entries.length; i++) {
+        const [col, cells] = entries[i];
+        const xs = cells.map((c) => c.x * CW).join(" ");
+        const str = cells.map((c) => c.ch).join("");
+        const cAttr = col === domCol ? "" : ` class="${CLS[col]}"`;
+        rowSpans += `<tspan x="${xs}"${cAttr}>${esc(str)}</tspan>`;
+      }
+      out += `<text y="${yVal}" class="${CLS[domCol]}">${rowSpans}</text>`;
     }
     return out;
   };
 
-  const staticBody = `<g>${renderLayer(shots[0], 0)}</g>`;
+  const staticBody = `<g>${renderLayer(shots[0], true)}</g>`;
   let dynGroups = "", keys = "";
   const pct = (i) => `${+((i / N) * 100).toFixed(2)}%`;
 
   for (let i = 0; i < N; i++) {
-    let kf = "", state = -1;
-    for (let s = 0; s <= N; s++) {
-      const v = s < N ? (s === i ? 1 : 0) : 0;
-      if (v !== state) {
-        kf += `${pct(s)}{opacity:${v}}`;
-        state = v;
-      }
-    }
+    const kf =
+      i === 0
+        ? `0%{opacity:1}${pct(1)}{opacity:0}`
+        : `0%{opacity:0}${pct(i)}{opacity:1}${pct(i + 1)}{opacity:0}`;
     keys += `@keyframes k${i}{${kf}}.k${i}{animation-name:k${i}}`;
-    dynGroups += `<g class="f k${i}">${renderLayer(shots[i], 1)}</g>`;
+    dynGroups += `<g class="f k${i}">${renderLayer(shots[i], false)}</g>`;
   }
 
   const inks = [...used]
@@ -119,12 +175,12 @@ function encodeSvg({ shots, palette, ground, every, label }) {
     .map((c) => `.${CLS[c]}{fill:${palette[c]}}`)
     .join("");
 
-  const fontCss = `text{font:16.67px ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;white-space:pre;dominant-baseline:central}`;
-  const animCss = `.f{opacity:0;animation:${every}s step-end infinite}${keys}@media (prefers-reduced-motion:reduce){.f{animation:none}.k0{opacity:1}}`;
+  const fontCss = `text{font:10px ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;dominant-baseline:central}`;
+  const animCss = `.f{opacity:0;will-change:opacity;animation:${every}s step-end infinite}${keys}@media (prefers-reduced-motion:reduce){.f{animation:none}.k0{opacity:1}}`;
   const width = W * CW, height = H * CH;
 
   return (
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="100%" role="img" aria-label="${esc(label)}" xml:space="preserve">` +
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="100%" role="img" aria-label="${esc(label)}">` +
     `<title>${esc(label)}</title>` +
     `<style>${fontCss}${inks}${animCss}</style>` +
     `<rect width="${width}" height="${height}" fill="${ground}"/>` +
@@ -135,31 +191,17 @@ function encodeSvg({ shots, palette, ground, every, label }) {
 }
 
 function renderSingleFrameSvg(shot, palette, ground) {
-  const width = W * CW, height = H * CH;
-  const inks = palette.map((p, i) => `.${CLS[i]}{fill:${p}}`).join("");
-  const fontCss = `text{font:16.67px "Liberation Mono",monospace;white-space:pre;dominant-baseline:central}`;
-  let out = "";
-  for (let r = 0; r < H; r++) {
-    let rowSpans = "", x = 0;
-    const line = shot.txt[r];
-    while (x < W) {
-      if (line[x] === " ") { x++; continue; }
-      const col = shot.c[r * W + x];
-      const x0 = x;
-      let run = "";
-      while (x < W && line[x] !== " " && shot.c[r * W + x] === col) {
-        run += line[x];
-        x++;
-      }
-      rowSpans += `<tspan x="${x0 * CW}" class="${CLS[col]}">${esc(run)}</tspan>`;
-    }
-    if (rowSpans) out += `<text y="${(r + 0.5) * CH}">${rowSpans}</text>`;
-  }
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="1200" height="600" xml:space="preserve"><style>${fontCss}${inks}</style><rect width="${width}" height="${height}" fill="${ground}"/><g>${out}</g></svg>`;
+  return encodeSvg({
+    shots: [shot],
+    palette,
+    ground,
+    every: 1,
+    label: "frame",
+  }).replace('width="100%"', 'width="1200" height="600"').replace('.f{opacity:0;', '.f{opacity:1;');
 }
 
 // 1. EARTHRISE (Physics): Full 360-degree seamless rotation of the ENTIRE Earth + clouds + twinkling stars
-function buildEarthrise(N = 24, every = 4.8) {
+function buildEarthrise(N = 24, every = 3.8) {
   const T_LOOP = (2 * Math.PI) / 0.045; // 139.626s = 1 full 360-degree rotation of Earth
   const fn = erMod.default();
   const shots = [];
@@ -184,38 +226,16 @@ function buildEarthrise(N = 24, every = 4.8) {
 }
 
 // 2. LAVA WALL (Web Dev - Jπ Studio): Pure lava-wall.ts
-function buildLavaWall(N = 16, every = 3.2) {
+function buildLavaWall(N = 20, every = 3.2) {
   const fn = lwMod.default();
-  const rgbPal = lwMod.meta.palette.map(hexRgb);
-  const shots0 = [];
+  const shots = [];
   for (let i = 0; i < N; i++) {
     const c = new Uint8Array(W * H);
     const t = (i / N) * 30;
     const txt = fn(t, { color: c }).split("\n");
-    shots0.push({ txt: txt.map((l) => [...l]), c });
+    shots.push({ txt, c });
   }
-  for (let r = 0; r < H; r++) {
-    for (let x = 0; x < W; x++) {
-      const k = r * W + x;
-      const isTally = x === 180 && r === 68;
-      if (isTally) continue;
-      let charsSame = true;
-      let maxDist = 0;
-      const c0 = shots0[0].c[k];
-      for (let i = 1; i < N; i++) {
-        if (shots0[i].txt[r][x] !== shots0[0].txt[r][x]) charsSame = false;
-        const d = colorDist(rgbPal[c0], rgbPal[shots0[i].c[k]]);
-        if (d > maxDist) maxDist = d;
-      }
-      if ((charsSame && maxDist < 85) || (c0 <= 5 && maxDist < 75)) {
-        for (let i = 1; i < N; i++) {
-          shots0[i].txt[r][x] = shots0[0].txt[r][x];
-          shots0[i].c[k] = c0;
-        }
-      }
-    }
-  }
-  const shots = shots0.map((s) => ({ txt: s.txt.map((row) => row.join("")), c: s.c }));
+  lockSubtleCells(shots, lwMod.meta.palette, 78, 45, (x, r) => x === 180 && r === 68);
   return {
     svg: encodeSvg({
       shots,
@@ -231,40 +251,17 @@ function buildLavaWall(N = 16, every = 3.2) {
 }
 
 // 3. COMMAND CITY (Data Science): Pure command-city.ts
-function buildCommandCity(N = 20, every = 3.6) {
+function buildCommandCity(N = 20, every = 3.0) {
   const fn = ccMod.default();
   const palette = [...ccMod.meta.palette];
-  const rgbPal = palette.map(hexRgb);
-
-  const shots0 = [];
+  const shots = [];
   for (let i = 0; i < N; i++) {
     const c = new Uint8Array(W * H);
     const t = (i / N) * 5.0;
     const txt = fn(t, { color: c }).split("\n");
-    shots0.push({ txt: txt.map((l) => [...l]), c });
+    shots.push({ txt, c });
   }
-
-  for (let r = 0; r < H; r++) {
-    for (let x = 0; x < W; x++) {
-      const k = r * W + x;
-      let charsSame = true;
-      let maxDist = 0;
-      const c0 = shots0[0].c[k];
-      for (let i = 1; i < N; i++) {
-        if (shots0[i].txt[r][x] !== shots0[0].txt[r][x]) charsSame = false;
-        const d = colorDist(rgbPal[c0], rgbPal[shots0[i].c[k]]);
-        if (d > maxDist) maxDist = d;
-      }
-      if ((charsSame && maxDist < 60) || maxDist < 42) {
-        for (let i = 1; i < N; i++) {
-          shots0[i].txt[r][x] = shots0[0].txt[r][x];
-          shots0[i].c[k] = c0;
-        }
-      }
-    }
-  }
-
-  const shots = shots0.map((s) => ({ txt: s.txt.map((row) => row.join("")), c: s.c }));
+  lockSubtleCells(shots, palette, 58, 38);
   return {
     svg: encodeSvg({
       shots,
@@ -280,14 +277,12 @@ function buildCommandCity(N = 20, every = 3.6) {
 }
 
 // 4. HEADER BANNER: edge-orbit.ts with the medium-sized detailed golden Jπ letters in the center (halftone 3D dot-shaded, zero borders, zero extra text)
-function buildHeaderEdgeOrbitJpi(N = 24, every = 4.0) {
+function buildHeaderEdgeOrbitJpi(N = 24, every = 3.6) {
   const fn = eoMod.default();
   const palette = [...eoMod.meta.palette];
   // Add rich golden ramp (#5a3c20 -> #e5b75f -> #ffd27c -> #fff8dc)
-  const g0 = palette.length;
   palette.push("#4a3014", "#7c511d", "#b57c2a", "#d99f3c", "#e5b75f", "#f5cf76", "#ffe8a3", "#fff8dc");
   const P = palette.map((s) => [1, 3, 5].map((i) => parseInt(s.slice(i, i + 2), 16) / 255));
-  const rgbPal = palette.map(hexRgb);
 
   const nearestGold = (r, g, b) => {
     let best = 0, bd = 1e9;
@@ -306,28 +301,6 @@ function buildHeaderEdgeOrbitJpi(N = 24, every = 4.0) {
     const t = (i / N) * 6.0;
     const txt = fn(t, { color: c }).split("\n");
     shots0.push({ txt: txt.map((l) => [...l]), c });
-  }
-
-  // Keep 100% of arcing orange/tangerine requests, landing rings, sun flare, and twinkling stars;
-  // lock negligible sub-pixel drift on unlit sea/land where character and color barely change over 6s
-  for (let r = 0; r < H; r++) {
-    for (let x = 0; x < W; x++) {
-      const k = r * W + x;
-      let charsSame = true;
-      let maxDist = 0;
-      const c0 = shots0[0].c[k];
-      for (let i = 1; i < N; i++) {
-        if (shots0[i].txt[r][x] !== shots0[0].txt[r][x]) charsSame = false;
-        const d = colorDist(rgbPal[c0], rgbPal[shots0[i].c[k]]);
-        if (d > maxDist) maxDist = d;
-      }
-      if ((charsSame && maxDist < 58) || maxDist < 38) {
-        for (let i = 1; i < N; i++) {
-          shots0[i].txt[r][x] = shots0[0].txt[r][x];
-          shots0[i].c[k] = c0;
-        }
-      }
-    }
   }
 
   // High-resolution signed distance / coverage field for medium-sized detailed "Jπ" centered at (100, 48)
@@ -408,6 +381,7 @@ function buildHeaderEdgeOrbitJpi(N = 24, every = 4.0) {
   }
 
   const shots = shots0.map((s) => ({ txt: s.txt.map((row) => row.join("")), c: s.c }));
+  lockSubtleCells(shots, palette, 54, 34);
   return {
     svg: encodeSvg({
       shots,
@@ -423,10 +397,10 @@ function buildHeaderEdgeOrbitJpi(N = 24, every = 4.0) {
 }
 
 const t0 = Date.now();
-const er = buildEarthrise(24, 4.8);
-const lw = buildLavaWall(16, 3.2);
-const cc = buildCommandCity(20, 3.6);
-const hd = buildHeaderEdgeOrbitJpi(20, 3.6);
+const er = buildEarthrise(24, 3.8);
+const lw = buildLavaWall(20, 3.2);
+const cc = buildCommandCity(20, 3.0);
+const hd = buildHeaderEdgeOrbitJpi(24, 3.6);
 
 const assetsDir = "/home/antigravity/JuanGelp/assets";
 const artDir = "/home/antigravity/.gemini/jetski/brain/v1/default/jetski_remote_agents_3p/2d1176f3-daf0-4f2e-80cd-8c4ef4592fb4";
@@ -439,7 +413,12 @@ for (const [fname, prefix, data] of [
 ]) {
   fs.writeFileSync(path.join(assetsDir, fname), data.svg);
   fs.writeFileSync(path.join(artDir, fname), data.svg);
-  console.log(fname, "size:", (data.svg.length / 1024).toFixed(1), "KB");
+  const gCnt = (data.svg.match(/<g/g) || []).length;
+  const tCnt = (data.svg.match(/<text/g) || []).length;
+  const sCnt = (data.svg.match(/<tspan/g) || []).length;
+  console.log(
+    `${fname}: ${(data.svg.length / 1024).toFixed(1)} KB | DOM nodes: ${gCnt + tCnt + sCnt} (g=${gCnt}, text=${tCnt}, tspan=${sCnt})`
+  );
 
   const f0Svg = renderSingleFrameSvg(data.shots[0], data.palette, data.ground);
   const resvg0 = new Resvg(f0Svg, { fitTo: { mode: "width", value: 1200 } });

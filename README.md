@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HEADER PRINCIPAL: EDGE ORBIT & Jπ DORADO EN EL CENTRO -->
-<img src="./assets/banner-cosmos-jpi.svg" width="100%" alt="Juan // Jπ Studio — Edge Orbit Header" />
+<img src="./assets/banner-cosmos-jpi.svg?v=8" width="100%" decoding="async" fetchpriority="high" alt="Juan // Jπ Studio — Edge Orbit Header" />
 
 <br/><br/>
 
@@ -30,7 +30,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/card-physics.svg" width="100%" alt="Física UNLP — Earthrise en ASCII" />
+  <img src="./assets/card-physics.svg?v=8" width="100%" loading="lazy" decoding="async" alt="Física UNLP — Earthrise en ASCII" />
 </p>
 
 <br/>
@@ -52,7 +52,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/card-jpi-studio.svg" width="100%" alt="Desarrollo Web - Jπ Studio — Lava Wall en ASCII" />
+  <img src="./assets/card-jpi-studio.svg?v=8" width="100%" loading="lazy" decoding="async" alt="Desarrollo Web - Jπ Studio — Lava Wall en ASCII" />
 </p>
 
 <br/>
@@ -72,7 +72,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/card-datascience.svg" width="100%" alt="Ciencia de Datos en Organizaciones UNLP — Command City en ASCII" />
+  <img src="./assets/card-datascience.svg?v=8" width="100%" loading="lazy" decoding="async" alt="Ciencia de Datos en Organizaciones UNLP — Command City en ASCII" />
 </p>
 
 <br/>
