@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- BANNER PRINCIPAL: ARTE ASCII 3D EN TIEMPO REAL & STARFIELD -->
-<img src="./assets/banner-cosmos-jpi.svg" width="100%" alt="Juan // Jπ Studio - 3D ASCII Cosmos & Creative Development Banner" />
+<img src="./assets/banner-cosmos-jpi.svg" width="100%" alt="Juan" />
 
 <br/>
 
